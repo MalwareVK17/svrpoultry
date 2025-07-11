@@ -22,11 +22,14 @@ const Navigation = () => {
   return (
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-blue-600">SVR</span>
-              <span className="text-2xl font-light text-gray-700 ml-1">Poultry</span>
+              <img 
+                src="/lovable-uploads/14c420aa-68fa-4a3b-8536-49a777adb9cb.png" 
+                alt="SVR Poultry Equipments" 
+                className="h-12 w-auto"
+              />
             </Link>
           </div>
 
