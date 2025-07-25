@@ -23,8 +23,15 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/c0e0a7d9-ede8-493b-af47-80c74c7c7e91.png" 
+            alt="SVR Poultry Equipments" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+        </div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,7 +62,7 @@ const Home = () => {
             <Link to="/about">
               <Button 
                 size="lg" 
-                className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-white text-primary hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
               >
                 Discover Our Story
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -158,12 +165,14 @@ const Home = () => {
             <p className="text-lg text-gray-700 mb-8 font-medium">
               Ready to join our network of successful partners?
             </p>
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-blue-500 to-cyan-400 hover:from-blue-600 hover:to-cyan-500 px-10 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-            >
-              Become Our Partner
-            </Button>
+            <Link to="/become-partner">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 px-10 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+              >
+                Become Our Partner
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

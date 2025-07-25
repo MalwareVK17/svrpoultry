@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
   const products = [
@@ -61,7 +62,7 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -97,11 +98,11 @@ const Products = () => {
                 className="group"
               >
                 <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-blue-100 to-cyan-100 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20"></div>
+                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10"></div>
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-20 h-20 bg-white/90 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                        <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                           {product.title.split(' ').map(word => word[0]).join('')}
                         </span>
                       </div>
@@ -113,17 +114,19 @@ const Products = () => {
                     <ul className="space-y-2 mb-6">
                       {product.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-sm text-gray-600">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
+                          <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    <Button 
-                      className="w-full bg-blue-500 hover:bg-blue-600 rounded-full group-hover:shadow-lg transition-all duration-300"
-                    >
-                      View Details
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <Link to={`/product/${product.id}`}>
+                      <Button 
+                        className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300"
+                      >
+                        View Details
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -161,7 +164,7 @@ const Products = () => {
               >
                 <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
                   <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                       <span className="text-white font-bold text-xl">{partner.name.charAt(0)}</span>
                     </div>
                     <h3 className="font-semibold text-gray-900 text-lg">{partner.name}</h3>
@@ -181,12 +184,14 @@ const Products = () => {
             <p className="text-lg text-gray-700 mb-8">
               Interested in becoming a partner? Let's work together to revolutionize poultry farming.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-blue-500 hover:bg-blue-600 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            >
-              Become a Partner
-            </Button>
+            <Link to="/become-partner">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              >
+                Become a Partner
+              </Button>
+            </Link>
           </motion.div>
         </div>
       </section>

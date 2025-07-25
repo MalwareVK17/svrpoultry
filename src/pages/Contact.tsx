@@ -99,7 +99,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -148,7 +148,7 @@ const Contact = () => {
                     whileHover={{ x: 10 }}
                     className="flex items-start space-x-4 group"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -183,7 +183,7 @@ const Contact = () => {
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="mt-2 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                          className="mt-2 rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
                           placeholder="Your full name"
                         />
                       </div>
@@ -196,7 +196,7 @@ const Contact = () => {
                           required
                           value={formData.email}
                           onChange={handleChange}
-                          className="mt-2 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                          className="mt-2 rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
                           placeholder="your@email.com"
                         />
                       </div>
@@ -211,7 +211,7 @@ const Contact = () => {
                           type="tel"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="mt-2 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                          className="mt-2 rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
                           placeholder="+91 XXXXX XXXXX"
                         />
                       </div>
@@ -224,7 +224,7 @@ const Contact = () => {
                           required
                           value={formData.subject}
                           onChange={handleChange}
-                          className="mt-2 rounded-lg border-gray-200 focus:border-blue-500 focus:ring-blue-500"
+                          className="mt-2 rounded-lg border-gray-200 focus:border-primary focus:ring-primary"
                           placeholder="How can we help?"
                         />
                       </div>
@@ -239,7 +239,7 @@ const Contact = () => {
                         rows={5}
                         value={formData.message}
                         onChange={handleChange}
-                        className="mt-2 w-full px-3 py-2 border border-gray-200 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-opacity-20 outline-none transition-all duration-200"
+                        className="mt-2 w-full px-3 py-2 border border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-20 outline-none transition-all duration-200"
                         placeholder="Tell us about your requirements..."
                       />
                     </div>
@@ -248,7 +248,7 @@ const Contact = () => {
                       type="submit"
                       size="lg"
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 rounded-lg py-3 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300"
+                      className="w-full bg-primary hover:bg-primary/90 rounded-lg py-3 font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-300"
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
                     </Button>
@@ -260,7 +260,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Map Section */}
+      {/* Locations Section */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -270,30 +270,77 @@ const Contact = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Visit Our Location</h2>
-            <p className="text-xl text-gray-600">Find us at our headquarters</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Visit Our Locations</h2>
+            <p className="text-xl text-gray-600">Find us at our offices across India</p>
           </motion.div>
           
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 text-center"
-          >
-            <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-              <MapPin className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">SVR Poultry Equipments</h3>
-            <p className="text-gray-700 text-lg mb-6">
-              123 Industrial Area<br />
-              City, State 123456<br />
-              India
-            </p>
-            <Button className="bg-blue-500 hover:bg-blue-600 px-8 py-3 rounded-full">
-              Get Directions
-            </Button>
-          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Headquarters */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 text-center"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                <MapPin className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Headquarters</h3>
+              <p className="text-gray-700 text-lg mb-6">
+                123 Industrial Area<br />
+                Hyderabad, Telangana 500001<br />
+                India
+              </p>
+              <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
+                Get Directions
+              </Button>
+            </motion.div>
+
+            {/* Branch Office 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 text-center"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                <MapPin className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Mumbai Branch</h3>
+              <p className="text-gray-700 text-lg mb-6">
+                456 Business District<br />
+                Mumbai, Maharashtra 400001<br />
+                India
+              </p>
+              <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
+                Get Directions
+              </Button>
+            </motion.div>
+
+            {/* Branch Office 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 text-center"
+            >
+              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                <MapPin className="w-10 h-10 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Chennai Branch</h3>
+              <p className="text-gray-700 text-lg mb-6">
+                789 Technology Park<br />
+                Chennai, Tamil Nadu 600001<br />
+                India
+              </p>
+              <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
+                Get Directions
+              </Button>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
