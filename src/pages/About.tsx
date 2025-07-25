@@ -36,19 +36,19 @@ const About = () => {
 
   const team = [
     { 
-      name: 'Rajesh Kumar', 
+      name: 'Mr.D. Venkateshwar Reddy', 
       role: 'Founder & CEO', 
       experience: '15+ years in poultry industry',
       icon: Building
     },
     { 
-      name: 'Priya Sharma', 
+      name: 'Mr.A.Srinivas Reddy', 
       role: 'Technical Director', 
       experience: 'Expert in equipment design',
       icon: Target
     },
     { 
-      name: 'Amit Patel', 
+      name: 'Mr.D. Jagadeshwar Reddy', 
       role: 'Customer Relations', 
       experience: 'Dedicated to customer success',
       icon: Users
