@@ -44,9 +44,9 @@ const Products = () => {
     },
     {
       id: 6,
-      title: 'Lighting Systems',
-      description: 'LED lighting solutions optimized for poultry productivity.',
-      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
+      title: 'Cage System-2',
+      description: 'Cage System solutions optimized for poultry productivity.',
+      image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       features: ['Energy saving', 'Programmable cycles', 'Long lifespan']
     },
   ];
