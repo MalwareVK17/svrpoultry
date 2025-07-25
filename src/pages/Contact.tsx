@@ -87,12 +87,12 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: ['info@svrpoultry.com']
+      details: ['svrpoultry@gmail.com']
     },
     {
       icon: Clock,
       title: 'Business Hours',
-      details: ['Mon - Fri: 9:00 AM - 6:00 PM', 'Sat: 9:00 AM - 4:00 PM']
+      details: ['Mon - Fri: 9:00 AM - 6:00 PM','Sat: 9:00 AM - 4:00 PM' ]
     }
   ];
 
@@ -286,7 +286,7 @@ const Contact = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
                 <MapPin className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Headquarters</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Headquarters (Unit-1)</h3>
               <p className="text-gray-700 text-lg mb-6">
                 123 Industrial Area<br />
                 Hyderabad, Telangana 500001<br />
@@ -308,10 +308,10 @@ const Contact = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
                 <MapPin className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Mumbai Branch</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Hydrebad (Unit-2)</h3>
               <p className="text-gray-700 text-lg mb-6">
                 456 Business District<br />
-                Mumbai, Maharashtra 400001<br />
+                Telangana, Hydrebad 501359<br />
                 India
               </p>
               <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
@@ -330,10 +330,10 @@ const Contact = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
                 <MapPin className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Chennai Branch</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">SVR Poulty(Unit-3)</h3>
               <p className="text-gray-700 text-lg mb-6">
-                789 Technology Park<br />
-                Chennai, Tamil Nadu 600001<br />
+                4G87+ Gudoor<br />
+                Telangana 600001<br />
                 India
               </p>
               <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
