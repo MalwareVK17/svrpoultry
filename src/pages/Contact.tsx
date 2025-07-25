@@ -337,7 +337,7 @@ const Contact = () => {
                 India
               </p>
               <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
-                Get Directions
+                Under Construction 
               </Button>
             </motion.div>
           </div>
