@@ -58,7 +58,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-cyan-50">
+      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -87,7 +87,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-blue-600 to-cyan-500 rounded-3xl p-16 text-white text-center mb-20 relative overflow-hidden"
+            className="bg-gradient-to-r from-primary to-primary/80 rounded-3xl p-16 text-white text-center mb-20 relative overflow-hidden"
           >
             <h2 className="text-4xl font-bold mb-6">Transforming Poultry Farming</h2>
             <p className="text-xl max-w-3xl mx-auto leading-relaxed">
@@ -133,10 +133,10 @@ const About = () => {
               >
                 <Card className="bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
                   <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                       <stat.icon className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-3xl font-bold text-blue-600 mb-2">{stat.value}</h3>
+                    <h3 className="text-3xl font-bold text-primary mb-2">{stat.value}</h3>
                     <p className="text-gray-600 font-medium">{stat.label}</p>
                   </CardContent>
                 </Card>
@@ -174,7 +174,7 @@ const About = () => {
               >
                 <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl">
                   <CardContent className="p-8 text-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-3xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <item.icon className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
@@ -209,7 +209,7 @@ const About = () => {
               >
                 <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl">
                   <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                       <value.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>
@@ -244,11 +244,11 @@ const About = () => {
               >
                 <Card className="bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl">
                   <CardContent className="p-8 text-center">
-                    <div className="w-24 h-24 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <member.icon className="w-12 h-12 text-blue-600" />
+                    <div className="w-24 h-24 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <member.icon className="w-12 h-12 text-primary" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
-                    <p className="text-blue-600 font-semibold mb-2">{member.role}</p>
+                    <p className="text-primary font-semibold mb-2">{member.role}</p>
                     <p className="text-gray-600 text-sm">{member.experience}</p>
                   </CardContent>
                 </Card>

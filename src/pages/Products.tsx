@@ -9,44 +9,44 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      title: 'Automatic Feeders',
-      description: 'High-efficiency automated feeding systems for optimal poultry nutrition.',
-      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
-      features: ['Automated scheduling', 'Portion control', 'Easy maintenance']
+      title: 'Feed Processing',
+      description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
+      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+      features: ['Automated processing', 'Quality control', 'High efficiency']
     },
     {
       id: 2,
-      title: 'Water Systems',
-      description: 'Advanced water delivery systems ensuring clean, fresh water supply.',
-      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
-      features: ['Pressure regulation', 'Leak detection', 'Easy cleaning']
-    },
-    {
-      id: 3,
-      title: 'Ventilation Units',
-      description: 'Climate control systems for optimal poultry house environment.',
-      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
-      features: ['Temperature control', 'Air quality monitoring', 'Energy efficient']
-    },
-    {
-      id: 4,
       title: 'Cage Systems',
       description: 'Modern, comfortable housing solutions for different poultry types.',
-      image: '/lovable-uploads/0998edbb-791f-48a3-b2da-2f8557834e77.png',
+      image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       features: ['Modular design', 'Easy access', 'Durability tested']
     },
     {
+      id: 3,
+      title: 'Feed Storage',
+      description: 'Industrial feed storage and mixing systems for large-scale operations.',
+      image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
+      features: ['Temperature control', 'Moisture management', 'Easy loading']
+    },
+    {
+      id: 4,
+      title: 'Feed Transportation',
+      description: 'Mobile feed delivery systems for efficient farm operations.',
+      image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
+      features: ['Large capacity', 'Precision delivery', 'Easy operation']
+    },
+    {
       id: 5,
-      title: 'Egg Collection',
-      description: 'Automated egg collection systems for maximum efficiency.',
-      image: '/lovable-uploads/0998edbb-791f-48a3-b2da-2f8557834e77.png',
-      features: ['Gentle handling', 'Automated sorting', 'Reduced breakage']
+      title: 'Industrial Setup',
+      description: 'Complete industrial poultry setup solutions.',
+      image: '/lovable-uploads/5741bd58-a88f-4110-9190-69ddea6d2670.png',
+      features: ['Scalable design', 'Automated systems', 'Quality assurance']
     },
     {
       id: 6,
       title: 'Lighting Systems',
       description: 'LED lighting solutions optimized for poultry productivity.',
-      image: '/lovable-uploads/0998edbb-791f-48a3-b2da-2f8557834e77.png',
+      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
       features: ['Energy saving', 'Programmable cycles', 'Long lifespan']
     },
   ];
@@ -105,14 +105,12 @@ const Products = () => {
               >
                 <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
                   <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/10"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-20 h-20 bg-white/90 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
-                        <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-                          {product.title.split(' ').map(word => word[0]).join('')}
-                        </span>
-                      </div>
-                    </div>
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
                   <CardContent className="p-8">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{product.title}</h3>
