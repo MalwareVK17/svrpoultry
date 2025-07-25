@@ -41,8 +41,8 @@ const Navigation = () => {
                 to={item.path}
                 className={`px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                   isActive(item.path)
-                    ? 'text-blue-600 border-b-2 border-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
+                    ? 'text-primary border-b-2 border-primary'
+                    : 'text-gray-700 hover:text-primary'
                 }`}
               >
                 {item.name}
@@ -54,7 +54,7 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                className="text-gray-700 hover:text-primary hover:bg-primary/10"
                 title="Admin"
               >
                 <Settings className="h-5 w-5" />
@@ -68,7 +68,7 @@ const Navigation = () => {
               <Button
                 variant="ghost"
                 size="icon"
-                className="text-gray-700 hover:text-blue-600 hover:bg-blue-50"
+                className="text-gray-700 hover:text-primary hover:bg-primary/10"
                 title="Admin"
               >
                 <Settings className="h-5 w-5" />
@@ -76,7 +76,7 @@ const Navigation = () => {
             </Link>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
             >
               {isOpen ? (
                 <X className="block h-6 w-6" />
@@ -98,8 +98,8 @@ const Navigation = () => {
                 to={item.path}
                 className={`block px-3 py-2 text-base font-medium transition-colors duration-200 ${
                   isActive(item.path)
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-100'
+                    ? 'text-primary bg-primary/10'
+                    : 'text-gray-700 hover:text-primary hover:bg-gray-100'
                 }`}
                 onClick={() => setIsOpen(false)}
               >

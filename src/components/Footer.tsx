@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
                 <span className="text-white font-bold">S</span>
               </div>
               <span className="font-bold text-xl">SVR Poultry Equipments</span>
@@ -20,10 +20,10 @@ const Footer = () => {
               Quality products, competitive pricing, and excellent customer service.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="w-6 h-6 text-gray-400 hover:text-blue-500 cursor-pointer transition-colors" />
-              <Instagram className="w-6 h-6 text-gray-400 hover:text-pink-500 cursor-pointer transition-colors" />
-              <Linkedin className="w-6 h-6 text-gray-400 hover:text-blue-600 cursor-pointer transition-colors" />
-              <Youtube className="w-6 h-6 text-gray-400 hover:text-red-500 cursor-pointer transition-colors" />
+              <Facebook className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+              <Instagram className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+              <Linkedin className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+              <Youtube className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
             </div>
           </div>
 
@@ -56,7 +56,7 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div className="text-gray-300 text-sm">
                   <p>123 Industrial Area</p>
                   <p>City, State 123456</p>
@@ -64,11 +64,11 @@ const Footer = () => {
                 </div>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-blue-500" />
+                <Phone className="w-5 h-5 text-primary" />
                 <span className="text-gray-300">+91 98765 43210</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-blue-500" />
+                <Mail className="w-5 h-5 text-primary" />
                 <span className="text-gray-300">info@svrpoultry.com</span>
               </div>
             </div>

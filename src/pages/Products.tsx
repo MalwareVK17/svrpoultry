@@ -52,11 +52,17 @@ const Products = () => {
   ];
 
   const partners = [
-    { name: 'AgroTech Solutions' },
-    { name: 'FarmEquip Pro' },
-    { name: 'Modern Farming Co.' },
-    { name: 'Poultry Innovations' },
-    { name: 'AgriSupply' },
+    { name: 'SVR Poultry Equipments', image: '/lovable-uploads/14c420aa-68fa-4a3b-8536-49a777adb9cb.png' },
+    { name: 'Urja Foods', image: '/lovable-uploads/3a42b103-573c-43ea-a266-060717114838.png' },
+    { name: 'SNEHA', image: '/lovable-uploads/26d0269c-c0a1-49f5-a5de-320f745dd9e5.png' },
+    { name: 'Jayshree Group', image: '/lovable-uploads/320b0afa-a43a-4bfd-9f02-a0b6ab233c2e.png' },
+    { name: "Venky's", image: '/lovable-uploads/2674e87b-944a-4d24-b30d-1d12c30c4ee4.png' },
+    { name: 'Noveltech', image: '/lovable-uploads/c22339be-6655-4fff-b67b-5b24f92160bf.png' },
+    { name: 'MARS', image: '/lovable-uploads/27bbcfcc-cb27-4d72-9943-49419c904262.png' },
+    { name: 'Suppa Chicken', image: '/lovable-uploads/ef3e7d0f-2ef4-402e-8070-977d9859a75c.png' },
+    { name: 'Tata Coffee', image: '/lovable-uploads/6edd9b0e-1e6a-44ea-ad4f-378059a491c4.png' },
+    { name: 'Ovo Farm Fresh', image: '/lovable-uploads/ce70d724-ff38-40bd-a99f-9f7d289b8d78.png' },
+    { name: 'Agricultural Innovations', image: '/lovable-uploads/c682e269-7fd3-4922-854b-2ca7dc8de272.png' },
   ];
 
   return (
@@ -151,7 +157,8 @@ const Products = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+          <div className="overflow-x-auto pb-6">
+            <div className="flex gap-6 w-max">
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.name}
@@ -160,18 +167,24 @@ const Products = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -10, scale: 1.05 }}
-                className="group"
+                className="group flex-shrink-0 w-72"
               >
                 <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
                   <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">{partner.name.charAt(0)}</span>
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                      <img 
+                        src={partner.image} 
+                        alt={partner.name}
+                        className="w-full h-full object-contain bg-white p-2"
+                      />
                     </div>
-                    <h3 className="font-semibold text-gray-900 text-lg">{partner.name}</h3>
+                    <h3 className="font-semibold text-gray-900 text-lg leading-tight">{partner.name}</h3>
+                    <div className="mt-4 w-12 h-1 bg-gradient-to-r from-primary to-primary/80 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </CardContent>
                 </Card>
               </motion.div>
             ))}
+            </div>
           </div>
 
           <motion.div
