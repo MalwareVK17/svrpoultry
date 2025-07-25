@@ -11,111 +11,219 @@ const ProductDetail = () => {
   // Product data (in a real app, this would come from an API or database)
   const products = {
     '1': {
-      title: 'Automated Feeding System',
-      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
-      description: 'State-of-the-art automated feeding system designed for optimal poultry nutrition management. This advanced system ensures precise feed distribution, reducing waste and maximizing growth efficiency.',
+      title: 'Feed Processing',
+      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+      description: 'Advanced feed mill equipment for optimal poultry nutrition processing. State-of-the-art technology ensures precise feed formulation and processing for maximum efficiency.',
       features: [
-        'Programmable feeding schedules',
-        'Precise portion control',
-        'Weather-resistant construction',
-        'Easy maintenance and cleaning',
-        'Energy-efficient operation',
-        'Real-time monitoring capabilities'
+        'Automated processing',
+        'Quality control systems',
+        'High efficiency operation',
+        'Precise mixing capabilities',
+        'Temperature monitoring',
+        'Batch tracking system'
       ],
       usage: [
-        'Suitable for broiler and layer farms',
-        'Capacity: 500-5000 birds per unit',
-        'Automated timer-based feeding',
-        'Reduces labor costs by up to 70%',
-        'Improves feed conversion ratio',
-        'Minimizes feed contamination'
+        'Suitable for all poultry types',
+        'Capacity: 1-10 tons per hour',
+        'Automated feed formulation',
+        'Reduces processing time by 60%',
+        'Improves feed quality consistency',
+        'Minimizes ingredient waste'
       ],
       applications: [
-        'Commercial poultry farms',
-        'Broiler production facilities',
-        'Layer hen operations',
-        'Breeding farms',
+        'Commercial feed mills',
+        'Large poultry farms',
+        'Feed manufacturing plants',
+        'Agricultural cooperatives',
         'Research facilities',
-        'Small to large-scale operations'
+        'Custom feed production'
       ],
       specifications: {
-        'Capacity': '500-5000 birds',
-        'Power Consumption': '2-5 kW',
-        'Material': 'Galvanized steel',
-        'Warranty': '3 years',
-        'Installation': 'Professional setup included'
+        'Capacity': '1-10 tons/hour',
+        'Power Consumption': '15-25 kW',
+        'Material': 'Stainless steel',
+        'Warranty': '5 years',
+        'Installation': 'Complete setup included'
       }
     },
     '2': {
-      title: 'Climate Control Unit',
-      image: '/lovable-uploads/0998edbb-791f-48a3-b2da-2f8557834e77.png',
-      description: 'Advanced climate control system that maintains optimal environmental conditions for poultry health and productivity. Features intelligent temperature and humidity management.',
+      title: 'Cage Systems',
+      image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
+      description: 'Modern, comfortable housing solutions for different poultry types. Designed with bird welfare and operational efficiency in mind.',
       features: [
-        'Automatic temperature regulation',
-        'Humidity control system',
-        'Air circulation management',
-        'Smart sensor technology',
-        'Remote monitoring capability',
-        'Energy-efficient design'
+        'Modular design',
+        'Easy access for maintenance',
+        'Durability tested',
+        'Optimal space utilization',
+        'Ventilation integration',
+        'Easy cleaning system'
       ],
       usage: [
-        'Maintains optimal temperature range',
-        'Controls humidity levels (60-70%)',
-        'Ensures proper ventilation',
-        'Reduces mortality rates',
-        'Improves feed conversion',
-        'Creates stress-free environment'
+        'Houses 50-200 birds per tier',
+        'Multi-tier configuration',
+        'Easy bird management',
+        'Reduces labor requirements',
+        'Improves hygiene standards',
+        'Maximizes space efficiency'
       ],
       applications: [
-        'Broiler houses',
-        'Layer facilities',
-        'Hatcheries',
-        'Nursery operations',
-        'Breeding farms',
-        'All-season farming'
+        'Layer hen operations',
+        'Broiler production',
+        'Breeder farms',
+        'Commercial operations',
+        'Small to medium farms',
+        'Indoor farming systems'
       ],
       specifications: {
-        'Temperature Range': '18-35°C',
-        'Humidity Control': '40-80% RH',
-        'Coverage Area': '1000-10000 sq ft',
-        'Power Rating': '5-15 kW',
-        'Control System': 'Digital PLC'
+        'Capacity': '50-200 birds/tier',
+        'Material': 'Galvanized wire',
+        'Dimensions': 'Customizable',
+        'Warranty': '10 years',
+        'Installation': 'Technical support included'
       }
     },
     '3': {
-      title: 'Water Management System',
-      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
-      description: 'Comprehensive water management solution ensuring clean, fresh water supply to poultry with automatic monitoring and filtration systems.',
+      title: 'Feed Storage',
+      image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
+      description: 'Industrial feed storage and mixing systems for large-scale operations. Advanced preservation and distribution technology.',
       features: [
-        'Automatic water level control',
-        'Multi-stage filtration',
-        'Water quality monitoring',
-        'Leak detection system',
-        'Pressure regulation',
-        'Self-cleaning mechanism'
+        'Temperature control',
+        'Moisture management',
+        'Easy loading system',
+        'Automated mixing',
+        'Quality preservation',
+        'Contamination prevention'
       ],
       usage: [
-        'Provides fresh water 24/7',
-        'Monitors water consumption',
-        'Prevents water contamination',
-        'Reduces water wastage',
-        'Maintains optimal water pressure',
-        'Alerts for maintenance needs'
+        'Stores 10-500 tons capacity',
+        'Maintains feed quality',
+        'Automated dispensing',
+        'Reduces storage losses',
+        'Temperature monitoring',
+        'Prevents pest infestation'
       ],
       applications: [
-        'Drinking water systems',
-        'Cooling systems',
-        'Cleaning operations',
-        'Medication delivery',
-        'All poultry farm types',
-        'Indoor and outdoor setups'
+        'Large poultry farms',
+        'Feed distribution centers',
+        'Agricultural cooperatives',
+        'Commercial operations',
+        'Multi-farm facilities',
+        'Industrial operations'
       ],
       specifications: {
-        'Flow Rate': '1-50 L/min',
-        'Filtration': '5-micron precision',
-        'Pressure Range': '1-5 bar',
-        'Material': 'Food-grade plastic',
-        'Monitoring': 'IoT-enabled sensors'
+        'Capacity': '10-500 tons',
+        'Material': 'Galvanized steel',
+        'Control': 'Automated systems',
+        'Warranty': '7 years',
+        'Monitoring': 'IoT-enabled'
+      }
+    },
+    '4': {
+      title: 'Feed Transportation',
+      image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
+      description: 'Mobile feed delivery systems for efficient farm operations. Advanced transportation solutions for feed distribution.',
+      features: [
+        'Large capacity storage',
+        'Precision delivery',
+        'Easy operation',
+        'GPS tracking',
+        'Load monitoring',
+        'Weather protection'
+      ],
+      usage: [
+        'Delivers 5-20 tons per trip',
+        'Automated unloading',
+        'Route optimization',
+        'Reduces delivery time',
+        'Prevents feed spillage',
+        'Real-time tracking'
+      ],
+      applications: [
+        'Multi-farm operations',
+        'Feed distribution services',
+        'Large commercial farms',
+        'Regional feed supply',
+        'Contract farming',
+        'Agricultural logistics'
+      ],
+      specifications: {
+        'Capacity': '5-20 tons',
+        'Engine': 'Diesel powered',
+        'Control': 'Digital systems',
+        'Warranty': '3 years',
+        'Tracking': 'GPS enabled'
+      }
+    },
+    '5': {
+      title: 'Industrial Setup',
+      image: '/lovable-uploads/5741bd58-a88f-4110-9190-69ddea6d2670.png',
+      description: 'Complete industrial poultry setup solutions. Comprehensive farm automation and management systems.',
+      features: [
+        'Scalable design',
+        'Automated systems',
+        'Quality assurance',
+        'Integrated control',
+        'Energy efficiency',
+        'Remote monitoring'
+      ],
+      usage: [
+        'Houses 10,000+ birds',
+        'Fully automated operations',
+        'Centralized control',
+        'Reduces operational costs',
+        'Improves productivity',
+        'Ensures consistency'
+      ],
+      applications: [
+        'Large commercial farms',
+        'Industrial poultry operations',
+        'Integrated facilities',
+        'Export-oriented farms',
+        'Corporate farming',
+        'Research institutions'
+      ],
+      specifications: {
+        'Capacity': '10,000+ birds',
+        'Automation': 'Full integration',
+        'Control': 'SCADA systems',
+        'Warranty': '10 years',
+        'Support': '24/7 technical'
+      }
+    },
+    '6': {
+      title: 'Lighting Systems',
+      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
+      description: 'LED lighting solutions optimized for poultry productivity. Advanced lighting technology for enhanced bird performance.',
+      features: [
+        'Energy saving technology',
+        'Programmable cycles',
+        'Long lifespan',
+        'Spectrum optimization',
+        'Dimming control',
+        'Weather resistance'
+      ],
+      usage: [
+        'Improves egg production',
+        'Reduces energy costs by 70%',
+        'Programmable lighting cycles',
+        'Enhances bird behavior',
+        'Reduces stress levels',
+        'Optimizes growth rates'
+      ],
+      applications: [
+        'Layer hen facilities',
+        'Broiler houses',
+        'Breeder operations',
+        'All poultry types',
+        'Indoor farming',
+        'Climate-controlled facilities'
+      ],
+      specifications: {
+        'Power': '20-100W per fixture',
+        'Lifespan': '50,000+ hours',
+        'Control': 'Smart dimming',
+        'Warranty': '5 years',
+        'Efficiency': '70% energy savings'
       }
     }
   };
