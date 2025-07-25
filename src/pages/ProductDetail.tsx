@@ -191,8 +191,8 @@ const ProductDetail = () => {
       }
     },
     '6': {
-      title: 'Lighting Systems',
-      image: '/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png',
+      title: 'Cage System -2 ',
+      image: /lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       description: 'LED lighting solutions optimized for poultry productivity. Advanced lighting technology for enhanced bird performance.',
       features: [
         'Energy saving technology',
