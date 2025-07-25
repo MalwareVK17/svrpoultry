@@ -286,7 +286,7 @@ const Contact = () => {
               <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
                 <MapPin className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Headquarters (Unit-1)</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Headquarters</h3>
               <p className="text-gray-700 text-lg mb-6">
                 123 Industrial Area<br />
                 Hyderabad, Telangana 500001<br />
