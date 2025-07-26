@@ -9,7 +9,7 @@ const Products = () => {
   const products = [
     {
       id: 1,
-      title: 'Feed Processing',
+      title: 'Auto Batching System',
       description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
       image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
       features: ['Automated processing', 'Quality control', 'High efficiency']
@@ -37,17 +37,38 @@ const Products = () => {
     },
     {
       id: 5,
-      title: 'Industrial Setup',
+      title: 'Flat Bottom Silos',
       description: 'Complete industrial poultry setup solutions.',
       image: '/lovable-uploads/5741bd58-a88f-4110-9190-69ddea6d2670.png',
       features: ['Scalable design', 'Automated systems', 'Quality assurance']
     },
     {
       id: 6,
-      title: 'Cage System-2',
+      title: 'Hopper Bottom silos',
       description: 'Cage System solutions optimized for poultry productivity.',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       features: ['Energy saving', 'Programmable cycles', 'Long lifespan']
+    },
+     {
+      id: 7,
+      title: 'Weld Mesh',
+      description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
+      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+      features: ['Automated processing', 'Quality control', 'High efficiency']
+    },
+    {
+      id: 8,
+      title: 'Tractor Tanker',
+      description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
+      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+      features: ['Automated processing', 'Quality control', 'High efficiency']
+    },
+    {
+      id: 7,
+      title: 'Bulk Feeding Tanker',
+      description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
+      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+      features: ['Automated processing', 'Quality control', 'High efficiency']
     },
   ];
 
