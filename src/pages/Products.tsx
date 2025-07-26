@@ -170,7 +170,7 @@ const Products = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Trusted Partners</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Trusted Clients</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Working together with industry leaders to deliver the best poultry equipment solutions
             </p>
