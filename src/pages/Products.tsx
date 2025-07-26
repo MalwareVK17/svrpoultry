@@ -53,7 +53,7 @@ const Products = () => {
       id: 7,
       title: 'Weld Mesh',
       description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
-      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+      image: 'https://storage.googleapis.com/kms-au.appspot.com/sites/bluedog-fences/assets/7d96697e-0136-44c7-bd93-e400abc264dd/Bluedog%20GuardForce%C2%AE%20358%20welded%20mesh%20high%20security%20fencing.JPG',
       features: ['Automated processing', 'Quality control', 'High efficiency']
     },
     {
