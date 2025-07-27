@@ -38,7 +38,7 @@ const Home = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative z-10 text-white px-4 max-w-7xl mx-auto"
         >
-          <div className="text-left max-w-3xl ml-8 md:ml-16">
+          <div className="text-left max-w-3xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -117,34 +117,34 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {[
               {
-                title: "Laser Machine SF3015G",
+                title: "Laser Machine",
                 description: "High-precision fiber laser cutting machine with advanced control systems for superior cutting quality and efficiency.",
-                image: "/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png"
+                image: "/lovable-uploads/43dcfa7e-4dde-48fd-a316-b89e5febc6e4.png"
               },
               {
-                title: "Bending Machine Falcon",
+                title: "Bending Machine",
                 description: "Professional hydraulic press brake with precision tooling for accurate bending and forming operations.",
-                image: "/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png"
+                image: "/lovable-uploads/05fe50de-992b-4cd7-bdd4-691f84847027.png"
               },
               {
                 title: "CNC Lathe Machine",
                 description: "Computer-controlled lathe machine delivering exceptional precision in turning and machining operations.",
-                image: "/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png"
+                image: "/lovable-uploads/7d4bdcfb-2038-4a3c-8858-e3760f560031.png"
               },
               {
                 title: "Laser Machine HSG",
                 description: "Advanced laser cutting system with high-speed processing capabilities for industrial applications.",
-                image: "/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png"
+                image: "/lovable-uploads/96f80145-67f7-4ecf-9009-d039c9cccbf6.png"
               },
               {
                 title: "Bending Machine AccurPress",
                 description: "Heavy-duty press brake machine designed for high-volume production with consistent accuracy.",
-                image: "/lovable-uploads/5741bd58-a88f-4110-9190-69ddea6d2670.png"
+                image: "/lovable-uploads/ddfd06fb-d157-42f0-86ae-f79a57a46334.png"
               },
               {
                 title: "Automatic Weldmesh Machine",
                 description: "Fully automated welding system for producing high-quality mesh products with exceptional consistency.",
-                image: "/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png"
+                image: "/lovable-uploads/13e2ede7-e2d9-4e79-9598-071ccf2a9a91.png"
               }
             ].map((equipment, index) => (
               <motion.div

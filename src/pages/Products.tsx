@@ -176,55 +176,45 @@ const Products = () => {
             </p>
           </motion.div>
 
-          <div className="overflow-x-auto pb-6">
-            <div className="flex gap-6 w-max">
-            {partners.map((partner, index) => (
+          {/* Auto-Scrolling Carousel Container */}
+          <div className="relative">
+            <div className="overflow-hidden">
               <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.05 }}
-                className="group flex-shrink-0 w-72"
+                className="flex gap-6"
+                animate={{
+                  x: [0, -1800, 0]
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
               >
-                <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
-                      <img 
-                        src={partner.image} 
-                        alt={partner.name}
-                        className="w-full h-full object-contain bg-white p-2"
-                      />
-                    </div>
-                    <h3 className="font-semibold text-gray-900 text-lg leading-tight">{partner.name}</h3>
-                    <div className="mt-4 w-12 h-1 bg-gradient-to-r from-primary to-primary/80 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </CardContent>
-                </Card>
+                {[...partners, ...partners].map((partner, index) => (
+                  <motion.div
+                    key={`${partner.name}-${index}`}
+                    whileHover={{ y: -15, scale: 1.05 }}
+                    className="group flex-shrink-0 w-80"
+                  >
+                    <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
+                      <CardContent className="p-8 text-center">
+                        <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                          <img 
+                            src={partner.image} 
+                            alt={partner.name}
+                            className="w-full h-full object-contain bg-white p-3"
+                          />
+                        </div>
+                        <h3 className="font-semibold text-gray-900 text-xl leading-tight">{partner.name}</h3>
+                        <div className="mt-4 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
               </motion.div>
-            ))}
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <p className="text-lg text-gray-700 mb-8">
-              Interested in becoming a partner? Let's work together to revolutionize poultry farming.
-            </p>
-            <Link to="/become-partner">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-              >
-                Become a Partner
-              </Button>
-            </Link>
-          </motion.div>
         </div>
       </section>
     </div>
