@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "917989303562"; // +91 7989303562
+  const phoneNumber = "919849397021"; // +91 9849397021
   const message = "Hello! I'm interested in your poultry equipment services.";
   
   const handleWhatsAppClick = () => {

@@ -36,39 +36,41 @@ const Home = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto"
+          className="relative z-10 text-white px-4 max-w-7xl mx-auto"
         >
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
-          >
-            Leading in Poultry Excellence
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl md:text-2xl mb-8 leading-relaxed"
-          >
-            Providing innovative poultry equipment solutions for modern farming with cutting-edge technology
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-          >
-            <Link to="/about">
-              <Button 
-                size="lg" 
-                className="bg-white text-primary hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-              >
-                Discover Our Story
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-            </Link>
-          </motion.div>
+          <div className="text-left max-w-3xl ml-8 md:ml-16">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            >
+              Leading in Poultry Excellence
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-xl md:text-2xl mb-8 leading-relaxed"
+            >
+              Providing innovative poultry equipment solutions for modern farming with cutting-edge technology
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.8 }}
+            >
+              <Link to="/about">
+                <Button 
+                  size="lg" 
+                  className="bg-white text-primary hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                >
+                  Discover Our Story
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+            </motion.div>
+          </div>
         </motion.div>
 
         {/* Enhanced Floating Elements */}
@@ -96,6 +98,84 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Our Equipment Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Premium Equipment</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              State-of-the-art machinery and fabrication solutions engineered for excellence and precision
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: "Laser Machine SF3015G",
+                description: "High-precision fiber laser cutting machine with advanced control systems for superior cutting quality and efficiency.",
+                image: "/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png"
+              },
+              {
+                title: "Bending Machine Falcon",
+                description: "Professional hydraulic press brake with precision tooling for accurate bending and forming operations.",
+                image: "/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png"
+              },
+              {
+                title: "CNC Lathe Machine",
+                description: "Computer-controlled lathe machine delivering exceptional precision in turning and machining operations.",
+                image: "/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png"
+              },
+              {
+                title: "Laser Machine HSG",
+                description: "Advanced laser cutting system with high-speed processing capabilities for industrial applications.",
+                image: "/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png"
+              },
+              {
+                title: "Bending Machine AccurPress",
+                description: "Heavy-duty press brake machine designed for high-volume production with consistent accuracy.",
+                image: "/lovable-uploads/5741bd58-a88f-4110-9190-69ddea6d2670.png"
+              },
+              {
+                title: "Automatic Weldmesh Machine",
+                description: "Fully automated welding system for producing high-quality mesh products with exceptional consistency.",
+                image: "/lovable-uploads/f3ef1077-50eb-4c98-9526-417e2431133c.png"
+              }
+            ].map((equipment, index) => (
+              <motion.div
+                key={equipment.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10, scale: 1.02 }}
+                className="group"
+              >
+                <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
+                  <div className="aspect-video overflow-hidden rounded-t-3xl">
+                    <img 
+                      src={equipment.image} 
+                      alt={equipment.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  <CardContent className="p-8">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{equipment.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{equipment.description}</p>
+                    <div className="mt-6 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Enhanced Partners Section */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,68 +192,45 @@ const Home = () => {
             </p>
           </motion.div>
 
-          {/* Horizontal Scrolling Container */}
+          {/* Auto-Scrolling Carousel Container */}
           <div className="relative">
-            <div className="overflow-x-auto pb-6">
-              <div className="flex gap-6 w-max">
-                {partners.map((partner, index) => (
+            <div className="overflow-hidden">
+              <motion.div
+                className="flex gap-6"
+                animate={{
+                  x: [0, -1800, 0]
+                }}
+                transition={{
+                  duration: 15,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                {[...partners, ...partners].map((partner, index) => (
                   <motion.div
-                    key={partner.name}
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
+                    key={`${partner.name}-${index}`}
                     whileHover={{ y: -15, scale: 1.05 }}
-                    className="group flex-shrink-0 w-72"
+                    className="group flex-shrink-0 w-80"
                   >
                     <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
                       <CardContent className="p-8 text-center">
-                        <div className="w-20 h-20 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                        <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
                           <img 
                             src={partner.image} 
                             alt={partner.name}
-                            className="w-full h-full object-contain bg-white p-2"
+                            className="w-full h-full object-contain bg-white p-3"
                           />
                         </div>
-                        <h3 className="font-semibold text-gray-900 text-lg leading-tight">{partner.name}</h3>
-                        <div className="mt-4 w-12 h-1 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <h3 className="font-semibold text-gray-900 text-xl leading-tight">{partner.name}</h3>
+                        <div className="mt-4 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </CardContent>
                     </Card>
                   </motion.div>
                 ))}
-              </div>
-            </div>
-            
-            {/* Scroll Indicators */}
-            <div className="flex justify-center mt-8 space-x-2">
-              {[...Array(3)].map((_, i) => (
-                <div 
-                  key={i}
-                  className="w-2 h-2 rounded-full bg-blue-300 opacity-60"
-                ></div>
-              ))}
+              </motion.div>
             </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            viewport={{ once: true }}
-            className="text-center mt-16"
-          >
-            <p className="text-lg text-gray-700 mb-8 font-medium">
-              Ready to join our network of successful partners?
-            </p>
-            <Link to="/become-partner">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 px-10 py-4 text-lg rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
-              >
-                Become Our Partner
-              </Button>
-            </Link>
-          </motion.div>
         </div>
       </section>
     </div>
