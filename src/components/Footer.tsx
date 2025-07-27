@@ -20,10 +20,15 @@ const Footer = () => {
               Quality products, competitive pricing, and excellent customer service.
             </p>
             <div className="flex space-x-4">
-              <Facebook className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
-              <Instagram className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
-              <Linkedin className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
-              <Youtube className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+              <a href="https://instagram.com/svrpoultryequipments" target="_blank" rel="noopener noreferrer">
+                <Instagram className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+              </a>
+              <a href="https://linkedin.com/company/svrpoultryequipments" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+              </a>
+              <a href="https://youtube.com/c/svrpoultryequipments" target="_blank" rel="noopener noreferrer">
+                <Youtube className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
+              </a>
             </div>
           </div>
 
