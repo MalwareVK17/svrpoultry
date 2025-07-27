@@ -359,7 +359,7 @@ const Contact = () => {
               <div className="p-6">
                 <div className="flex items-center mb-3">
                   <MapPin className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">Maheswaram Industrial area, main road, manchala industrial development area, Telangana 501359</span>
+                  <span className="text-sm text-gray-600">Maheswaram Industrial area ,Telangana 501359</span>
                 </div>
                 <div className="flex items-center mb-3">
                   <Phone className="w-4 h-4 text-green-500 mr-2" />
