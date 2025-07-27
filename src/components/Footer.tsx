@@ -26,7 +26,7 @@ const Footer = () => {
               <a href="https://www.linkedin.com/company/s-v-r-poultry-equipments/" target="_blank" rel="noopener noreferrer">
                 <Linkedin className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
               </a>
-              <a href="https://youtube.com/c/svrpoultryequipments" target="_blank" rel="noopener noreferrer">
+              <a href="https://youtube.com/@svrpoultryengineeringworks4116?si=CtTUdGuAeQ8Q_7_m" target="_blank" rel="noopener noreferrer">
                 <Youtube className="w-6 h-6 text-gray-400 hover:text-primary cursor-pointer transition-colors" />
               </a>
             </div>
