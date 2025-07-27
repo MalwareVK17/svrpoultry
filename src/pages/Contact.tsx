@@ -88,8 +88,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: ['svrpoultryequipments@gmail.com
-']
+      details: ['svrpoultryequipments@gmail.com']
     },
     {
       icon: Clock,
