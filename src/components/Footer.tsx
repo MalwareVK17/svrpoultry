@@ -47,12 +47,13 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-4">Our Products</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Automatic Feeders</li>
-              <li>Water Systems</li>
-              <li>Ventilation Units</li>
+              <li>Auto Batching System</li>
+              <li>Flat Bottom Silos</li>
+              <li>Hopper Bottom Silos</li>
               <li>Cage Systems</li>
-              <li>Egg Collection</li>
-              <li>Lighting Systems</li>
+              <li>Tractor Tanker</li>
+              <li>Bulk Feeding Tanker</li>
+              <li>Weld Mesh</li>
             </ul>
           </div>
 
