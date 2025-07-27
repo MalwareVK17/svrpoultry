@@ -305,7 +305,7 @@ const Contact = () => {
             >
               <div className="relative h-48 bg-gradient-to-br from-green-400 to-blue-600">
                 <img 
-                  src="/lovable-uploads/812c8b07-736e-4b01-a661-924086ff120a.png" 
+                  src="https://svrpoultryequipments.com/static/images/SVR_2.png" 
                   alt="Hyderabad Head Office"
                   className="w-full h-full object-cover"
                 />
