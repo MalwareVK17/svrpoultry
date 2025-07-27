@@ -63,18 +63,19 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div className="text-gray-300 text-sm">
-                  <p>123 Industrial Area</p>
-                  <p>City, State 123456</p>
+                  <p>Turkayamjal Municipality</p>
+                  <p>Hyderabad, Telangana, 501510</p>
                   <p>India</p>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary" />
-                <span className="text-gray-300">+91 98765 43210</span>
+                <span className="text-gray-300">+91 98493 97021 </span>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-gray-300">info@svrpoultry.com</span>
+                <span className="text-gray-300">svrpoultryequipments@gmail.com
+</span>
               </div>
             </div>
           </div>
