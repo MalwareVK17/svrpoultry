@@ -46,7 +46,7 @@ const Products = () => {
       id: 6,
       title: 'Hopper Bottom Silos',
       description: 'Efficient feed storage with hopper bottom design for easy discharge.',
-      image: '/lovable-uploads/e1d9b3e3-ce19-42eb-bef7-b6cb814a916a.png',
+      image: 'https://www.annapurnaagronics.com/wp-content/uploads/2023/07/hopper-silo-estonia.jpg',
       features: ['Gravity discharge', 'Cone bottom design', 'Complete feed flow']
     },
     {
