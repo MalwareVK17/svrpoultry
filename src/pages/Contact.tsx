@@ -78,17 +78,18 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['123 Industrial Area', 'City, State 123456', 'India']
+      details: ['Telangana 501510', 'Kammaguda, Telangana 123456', 'India']
     },
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 98765 43210']
+      details: ['+91 98493 97021']
     },
     {
       icon: Mail,
       title: 'Email',
-      details: ['svrpoultry@gmail.com']
+      details: ['svrpoultryequipments@gmail.com
+']
     },
     {
       icon: Clock,
