@@ -41,22 +41,22 @@ const About = () => {
       icon: Building
     },
     { 
-      name: 'Mr.A.Srinivas Reddy', 
+      name: 'Mr.D. Jagadeshwar Reddy', 
       experience: 'Expert in equipment design',
       icon: Target
     },
     { 
-      name: 'Mr.D. Jagadeshwar Reddy', 
+      name: 'Mr.A. Srinivas Reddy', 
       experience: 'Dedicated to customer success',
       icon: Users
     },
     { 
-      name: 'Mr.K. Ramesh Kumar', 
+      name: 'Mr.D. Mahesh Reddy', 
       experience: 'Quality assurance specialist',
       icon: Award
     },
     { 
-      name: 'Mr.S. Prakash Reddy', 
+      name: 'Mr.D. Aditya Reddy', 
       experience: 'Innovation and R&D expert',
       icon: Lightbulb
     },
