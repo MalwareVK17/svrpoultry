@@ -347,7 +347,7 @@ const Contact = () => {
             >
               <div className="relative h-48 bg-gradient-to-br from-purple-400 to-orange-600">
                 <img 
-                  src="https://media.licdn.com/dms/image/v2/D560BAQFnIrbEa4k4ig/company-logo_200_200/company-logo_200_200/0/1737180113814/s_v_r_poultry_equipments_logo?e=2147483647&v=beta&t=slo_MfBS94Q4IevRRF1iO9CWRQwyZwW0yboQYMERmg4" 
+                  src="https://ik.imagekit.io/xu7akp4g0/WhatsApp%20Image%202025-07-27%20at%2022.57.52_b3255cad.jpg?updatedAt=1753637596413" 
                   alt="Bangalore Branch Office"
                   className="w-full h-full object-cover"
                 />
