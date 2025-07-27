@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <img src="https://www.adm.com/globalassets/products--services/animal-nutrition/species/poultry/poultry_c30_us_l.png" alt="Poultry" className="w-10 h-8 object-contain" />
+                <span className="text-white font-bold">S</span>
               </div>
               <span className="font-bold text-xl">SVR Poultry Equipments</span>
             </div>
