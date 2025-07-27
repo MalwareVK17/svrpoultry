@@ -401,7 +401,7 @@ const Contact = () => {
               <div className="p-6">
                 <div className="flex items-center mb-3">
                   <MapPin className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">Door No. 67, OMR Road, Thoraipakkam, Chennai - 600097</span>
+                  <span className="text-sm text-gray-600">4G87+WPV Gudoor, Telangana</span>
                 </div>
                 <div className="flex items-center mb-3">
                   <Phone className="w-4 h-4 text-green-500 mr-2" />
