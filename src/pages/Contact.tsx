@@ -317,15 +317,16 @@ const Contact = () => {
               <div className="p-6">
                 <div className="flex items-center mb-3">
                   <MapPin className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">Plot No. 123, Industrial Area, Gachibowli, Hyderabad - 500032</span>
+                  <span className="text-sm text-gray-600">7HJQ+9P Turkayamjal, Telangana</span>
                 </div>
                 <div className="flex items-center mb-3">
                   <Phone className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">+91 98765 43210</span>
+                  <span className="text-sm text-gray-600">+91 9849397021</span>
                 </div>
                 <div className="flex items-center mb-6">
                   <Mail className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">hyderabad@svrpoultry.com</span>
+                  <span className="text-sm text-gray-600">svrpoultryequipments@gmail.com
+</span>
                 </div>
                 <Button 
                   onClick={() => window.open('https://www.google.com/maps/place/Svr+Poultry+Equipments/@17.2808662,78.5893317,3a,75y/data=!3m8!1e2!3m6!1sAF1QipNGDpEJjnNNrYqVRqAUOSWoocUq5uHqSYYzGP-E!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNGDpEJjnNNrYqVRqAUOSWoocUq5uHqSYYzGP-E%3Dw86-h114-k-no!7i3456!8i4608!4m7!3m6!1s0x3bcba112c855de81:0x482d54417d723ba0!8m2!3d17.2809183!4d78.5893481!10e5!16s%2Fg%2F11gbfk433d?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')}
@@ -352,21 +353,22 @@ const Contact = () => {
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute top-4 left-4 text-white">
-                  <h3 className="text-lg font-bold">Bangalore - Branch Office</h3>
+                  <h3 className="text-lg font-bold">Hyderabad - (Unit-2)</h3>
                 </div>
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
                   <MapPin className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">No. 45, Electronics City Phase 1, Bangalore - 560100</span>
+                  <span className="text-sm text-gray-600">Plot no 48,49, plastic park, Maheswaram Industrial area, main road, manchala industrial development area, Telangana 501359</span>
                 </div>
                 <div className="flex items-center mb-3">
                   <Phone className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">+91 98765 43211</span>
+                  <span className="text-sm text-gray-600">+91 9849397021, 8886699995</span>
                 </div>
                 <div className="flex items-center mb-6">
                   <Mail className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">bangalore@svrpoultry.com</span>
+                  <span className="text-sm text-gray-600">svrpoultryequipments@gmail.com
+</span>
                 </div>
                 <Button 
                   onClick={() => window.open('https://www.google.com/maps/place/SVR+Poultry+Equipments+(unit-2)/@17.1633926,78.4618567,16.5z/data=!4m6!3m5!1s0x3bcbbb003c02e303:0xa1faa9ba44030e3f!8m2!3d17.162705!4d78.4626264!16s%2Fg%2F11ww938fy2?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')}
@@ -393,7 +395,7 @@ const Contact = () => {
                 />
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="absolute top-4 left-4 text-white">
-                  <h3 className="text-lg font-bold">Chennai - Service Center</h3>
+                  <h3 className="text-lg font-bold">Hyderabad - (Unit-3)</h3>
                 </div>
               </div>
               <div className="p-6">
@@ -403,11 +405,11 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center mb-3">
                   <Phone className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">+91 98765 43212</span>
+                  <span className="text-sm text-gray-600">+91 8886645123</span>
                 </div>
                 <div className="flex items-center mb-6">
                   <Mail className="w-4 h-4 text-green-500 mr-2" />
-                  <span className="text-sm text-gray-600">chennai@svrpoultry.com</span>
+                  <span className="text-sm text-gray-600">svrpoultryequipments@gmail.com</span>
                 </div>
                 <Button 
                   onClick={() => setShowConstructionPopup(true)}
