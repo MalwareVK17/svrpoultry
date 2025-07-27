@@ -38,37 +38,37 @@ const Products = () => {
     {
       id: 5,
       title: 'Flat Bottom Silos',
-      description: 'Complete industrial poultry setup solutions.',
-      image: '/lovable-uploads/5741bd58-a88f-4110-9190-69ddea6d2670.png',
-      features: ['Scalable design', 'Automated systems', 'Quality assurance']
+      description: 'Large capacity storage solutions for bulk feed materials with flat bottom design.',
+      image: '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png',
+      features: ['Large storage capacity', 'Weather resistant', 'Easy maintenance']
     },
     {
       id: 6,
-      title: 'Hopper Bottom silos',
-      description: 'Cage System solutions optimized for poultry productivity.',
-      image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-      features: ['Energy saving', 'Programmable cycles', 'Long lifespan']
+      title: 'Hopper Bottom Silos',
+      description: 'Efficient feed storage with hopper bottom design for easy discharge.',
+      image: '/lovable-uploads/e1d9b3e3-ce19-42eb-bef7-b6cb814a916a.png',
+      features: ['Gravity discharge', 'Cone bottom design', 'Complete feed flow']
     },
-     {
+    {
       id: 7,
       title: 'Weld Mesh',
-      description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
+      description: 'High-quality welded mesh panels for poultry housing and security fencing.',
       image: 'https://storage.googleapis.com/kms-au.appspot.com/sites/bluedog-fences/assets/7d96697e-0136-44c7-bd93-e400abc264dd/Bluedog%20GuardForce%C2%AE%20358%20welded%20mesh%20high%20security%20fencing.JPG',
-      features: ['Automated processing', 'Quality control', 'High efficiency']
+      features: ['Corrosion resistant', 'Strong construction', 'Multiple sizes']
     },
     {
       id: 8,
       title: 'Tractor Tanker',
-      description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
-      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
-      features: ['Automated processing', 'Quality control', 'High efficiency']
+      description: 'Mobile feed cleaning and processing unit for on-site feed quality enhancement.',
+      image: '/lovable-uploads/5d104031-b293-4f56-a4db-550853a91376.png',
+      features: ['Mobile operation', 'Feed cleaning', 'Quality enhancement']
     },
     {
-      id: 7,
+      id: 9,
       title: 'Bulk Feeding Tanker',
-      description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
-      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
-      features: ['Automated processing', 'Quality control', 'High efficiency']
+      description: 'Industrial bulk feeding system with automated delivery for large-scale operations.',
+      image: '/lovable-uploads/b38e8ccd-bb1b-40f2-bc05-12579bc3472f.png',
+      features: ['Bulk delivery', 'Automated systems', 'Industrial capacity']
     },
   ];
 
@@ -107,6 +107,70 @@ const Products = () => {
           >
             Comprehensive range of poultry equipment for modern farming operations
           </motion.p>
+        </div>
+      </section>
+
+      {/* Project Showcase Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl p-8 md:p-12 shadow-xl"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="order-2 lg:order-1">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-center lg:text-left"
+                >
+                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                    <span className="text-primary text-6xl font-extrabold">50 ACRE</span>
+                    <br />
+                    <span className="text-2xl md:text-3xl">POULTRY FARM AT</span>
+                    <br />
+                    <span className="text-primary text-3xl md:text-4xl font-bold">CHINTHPALLY</span>
+                  </h2>
+                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                    <p className="text-xl md:text-2xl font-semibold text-gray-800 mb-3">
+                      ENTIRELY EXECUTED BY
+                    </p>
+                    <p className="text-2xl md:text-3xl font-bold text-primary mb-3">
+                      SVR POULTRY EQUIPMENTS
+                    </p>
+                    <p className="text-lg md:text-xl text-gray-700">
+                      LEASED TO <span className="font-bold text-primary">SNEHA</span>
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+              <div className="order-1 lg:order-2">
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  <div className="rounded-2xl overflow-hidden shadow-2xl">
+                    <img 
+                      src="/lovable-uploads/ff822bca-19e0-449e-bd03-9eed1ecfb013.png" 
+                      alt="50 Acre Poultry Farm at Chinthpally"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-4 -right-4 bg-primary text-white px-6 py-3 rounded-full font-bold shadow-lg">
+                    50 Acres
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -155,75 +155,183 @@ const ProductDetail = () => {
       }
     },
     '5': {
-      title: 'Industrial Setup',
-      image: '/lovable-uploads/5741bd58-a88f-4110-9190-69ddea6d2670.png',
-      description: 'Complete industrial poultry setup solutions. Comprehensive farm automation and management systems.',
+      title: 'Flat Bottom Silos',
+      image: '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png',
+      description: 'Large capacity storage solutions for bulk feed materials with flat bottom design. Ideal for long-term storage and easy maintenance.',
       features: [
-        'Scalable design',
-        'Automated systems',
-        'Quality assurance',
-        'Integrated control',
-        'Energy efficiency',
-        'Remote monitoring'
+        'Large storage capacity',
+        'Weather resistant construction',
+        'Easy maintenance access',
+        'Pest prevention systems',
+        'Quality preservation',
+        'Efficient loading/unloading'
       ],
       usage: [
-        'Houses 10,000+ birds',
-        'Fully automated operations',
-        'Centralized control',
-        'Reduces operational costs',
-        'Improves productivity',
-        'Ensures consistency'
+        'Stores 50-1000 tons capacity',
+        'Long-term feed storage',
+        'Weather protection',
+        'Reduces storage losses',
+        'Easy access for maintenance',
+        'Prevents contamination'
       ],
       applications: [
         'Large commercial farms',
-        'Industrial poultry operations',
-        'Integrated facilities',
-        'Export-oriented farms',
-        'Corporate farming',
-        'Research institutions'
+        'Feed manufacturing units',
+        'Agricultural cooperatives',
+        'Grain storage facilities',
+        'Industrial operations',
+        'Export facilities'
       ],
       specifications: {
-        'Capacity': '10,000+ birds',
-        'Automation': 'Full integration',
-        'Control': 'SCADA systems',
-        'Warranty': '10 years',
-        'Support': '24/7 technical'
+        'Capacity': '50-1000 tons',
+        'Material': 'Galvanized steel',
+        'Design': 'Flat bottom',
+        'Warranty': '15 years',
+        'Maintenance': 'Easy access design'
       }
     },
     '6': {
-      title: 'Cage System -2 ',
-      image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-      description: 'LED lighting solutions optimized for poultry productivity. Advanced lighting technology for enhanced bird performance.',
+      title: 'Hopper Bottom Silos',
+      image: '/lovable-uploads/e1d9b3e3-ce19-42eb-bef7-b6cb814a916a.png',
+      description: 'Efficient feed storage with hopper bottom design for easy discharge. Perfect for automated feeding systems with gravity flow.',
       features: [
-        'Energy saving technology',
-        'Programmable cycles',
-        'Long lifespan',
-        'Spectrum optimization',
-        'Dimming control',
-        'Weather resistance'
+        'Gravity discharge system',
+        'Cone bottom design',
+        'Complete feed flow',
+        'No residual material',
+        'Automated operation',
+        'Easy integration'
       ],
       usage: [
-        'Improves egg production',
-        'Reduces energy costs by 70%',
-        'Programmable lighting cycles',
-        'Enhances bird behavior',
-        'Reduces stress levels',
-        'Optimizes growth rates'
+        'Automated feed discharge',
+        'No material wastage',
+        'Continuous operation',
+        'Reduces labor costs',
+        'Improves efficiency',
+        'Consistent feed flow'
       ],
       applications: [
-        'Layer hen facilities',
-        'Broiler houses',
-        'Breeder operations',
-        'All poultry types',
-        'Indoor farming',
-        'Climate-controlled facilities'
+        'Automated feeding systems',
+        'Poultry processing plants',
+        'Commercial farms',
+        'Feed distribution centers',
+        'Integrated operations',
+        'Modern farming facilities'
       ],
       specifications: {
-        'Power': '20-100W per fixture',
-        'Lifespan': '50,000+ hours',
-        'Control': 'Smart dimming',
+        'Capacity': '20-500 tons',
+        'Discharge': 'Gravity flow',
+        'Material': 'Stainless steel',
+        'Warranty': '12 years',
+        'Automation': 'Full integration'
+      }
+    },
+    '7': {
+      title: 'Weld Mesh',
+      image: 'https://storage.googleapis.com/kms-au.appspot.com/sites/bluedog-fences/assets/7d96697e-0136-44c7-bd93-e400abc264dd/Bluedog%20GuardForce%C2%AE%20358%20welded%20mesh%20high%20security%20fencing.JPG',
+      description: 'High-quality welded mesh panels for poultry housing and security fencing. Durable construction for long-lasting protection.',
+      features: [
+        'Corrosion resistant coating',
+        'Strong welded construction',
+        'Multiple size options',
+        'Easy installation',
+        'Weather resistance',
+        'Custom configurations'
+      ],
+      usage: [
+        'Poultry enclosures',
+        'Security fencing',
+        'Cage construction',
+        'Partition systems',
+        'Protective barriers',
+        'Ventilation panels'
+      ],
+      applications: [
+        'Poultry housing',
+        'Farm security',
+        'Cage systems',
+        'Boundary fencing',
+        'Industrial facilities',
+        'Agricultural operations'
+      ],
+      specifications: {
+        'Wire Gauge': '2-6mm',
+        'Mesh Size': '25x25mm to 100x100mm',
+        'Material': 'Galvanized steel',
+        'Warranty': '8 years',
+        'Coating': 'Hot-dip galvanized'
+      }
+    },
+    '8': {
+      title: 'Tractor Tanker',
+      image: '/lovable-uploads/5d104031-b293-4f56-a4db-550853a91376.png',
+      description: 'Mobile feed cleaning and processing unit for on-site feed quality enhancement. Portable solution for feed preparation.',
+      features: [
+        'Mobile operation capability',
+        'Feed cleaning systems',
+        'Quality enhancement',
+        'Dust removal',
+        'Grading systems',
+        'Compact design'
+      ],
+      usage: [
+        'On-site feed cleaning',
+        'Quality improvement',
+        'Dust removal',
+        'Mobile processing',
+        'Field operations',
+        'Remote locations'
+      ],
+      applications: [
+        'Farm feed preparation',
+        'Mobile services',
+        'Remote operations',
+        'Quality control',
+        'Field processing',
+        'Custom cleaning'
+      ],
+      specifications: {
+        'Capacity': '2-5 tons/hour',
+        'Power': 'Tractor PTO driven',
+        'Mobility': 'Trailer mounted',
+        'Warranty': '3 years',
+        'Operation': 'Mobile unit'
+      }
+    },
+    '9': {
+      title: 'Bulk Feeding Tanker',
+      image: '/lovable-uploads/b38e8ccd-bb1b-40f2-bc05-12579bc3472f.png',
+      description: 'Industrial bulk feeding system with automated delivery for large-scale operations. High-capacity feed distribution solution.',
+      features: [
+        'Bulk delivery capacity',
+        'Automated systems',
+        'Industrial capacity',
+        'Pneumatic discharge',
+        'Load monitoring',
+        'Safety systems'
+      ],
+      usage: [
+        'Large-scale feed delivery',
+        'Automated operations',
+        'Bulk handling',
+        'Reduced labor costs',
+        'Efficient distribution',
+        'High-volume operations'
+      ],
+      applications: [
+        'Industrial poultry farms',
+        'Large commercial operations',
+        'Feed distribution',
+        'Bulk handling facilities',
+        'Automated systems',
+        'High-capacity operations'
+      ],
+      specifications: {
+        'Capacity': '15-30 tons',
+        'Discharge': 'Pneumatic system',
+        'Control': 'Automated operation',
         'Warranty': '5 years',
-        'Efficiency': '70% energy savings'
+        'Operation': 'Industrial grade'
       }
     }
   };
