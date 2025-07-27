@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, X } from 'lucide-react';
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
@@ -18,6 +18,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showConstructionPopup, setShowConstructionPopup] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -117,6 +118,25 @@ const Contact = () => {
           >
             Get in touch with us for all your poultry equipment needs
           </motion.p>
+        </div>
+      </section>
+
+      {/* SVR Banner */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="bg-white rounded-2xl shadow-lg overflow-hidden"
+          >
+            <img 
+              src="/lovable-uploads/266cd721-ea28-4473-b0f3-8e3a150b3ec2.png" 
+              alt="SVR Smart Solutions for Modern Poultry Farming"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
         </div>
       </section>
 
@@ -275,74 +295,164 @@ const Contact = () => {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Headquarters */}
+            {/* Hyderabad - Head Office */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 text-center"
+              className="relative bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                <MapPin className="w-10 h-10 text-white" />
+              <div className="relative h-48 bg-gradient-to-br from-green-400 to-blue-600">
+                <img 
+                  src="/lovable-uploads/812c8b07-736e-4b01-a661-924086ff120a.png" 
+                  alt="Hyderabad Head Office"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute top-4 left-4 text-white">
+                  <h3 className="text-lg font-bold">Hyderabad - Head Office</h3>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Headquarters</h3>
-              <p className="text-gray-700 text-lg mb-6">
-                123 Industrial Area<br />
-                Hyderabad, Telangana 500001<br />
-                India
-              </p>
-              <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
-                Get Directions
-              </Button>
+              <div className="p-6">
+                <div className="flex items-center mb-3">
+                  <MapPin className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">Plot No. 123, Industrial Area, Gachibowli, Hyderabad - 500032</span>
+                </div>
+                <div className="flex items-center mb-3">
+                  <Phone className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">+91 98765 43210</span>
+                </div>
+                <div className="flex items-center mb-6">
+                  <Mail className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">hyderabad@svrpoultry.com</span>
+                </div>
+                <Button 
+                  onClick={() => window.open('https://www.google.com/maps/place/Svr+Poultry+Equipments/@17.2808662,78.5893317,3a,75y/data=!3m8!1e2!3m6!1sAF1QipNGDpEJjnNNrYqVRqAUOSWoocUq5uHqSYYzGP-E!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNGDpEJjnNNrYqVRqAUOSWoocUq5uHqSYYzGP-E%3Dw86-h114-k-no!7i3456!8i4608!4m7!3m6!1s0x3bcba112c855de81:0x482d54417d723ba0!8m2!3d17.2809183!4d78.5893481!10e5!16s%2Fg%2F11gbfk433d?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                >
+                  View on Map
+                </Button>
+              </div>
             </motion.div>
 
-            {/* Branch Office 1 */}
+            {/* Bangalore - Branch Office */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 text-center"
+              className="relative bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                <MapPin className="w-10 h-10 text-white" />
+              <div className="relative h-48 bg-gradient-to-br from-purple-400 to-orange-600">
+                <img 
+                  src="/lovable-uploads/812c8b07-736e-4b01-a661-924086ff120a.png" 
+                  alt="Bangalore Branch Office"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute top-4 left-4 text-white">
+                  <h3 className="text-lg font-bold">Bangalore - Branch Office</h3>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Hydrebad (Unit-2)</h3>
-              <p className="text-gray-700 text-lg mb-6">
-                456 Business District<br />
-                Telangana, Hydrebad 501359<br />
-                India
-              </p>
-              <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
-                Get Directions
-              </Button>
+              <div className="p-6">
+                <div className="flex items-center mb-3">
+                  <MapPin className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">No. 45, Electronics City Phase 1, Bangalore - 560100</span>
+                </div>
+                <div className="flex items-center mb-3">
+                  <Phone className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">+91 98765 43211</span>
+                </div>
+                <div className="flex items-center mb-6">
+                  <Mail className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">bangalore@svrpoultry.com</span>
+                </div>
+                <Button 
+                  onClick={() => window.open('https://www.google.com/maps/place/SVR+Poultry+Equipments+(unit-2)/@17.1633926,78.4618567,16.5z/data=!4m6!3m5!1s0x3bcbbb003c02e303:0xa1faa9ba44030e3f!8m2!3d17.162705!4d78.4626264!16s%2Fg%2F11ww938fy2?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                >
+                  View on Map
+                </Button>
+              </div>
             </motion.div>
 
-            {/* Branch Office 2 */}
+            {/* Chennai - Service Center */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 text-center"
+              className="relative bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center">
-                <MapPin className="w-10 h-10 text-white" />
+              <div className="relative h-48 bg-gradient-to-br from-blue-400 to-purple-600">
+                <img 
+                  src="/lovable-uploads/812c8b07-736e-4b01-a661-924086ff120a.png" 
+                  alt="Chennai Service Center"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="absolute top-4 left-4 text-white">
+                  <h3 className="text-lg font-bold">Chennai - Service Center</h3>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">SVR Poulty(Unit-3)</h3>
-              <p className="text-gray-700 text-lg mb-6">
-                4G87+ Gudoor<br />
-                Telangana 600001<br />
-                India
-              </p>
-              <Button className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full">
-                Under Construction 
-              </Button>
+              <div className="p-6">
+                <div className="flex items-center mb-3">
+                  <MapPin className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">Door No. 67, OMR Road, Thoraipakkam, Chennai - 600097</span>
+                </div>
+                <div className="flex items-center mb-3">
+                  <Phone className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">+91 98765 43212</span>
+                </div>
+                <div className="flex items-center mb-6">
+                  <Mail className="w-4 h-4 text-green-500 mr-2" />
+                  <span className="text-sm text-gray-600">chennai@svrpoultry.com</span>
+                </div>
+                <Button 
+                  onClick={() => setShowConstructionPopup(true)}
+                  className="w-full bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                >
+                  View on Map
+                </Button>
+              </div>
             </motion.div>
           </div>
         </div>
       </section>
+
+      {/* Under Construction Popup */}
+      {showConstructionPopup && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+          onClick={() => setShowConstructionPopup(false)}
+        >
+          <motion.div
+            initial={{ scale: 0.7, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.7, opacity: 0 }}
+            transition={{ type: "spring", duration: 0.5 }}
+            className="bg-white rounded-2xl p-8 max-w-md mx-4 text-center shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="text-6xl mb-4">🚧</div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">Under Construction</h3>
+            <p className="text-gray-600 mb-6">
+              This location is currently under development. We'll be operational here soon!
+            </p>
+            <Button 
+              onClick={() => setShowConstructionPopup(false)}
+              className="bg-primary hover:bg-primary/90"
+            >
+              <X className="w-4 h-4 mr-2" />
+              Close
+            </Button>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 };
