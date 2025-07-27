@@ -305,7 +305,7 @@ const Contact = () => {
             >
               <div className="relative h-48 bg-gradient-to-br from-green-400 to-blue-600">
                 <img 
-                  src="https://svrpoultryequipments.com/static/images/SVR_2.png" 
+                  src="https://ik.imagekit.io/xu7akp4g0/Screenshot%202025-07-27%20224725.png?updatedAt=1753638224876" 
                   alt="Hyderabad Head Office"
                   className="w-full h-full object-cover"
                 />
@@ -389,7 +389,7 @@ const Contact = () => {
             >
               <div className="relative h-48 bg-gradient-to-br from-blue-400 to-purple-600">
                 <img 
-                  src="/lovable-uploads/812c8b07-736e-4b01-a661-924086ff120a.png" 
+                  src="https://ik.imagekit.io/xu7akp4g0/Screenshot%202025-07-27%20230857.png?updatedAt=1753638581135" 
                   alt="Chennai Service Center"
                   className="w-full h-full object-cover"
                 />
