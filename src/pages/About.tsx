@@ -5,7 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const About = () => {
   const stats = [
-    { icon: Award, value: '10+', label: 'Years Experience' },
+    { icon: Award, value: '40+', label: 'Years Experience' },
     { icon: Users, value: '5000+', label: 'Happy Customers' },
     { icon: Package, value: '50+', label: 'Product Range' },
     { icon: Headphones, value: '24/7', label: 'Support Available' },
@@ -37,27 +37,27 @@ const About = () => {
   const team = [
     { 
       name: 'Mr.D. Venkateshwar Reddy', 
-      experience: '15+ years in poultry industry',
+      experience: '',
       icon: Building
     },
     { 
       name: 'Mr.D. Jagadeshwar Reddy', 
-      experience: 'Expert in equipment design',
+      experience: '',
       icon: Target
     },
     { 
       name: 'Mr.A. Srinivas Reddy', 
-      experience: 'Dedicated to customer success',
+      experience: '',
       icon: Users
     },
     { 
       name: 'Mr.D. Mahesh Reddy', 
-      experience: 'Quality assurance specialist',
+      experience: '',
       icon: Award
     },
     { 
       name: 'Mr.D. Aditya Reddy', 
-      experience: 'Innovation and R&D expert',
+      experience: '',
       icon: Lightbulb
     },
   ];
@@ -99,7 +99,7 @@ const About = () => {
           >
             <div className="max-w-5xl mx-auto">
               <p className="text-lg text-gray-700 leading-relaxed">
-                Sri Venkata Ramana Engineering Works was established in the early '80s. In the early 2000's SVR Poultry Equipment Manufacturing was set up separately in Hyderabad. We have a fully pledged manufacturing facility and a modern CAD-equipped design office, a well-equipped machine and fabrication shop, and a complete team of engineers, technocrats, and professionals, capable of designing, manufacturing, and fully automated feed milling plants, up to 200 tons per day capacity. we have employees of about 150 members, directly and indirectly. Overall, we have 35+ years of experience in the field of manufacturing different machines utilized in the poultry industry. We have an extensive product range with technology in line with the latest. The product range includes R&D products, apart from a wide capacity spectrum feed, Auto Feeding Machines, Auger systems, Feed storage bins, Feed transportation, silos, Auto batching, and Feed plants. We have clients all over India and also, we export our equipment to other foreign countries like Angola, Ghana, etc.
+                Sri Venkata Ramana Engineering Works was established in the early '80s. In the early 2000's SVR Poultry Equipment Manufacturing was set up separately in Hyderabad. We have a fully pledged manufacturing facility and a modern CAD-equipped design office, a well-equipped machine and fabrication shop, and a complete team of engineers, technocrats, and professionals, capable of designing, manufacturing, and fully automated feed milling plants, up to 200 tons per day capacity. we have employees of about 150 members, directly and indirectly. Overall, we have 40+ years of experience in the field of manufacturing different machines utilized in the poultry industry. We have an extensive product range with technology in line with the latest. The product range includes R&D products, apart from a wide capacity spectrum feed, Auto Feeding Machines, Auger systems, Feed storage bins, Feed transportation, silos, Auto batching, and Feed plants. We have clients all over India and also, we export our equipment to other foreign countries like Angola, Ghana, etc.
               </p>
             </div>
           </motion.div>
