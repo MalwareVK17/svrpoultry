@@ -53,7 +53,7 @@ const Products = () => {
       id: 7,
       title: 'Weld Mesh',
       description: 'High-quality welded mesh panels for poultry housing and security fencing.',
-      image: 'https://storage.googleapis.com/kms-au.appspot.com/sites/bluedog-fences/assets/7d96697e-0136-44c7-bd93-e400abc264dd/Bluedog%20GuardForce%C2%AE%20358%20welded%20mesh%20high%20security%20fencing.JPG',
+      image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
       features: ['Corrosion resistant', 'Strong construction', 'Multiple sizes']
     },
     {
