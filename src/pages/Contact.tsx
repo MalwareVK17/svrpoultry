@@ -132,7 +132,7 @@ const Contact = () => {
             className="bg-white rounded-2xl shadow-lg overflow-hidden"
           >
             <img 
-              src="/lovable-uploads/812c8b07-736e-4b01-a661-924086ff120a.png" 
+              src="" 
               alt="SVR Smart Solutions for Modern Poultry Farming"
               className="w-full h-auto object-contain rounded-xl"
               style={{ 
