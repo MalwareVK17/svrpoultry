@@ -143,9 +143,6 @@ const Products = () => {
                     <p className="text-2xl md:text-3xl font-bold text-primary mb-3">
                       SVR POULTRY EQUIPMENTS
                     </p>
-                    <p className="text-lg md:text-xl text-gray-700">
-                      LEASED TO <span className="font-bold text-primary">SNEHA</span>
-                    </p>
                   </div>
                 </motion.div>
               </div>
