@@ -132,7 +132,7 @@ const Contact = () => {
             className="bg-white rounded-2xl shadow-lg overflow-hidden"
           >
             <img 
-              src="" 
+              src="https://ik.imagekit.io/xu7akp4g0/WhatsApp%20Image%202025-07-28%20at%2011.45.52_8638ced5.jpg?updatedAt=1753683916589" 
               alt="SVR Smart Solutions for Modern Poultry Farming"
               className="w-full h-auto object-contain rounded-xl"
               style={{ 
