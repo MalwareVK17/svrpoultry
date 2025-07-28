@@ -176,6 +176,123 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Market Presence Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative bg-white rounded-3xl shadow-2xl overflow-hidden"
+          >
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-center min-h-[500px]">
+              {/* Content Side */}
+              <div className="p-12 lg:p-16">
+                <motion.div
+                  initial={{ opacity: 0, x: -30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+                    Global Reach
+                  </div>
+                  <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                    Our <span className="text-primary">MARKET PRESENCE</span>
+                  </h2>
+                  <div className="space-y-4 mb-8">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-primary rounded-full"></div>
+                      <span className="text-lg text-gray-700 font-medium">EXPORTING TO MIDDLE EASTERN COUNTRIES</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <span className="text-lg text-gray-700">Trusted by 500+ global clients</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                      <span className="text-lg text-gray-700">Premium quality equipment worldwide</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    SVR Poultry Equipments has established a strong international presence, delivering 
+                    cutting-edge poultry solutions across multiple continents with a focus on quality 
+                    and innovation.
+                  </p>
+                </motion.div>
+              </div>
+
+              {/* Image Side */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="relative h-full"
+              >
+                <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden rounded-r-3xl">
+                  <motion.img
+                    src="/lovable-uploads/218c46a4-5748-48bf-a3f2-a4effd131ea4.png"
+                    alt="Global Market Presence - World Map"
+                    className="w-full h-full object-contain p-8"
+                    animate={{
+                      scale: [1, 1.05, 1],
+                    }}
+                    transition={{
+                      duration: 6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+                  
+                  {/* Animated location markers */}
+                  <motion.div
+                    className="absolute top-1/3 left-2/3 w-4 h-4 bg-red-500 rounded-full shadow-lg"
+                    animate={{
+                      scale: [1, 1.5, 1],
+                      opacity: [0.7, 1, 0.7]
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                  <motion.div
+                    className="absolute top-1/2 left-1/4 w-3 h-3 bg-blue-500 rounded-full shadow-lg"
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.6, 1, 0.6]
+                    }}
+                    transition={{
+                      duration: 2.5,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }}
+                  />
+                  <motion.div
+                    className="absolute top-2/5 right-1/3 w-3 h-3 bg-orange-500 rounded-full shadow-lg"
+                    animate={{
+                      scale: [1, 1.4, 1],
+                      opacity: [0.8, 1, 0.8]
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 1
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Enhanced Partners Section */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

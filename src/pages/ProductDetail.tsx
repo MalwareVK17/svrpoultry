@@ -4,9 +4,53 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Settings, Users, Zap } from 'lucide-react';
+import { useState, useEffect } from 'react';
 
 const ProductDetail = () => {
   const { id } = useParams();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Define image arrays for each product
+  const productImages = {
+    '1': [
+      '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+      '/lovable-uploads/8a104838-fb90-4d21-b4f7-be5da2ec9e2d.png',
+      '/lovable-uploads/847e4da2-2bf0-4da2-b119-699bac1373f1.png'
+    ],
+    '2': [
+      '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
+      '/lovable-uploads/b43eae74-224b-4b97-9c97-fee060bfbce1.png',
+      '/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png'
+    ],
+    '3': [
+      '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
+      '/lovable-uploads/e6c1c0a4-2f52-437f-84d7-2104e8b0cc91.png',
+      '/lovable-uploads/f2c1441c-8630-47f7-a4cc-284e064d2ee3.png'
+    ],
+    '4': [
+      '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
+      '/lovable-uploads/37b19977-d765-4669-b6bc-c7d59a28d39f.png'
+    ],
+    '5': [
+      '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png',
+      '/lovable-uploads/a9bfc5e5-a28d-4c66-b56e-3fa04b8dfb50.png',
+      '/lovable-uploads/201fd9a0-96d4-4739-8e9b-0258a6ce4dc8.png'
+    ]
+  };
+
+  // Auto-slide effect for images
+  useEffect(() => {
+    const images = productImages[id as keyof typeof productImages];
+    if (images && images.length > 1) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prevIndex) => 
+          prevIndex === images.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000);
+
+      return () => clearInterval(interval);
+    }
+  }, [id]);
 
   // Product data (in a real app, this would come from an API or database)
   const products = {
@@ -388,12 +432,48 @@ const ProductDetail = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl bg-white p-8">
-                <img 
-                  src={product.image} 
-                  alt={product.title}
-                  className="w-full h-full object-contain"
-                />
+              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white p-8 relative">
+                {(() => {
+                  const images = productImages[id as keyof typeof productImages];
+                  if (images && images.length > 1) {
+                    return (
+                      <>
+                        <motion.img 
+                          key={currentImageIndex}
+                          src={images[currentImageIndex]} 
+                          alt={`${product.title} - Image ${currentImageIndex + 1}`}
+                          className="w-full h-full object-contain rounded-2xl"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          exit={{ opacity: 0, scale: 0.9 }}
+                          transition={{ duration: 0.5 }}
+                        />
+                        {/* Image indicators */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                          {images.map((_, index) => (
+                            <div
+                              key={index}
+                              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                index === currentImageIndex 
+                                  ? 'bg-primary scale-125' 
+                                  : 'bg-gray-300 hover:bg-gray-400'
+                              }`}
+                              onClick={() => setCurrentImageIndex(index)}
+                              style={{ cursor: 'pointer' }}
+                            />
+                          ))}
+                        </div>
+                      </>
+                    );
+                  }
+                  return (
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-full object-contain rounded-2xl"
+                    />
+                  );
+                })()}
               </div>
             </motion.div>
           </div>

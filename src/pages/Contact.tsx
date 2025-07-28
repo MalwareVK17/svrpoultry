@@ -132,9 +132,13 @@ const Contact = () => {
             className="bg-white rounded-2xl shadow-lg overflow-hidden"
           >
             <img 
-              src="/lovable-uploads/266cd721-ea28-4473-b0f3-8e3a150b3ec2.png" 
+              src="/lovable-uploads/812c8b07-736e-4b01-a661-924086ff120a.png" 
               alt="SVR Smart Solutions for Modern Poultry Farming"
-              className="w-full h-auto object-contain"
+              className="w-full h-auto object-contain rounded-xl"
+              style={{ 
+                objectFit: 'cover',
+                clipPath: 'inset(20px 20px 20px 20px)'
+              }}
             />
           </motion.div>
         </div>
@@ -316,21 +320,21 @@ const Contact = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
-                  <MapPin className="w-4 h-4 text-green-500 mr-2" />
+                  <MapPin className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">7HJQ+9P Turkayamjal, Telangana</span>
                 </div>
                 <div className="flex items-center mb-3">
-                  <Phone className="w-4 h-4 text-green-500 mr-2" />
+                  <Phone className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">+91 9849397021</span>
                 </div>
                 <div className="flex items-center mb-6">
-                  <Mail className="w-4 h-4 text-green-500 mr-2" />
+                  <Mail className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">svrpoultryequipments@gmail.com
 </span>
                 </div>
                 <Button 
                   onClick={() => window.open('https://www.google.com/maps/place/Svr+Poultry+Equipments/@17.2808662,78.5893317,3a,75y/data=!3m8!1e2!3m6!1sAF1QipNGDpEJjnNNrYqVRqAUOSWoocUq5uHqSYYzGP-E!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNGDpEJjnNNrYqVRqAUOSWoocUq5uHqSYYzGP-E%3Dw86-h114-k-no!7i3456!8i4608!4m7!3m6!1s0x3bcba112c855de81:0x482d54417d723ba0!8m2!3d17.2809183!4d78.5893481!10e5!16s%2Fg%2F11gbfk433d?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                  className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg"
                 >
                   View on Map
                 </Button>
@@ -358,21 +362,21 @@ const Contact = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
-                  <MapPin className="w-4 h-4 text-green-500 mr-2" />
+                  <MapPin className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">Maheswaram Industrial area ,Telangana 501359</span>
                 </div>
                 <div className="flex items-center mb-3">
-                  <Phone className="w-4 h-4 text-green-500 mr-2" />
+                  <Phone className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">+91 9849397021, 8886699995</span>
                 </div>
                 <div className="flex items-center mb-6">
-                  <Mail className="w-4 h-4 text-green-500 mr-2" />
+                  <Mail className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">svrpoultryequipments@gmail.com
 </span>
                 </div>
                 <Button 
                   onClick={() => window.open('https://www.google.com/maps/place/SVR+Poultry+Equipments+(unit-2)/@17.1633926,78.4618567,16.5z/data=!4m6!3m5!1s0x3bcbbb003c02e303:0xa1faa9ba44030e3f!8m2!3d17.162705!4d78.4626264!16s%2Fg%2F11ww938fy2?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                  className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg"
                 >
                   View on Map
                 </Button>
@@ -400,20 +404,20 @@ const Contact = () => {
               </div>
               <div className="p-6">
                 <div className="flex items-center mb-3">
-                  <MapPin className="w-4 h-4 text-green-500 mr-2" />
+                  <MapPin className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">4G87+WPV Gudoor, Telangana</span>
                 </div>
                 <div className="flex items-center mb-3">
-                  <Phone className="w-4 h-4 text-green-500 mr-2" />
+                  <Phone className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">+91 8886645123</span>
                 </div>
                 <div className="flex items-center mb-6">
-                  <Mail className="w-4 h-4 text-green-500 mr-2" />
+                  <Mail className="w-4 h-4 text-green-700 mr-2" />
                   <span className="text-sm text-gray-600">svrpoultryequipments@gmail.com</span>
                 </div>
                 <Button 
                   onClick={() => setShowConstructionPopup(true)}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white rounded-lg"
+                  className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg"
                 >
                   View on Map
                 </Button>
