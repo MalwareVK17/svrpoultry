@@ -129,7 +129,7 @@ const Home = () => {
               {
                 title: "CNC Lathe Machine",
                 description: "Computer-controlled lathe machine delivering exceptional precision in turning and machining operations.",
-                image: "/lovable-uploads/7d4bdcfb-2038-4a3c-8858-e3760f560031.png"
+                image: "https://www.focus-cnc.com/web/image/product.template/20/image_1024?unique=d4b959d"
               },
               {
                 title: "Laser Machine HSG",
