@@ -139,7 +139,7 @@ const Home = () => {
               {
                 title: "Bending Machine AccurPress",
                 description: "Heavy-duty press brake machine designed for high-volume production with consistent accuracy.",
-                image: "/lovable-uploads/ddfd06fb-d157-42f0-86ae-f79a57a46334.png"
+                image: "https://northsouthmachinery.com/wp-content/uploads/2019/01/ACCEL-U.jpg"
               },
               {
                 title: "Automatic Weldmesh Machine",
