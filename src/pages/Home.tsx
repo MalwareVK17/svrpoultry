@@ -119,12 +119,12 @@ const Home = () => {
               {
                 title: "Laser Machine",
                 description: "High-precision fiber laser cutting machine with advanced control systems for superior cutting quality and efficiency.",
-                image: "/lovable-uploads/43dcfa7e-4dde-48fd-a316-b89e5febc6e4.png"
+                image: "https://sc04.alicdn.com/kf/H25cdc5609cc74becad785a4d8445f6deC.jpg"
               },
               {
                 title: "Bending Machine",
                 description: "Professional hydraulic press brake with precision tooling for accurate bending and forming operations.",
-                image: "/lovable-uploads/05fe50de-992b-4cd7-bdd4-691f84847027.png"
+                image: "https://www.hindustanhydraulics.com/images/hindustan-hydraulics_india_cnc-hydraulic-press-brake_falcon-griffon_series.jpg"
               },
               {
                 title: "CNC Lathe Machine",
@@ -134,7 +134,7 @@ const Home = () => {
               {
                 title: "Laser Machine HSG",
                 description: "Advanced laser cutting system with high-speed processing capabilities for industrial applications.",
-                image: "/lovable-uploads/96f80145-67f7-4ecf-9009-d039c9cccbf6.png"
+                image: "https://cdn.prod.website-files.com/5fcbb3ec902179357be44b2d/660506e77e2dde4390212180_202306-G4020V%20V1.png"
               },
               {
                 title: "Bending Machine AccurPress",
