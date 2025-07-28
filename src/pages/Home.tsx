@@ -144,7 +144,7 @@ const Home = () => {
               {
                 title: "Automatic Weldmesh Machine",
                 description: "Fully automated welding system for producing high-quality mesh products with exceptional consistency.",
-                image: "/lovable-uploads/13e2ede7-e2d9-4e79-9598-071ccf2a9a91.png"
+                image: "https://5.imimg.com/data5/SELLER/Default/2023/11/358449488/TV/NG/AJ/6690679/wire-mesh-welding-machine-500x500.jpg"
               }
             ].map((equipment, index) => (
               <motion.div
