@@ -295,7 +295,6 @@ const Contact = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Visit Our Locations</h2>
-            <p className="text-xl text-gray-600">Find us at our offices across India</p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
