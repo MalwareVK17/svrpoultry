@@ -36,16 +36,6 @@ const ProductDetail = () => {
       '/lovable-uploads/a9bfc5e5-a28d-4c66-b56e-3fa04b8dfb50.png',
       '/lovable-uploads/201fd9a0-96d4-4739-8e9b-0258a6ce4dc8.png'
     ]
-    '6': [
-      '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png',
-      'https://pradosilos.com/wp-content/uploads/2021/06/fondo-conico-silo.jpg',
-      'https://d20854696ijsuu.cloudfront.net/files/144960/products/1001504/144960_2_202311150713270681964_raw.jpg'
-    ]
-  '7': [
-      'https://www.barbedwire.net/images/welded-mesh-panel.jpg',
-      'https://shreebalajiwirenetting.com/wp-content/uploads/2022/02/464-e1680030311196.jpg',
-      'https://www.edconsteel.com.au/store/storage/images/products/welded.mesh.JPG'
-    ]
   };
 
   // Auto-slide effect for images
