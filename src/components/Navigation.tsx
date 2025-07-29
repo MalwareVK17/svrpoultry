@@ -50,7 +50,7 @@ const Navigation = () => {
             ))}
             
             {/* Admin Icon */}
-            <Link to="/admin/login">
+            <Link to="/svr-admin">
               <Button
                 variant="ghost"
                 size="icon"
@@ -64,7 +64,7 @@ const Navigation = () => {
 
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <Link to="/admin/login" className="mr-2">
+            <Link to="/svr-admin" className="mr-2">
               <Button
                 variant="ghost"
                 size="icon"

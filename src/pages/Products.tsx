@@ -205,7 +205,7 @@ const Products = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to={`/product/${product.id}`}>
+                    <Link to={`/products/${product.id}`}>
                       <Button 
                         className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300"
                       >

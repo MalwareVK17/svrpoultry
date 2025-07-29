@@ -11,8 +11,8 @@ import { useToast } from '@/hooks/use-toast';
 
 // Admin credentials (in production, this should be in environment variables)
 const ADMIN_CREDENTIALS = {
-  username: 'admin',
-  password: 'admin123'
+  username: 'svr@gmail.com',
+  password: 'svrpoultry'
 };
 
 const AdminLogin = () => {
@@ -130,7 +130,7 @@ const AdminLogin = () => {
 
             <div className="mt-6 text-center text-sm text-gray-500">
               <p>Demo credentials:</p>
-              <p>Username: admin | Password: admin123</p>
+              <p>Username: svr@gmail.com | Password: svrpoultry</p>
             </div>
           </CardContent>
         </Card>
