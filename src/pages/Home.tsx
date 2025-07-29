@@ -101,8 +101,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Evolution Timeline Section */}
-      <section className="py-20 bg-gray-50">
+      {/* The SVR Journey of Innovation */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -111,60 +111,238 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Evolution Timeline</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Witness our journey of growth and innovation in the poultry industry over the decades
+            <h2 className="text-5xl font-bold text-gray-900 mb-6">The SVR Journey of Innovation</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Over Four Decades of Engineering Excellence in Poultry Automation
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-            {[
-              {
-                year: "1980s",
-                title: "Humble Beginnings",
-                description: "Started as a small family business with a vision to revolutionize poultry equipment manufacturing in India."
-              },
-              {
-                year: "2000s", 
-                title: "Major Expansion",
-                description: "Established our state-of-the-art manufacturing facility in Hyderabad, marking a significant milestone in our growth."
-              },
-              {
-                year: "2020s",
-                title: "Global Presence",
-                description: "Achieved capacity of 200 tons per day for automated feed milling plants and expanded exports to Middle Eastern countries."
-              }
-            ].map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ 
-                  duration: 0.8, 
-                  delay: index * 0.3,
-                  ease: "easeOut"
-                }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="group"
-              >
-                <Card className="bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-0 rounded-2xl overflow-hidden h-full">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                      <span className="text-white font-bold text-xl">{milestone.year.slice(0, 2)}</span>
+          {/* Era 1: Foundations */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="text-center mb-8">
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                ERA 1: FOUNDATIONS
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  year: "1984",
+                  title: "Engineering Foundations",
+                  description: "Established as Sri Venkata Ramana Engineering Works, focusing on general engineering solutions.",
+                  gradient: "from-blue-500 to-teal-500"
+                },
+                {
+                  year: "1990",
+                  title: "Poultry Entry",
+                  description: "Entered the poultry equipment industry, manufacturing small-scale feeders and drinkers.",
+                  gradient: "from-teal-500 to-green-500"
+                },
+                {
+                  year: "1995",
+                  title: "Manufacturing Expansion",
+                  description: "Expanded manufacturing capabilities to include manual and semi-automated feeding systems.",
+                  gradient: "from-green-500 to-emerald-500"
+                }
+              ].map((milestone, index) => (
+                <motion.div
+                  key={milestone.year}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="relative"
+                >
+                  <div className="text-center">
+                    <div className={`w-24 h-32 bg-gradient-to-b ${milestone.gradient} rounded-3xl mx-auto mb-4 flex items-center justify-center shadow-xl`}>
+                      <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">{milestone.year}</span>
+                      </div>
                     </div>
-                    <div className="mb-4">
-                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
-                        {milestone.year}
-                      </span>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Era 2: The Automation Revolution */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="text-center mb-8">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                ERA 2: THE AUTOMATION REVOLUTION
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  year: "2000",
+                  title: "SVR Transformation",
+                  description: "Officially transitioned into SVR Poultry Equipment Manufacturing, specializing in poultry automation.",
+                  gradient: "from-purple-500 to-pink-500"
+                },
+                {
+                  year: "2005",
+                  title: "Full Automation",
+                  description: "Launched fully automated feeding and watering systems for poultry farms.",
+                  gradient: "from-pink-500 to-rose-500"
+                },
+                {
+                  year: "2010",
+                  title: "Auger Systems",
+                  description: "Developed auger-based automatic feeding systems, enhancing efficiency for poultry farmers.",
+                  gradient: "from-rose-500 to-orange-500"
+                }
+              ].map((milestone, index) => (
+                <motion.div
+                  key={milestone.year}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="relative"
+                >
+                  <div className="text-center">
+                    <div className={`w-24 h-32 bg-gradient-to-b ${milestone.gradient} rounded-3xl mx-auto mb-4 flex items-center justify-center shadow-xl`}>
+                      <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">{milestone.year}</span>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">{milestone.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Era 3: Scaling New Horizons */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="text-center mb-8">
+              <span className="bg-gradient-to-r from-orange-600 to-red-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                ERA 3: SCALING NEW HORIZONS
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  year: "2011",
+                  title: "Official Incorporation",
+                  description: "SVR Poultry Equipments officially incorporated on January 24th.",
+                  gradient: "from-orange-500 to-amber-500"
+                },
+                {
+                  year: "2016",
+                  title: "National Presence",
+                  description: "Achieved milestone of serving clients across India, solidifying market presence.",
+                  gradient: "from-amber-500 to-yellow-500"
+                },
+                {
+                  year: "2017",
+                  title: "Global Expansion",
+                  description: "Began exporting equipment to international markets, including Angola and Ghana.",
+                  gradient: "from-yellow-500 to-lime-500"
+                }
+              ].map((milestone, index) => (
+                <motion.div
+                  key={milestone.year}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="relative"
+                >
+                  <div className="text-center">
+                    <div className={`w-24 h-32 bg-gradient-to-b ${milestone.gradient} rounded-3xl mx-auto mb-4 flex items-center justify-center shadow-xl`}>
+                      <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">{milestone.year}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Era 4: Global Leadership & The Future */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="text-center mb-8">
+              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
+                ERA 4: GLOBAL LEADERSHIP & THE FUTURE
+              </span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  year: "2021",
+                  title: "MSME Recognition",
+                  description: "Recognized as a Micro Enterprise under MSME classification.",
+                  gradient: "from-cyan-500 to-blue-500"
+                },
+                {
+                  year: "2024",
+                  title: "Continued Growth",
+                  description: "Further expansion into new global markets, strengthening exports and New Fabrication unit setup.",
+                  gradient: "from-blue-500 to-indigo-500"
+                },
+                {
+                  year: "2025",
+                  title: "Future Innovation",
+                  description: "Expected: Launch of next-generation poultry automation systems and smart farm integration.",
+                  gradient: "from-indigo-500 to-purple-500"
+                }
+              ].map((milestone, index) => (
+                <motion.div
+                  key={milestone.year}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10 }}
+                  className="relative"
+                >
+                  <div className="text-center">
+                    <div className={`w-24 h-32 bg-gradient-to-b ${milestone.gradient} rounded-3xl mx-auto mb-4 flex items-center justify-center shadow-xl`}>
+                      <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-sm">{milestone.year}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone.description}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
