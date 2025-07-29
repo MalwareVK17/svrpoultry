@@ -128,10 +128,7 @@ const AdminLogin = () => {
               </Button>
             </form>
 
-            <div className="mt-6 text-center text-sm text-gray-500">
-              <p>Demo credentials:</p>
-              <p>Username: svr@gmail.com | Password: svrpoultry</p>
-            </div>
+            
           </CardContent>
         </Card>
       </motion.div>
