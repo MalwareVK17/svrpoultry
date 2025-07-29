@@ -31,7 +31,7 @@ const Home = () => {
             loop
             className="w-full h-full object-cover"
           >
-            <source src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos//svr%20video.mp4" type="video/mp4" />
+            <source src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos//SVR%20vid.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
