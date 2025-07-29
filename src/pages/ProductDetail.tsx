@@ -442,49 +442,51 @@ const ProductDetail = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl bg-white p-8 relative">
-                {(() => {
-                  const images = productImages[id as keyof typeof productImages];
-                  if (images && images.length > 1) {
+              <Card className="rounded-3xl overflow-hidden shadow-2xl bg-white">
+                <CardContent className="p-0">
+                  {(() => {
+                    const images = productImages[id as keyof typeof productImages];
+                    if (images && images.length > 1) {
+                      return (
+                        <>
+                          <motion.img 
+                            key={currentImageIndex}
+                            src={images[currentImageIndex]} 
+                            alt={`${product.title} - Image ${currentImageIndex + 1}`}
+                            className="w-full h-full object-cover rounded-3xl"
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            transition={{ duration: 0.5 }}
+                          />
+                          {/* Image indicators */}
+                          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            {images.map((_, index) => (
+                              <div
+                                key={index}
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                  index === currentImageIndex 
+                                    ? 'bg-primary scale-125' 
+                                    : 'bg-gray-300 hover:bg-gray-400'
+                                }`}
+                                onClick={() => setCurrentImageIndex(index)}
+                                style={{ cursor: 'pointer' }}
+                              />
+                            ))}
+                          </div>
+                        </>
+                      );
+                    }
                     return (
-                      <>
-                        <motion.img 
-                          key={currentImageIndex}
-                          src={images[currentImageIndex]} 
-                          alt={`${product.title} - Image ${currentImageIndex + 1}`}
-                           className="w-full h-full object-contain rounded-lg"
-                          initial={{ opacity: 0, scale: 0.9 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0, scale: 0.9 }}
-                          transition={{ duration: 0.5 }}
-                        />
-                        {/* Image indicators */}
-                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                          {images.map((_, index) => (
-                            <div
-                              key={index}
-                              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                                index === currentImageIndex 
-                                  ? 'bg-primary scale-125' 
-                                  : 'bg-gray-300 hover:bg-gray-400'
-                              }`}
-                              onClick={() => setCurrentImageIndex(index)}
-                              style={{ cursor: 'pointer' }}
-                            />
-                          ))}
-                        </div>
-                      </>
+                      <img 
+                        src={product.image} 
+                        alt={product.title}
+                        className="w-full h-full object-cover rounded-3xl"
+                      />
                     );
-                  }
-                  return (
-                    <img 
-                      src={product.image} 
-                      alt={product.title}
-                      className="w-full h-full object-contain rounded-lg"
-                    />
-                  );
-                })()}
-              </div>
+                  })()}
+                </CardContent>
+              </Card>
             </motion.div>
           </div>
         </div>
