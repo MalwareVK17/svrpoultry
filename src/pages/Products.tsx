@@ -251,27 +251,21 @@ const Products = () => {
                   ease: "linear"
                 }}
               >
-                {[...partners, ...partners].map((partner, index) => (
-                  <motion.div
-                    key={`${partner.name}-${index}`}
-                    whileHover={{ y: -15, scale: 1.05 }}
-                    className="group flex-shrink-0 w-60"
-                  >
-                    <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
-                      <CardContent className="p-6 text-center">
-                        <div className="w-24 h-24 mx-auto mb-4 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
-                          <img 
-                            src={partner.image} 
-                            alt={partner.name}
-                            className="w-full h-full object-contain bg-white p-3"
-                          />
-                        </div>
-                        <h3 className="font-semibold text-gray-900 text-lg leading-tight">{partner.name}</h3>
-                        <div className="mt-4 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
+              {[...partners, ...partners].map((partner, index) => (
+                <motion.div
+                  key={`${partner.name}-${index}`}
+                  whileHover={{ y: -10, scale: 1.1 }}
+                  className="group flex-shrink-0 w-32 h-20"
+                >
+                  <div className="h-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                    <img 
+                      src={partner.image} 
+                      alt={partner.name}
+                      className="w-full h-full object-contain bg-white"
+                    />
+                  </div>
+                </motion.div>
+              ))}
               </motion.div>
             </div>
           </div>

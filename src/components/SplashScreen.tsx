@@ -33,10 +33,12 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
-            <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">S</span>
-            </div>
+          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl p-2">
+            <img 
+              src="/lovable-uploads/14c420aa-68fa-4a3b-8536-49a777adb9cb.png" 
+              alt="SVR Poultry Equipments Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <motion.h1
             initial={{ y: 20, opacity: 0 }}

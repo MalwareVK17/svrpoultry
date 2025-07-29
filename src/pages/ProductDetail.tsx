@@ -35,6 +35,16 @@ const ProductDetail = () => {
       '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png',
       '/lovable-uploads/a9bfc5e5-a28d-4c66-b56e-3fa04b8dfb50.png',
       '/lovable-uploads/201fd9a0-96d4-4739-8e9b-0258a6ce4dc8.png'
+    ],
+    '6': [
+      '/lovable-uploads/71326db0-42f7-42d8-9c50-165c3f17b739.png',
+      '/lovable-uploads/25a37988-34e6-44c5-9198-3c3926fe49b0.png',
+      'https://pradosilos.com/wp-content/uploads/2021/06/fondo-conico-silo.jpg'
+    ],
+    '7': [
+      '/lovable-uploads/77413970-4bb0-40b6-943d-ec5d851a92aa.png',
+      '/lovable-uploads/e1fab63a-52b7-4282-86b5-75c0b4a79b15.png',
+      'https://www.barbedwire.net/images/welded-mesh-panel.jpg'
     ]
   };
 
@@ -442,7 +452,7 @@ const ProductDetail = () => {
                           key={currentImageIndex}
                           src={images[currentImageIndex]} 
                           alt={`${product.title} - Image ${currentImageIndex + 1}`}
-                          className="w-full h-full object-contain rounded-2xl"
+                           className="w-full h-full object-contain rounded-lg"
                           initial={{ opacity: 0, scale: 0.9 }}
                           animate={{ opacity: 1, scale: 1 }}
                           exit={{ opacity: 0, scale: 0.9 }}
@@ -470,7 +480,7 @@ const ProductDetail = () => {
                     <img 
                       src={product.image} 
                       alt={product.title}
-                      className="w-full h-full object-contain rounded-2xl"
+                      className="w-full h-full object-contain rounded-lg"
                     />
                   );
                 })()}

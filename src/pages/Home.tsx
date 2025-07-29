@@ -23,22 +23,25 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="/lovable-uploads/c0e0a7d9-ede8-493b-af47-80c74c7c7e91.png" 
-            alt="SVR Poultry Equipments" 
+          <video 
+            autoPlay
+            muted
+            loop
             className="w-full h-full object-cover"
-          />
+          >
+            <source src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/hero-video.mp4" type="video/mp4" />
+          </video>
           <div className="absolute inset-0 bg-black/40"></div>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative z-10 text-white px-4 max-w-7xl mx-auto"
+          className="relative z-10 text-white px-8 w-full"
         >
-          <div className="text-left max-w-3xl ml-0">
+          <div className="text-left max-w-4xl">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -114,35 +117,49 @@ const Home = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {[
-              '/lovable-uploads/bd95c31d-f9d7-4ca2-987b-4c01788212e5.png',
-              '/lovable-uploads/b407ed67-3e11-4444-8ef1-7bb807ada6a3.png',
-              '/lovable-uploads/eb1143e6-0bfe-4295-8afc-a56d17eeade9.png'
-            ].map((image, index) => (
+              {
+                year: "1980s",
+                title: "Humble Beginnings",
+                description: "Started as a small family business with a vision to revolutionize poultry equipment manufacturing in India."
+              },
+              {
+                year: "2000s", 
+                title: "Major Expansion",
+                description: "Established our state-of-the-art manufacturing facility in Hyderabad, marking a significant milestone in our growth."
+              },
+              {
+                year: "2020s",
+                title: "Global Presence",
+                description: "Achieved capacity of 200 tons per day for automated feed milling plants and expanded exports to Middle Eastern countries."
+              }
+            ].map((milestone, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 transition={{ 
                   duration: 0.8, 
-                  delay: index * 0.5,
+                  delay: index * 0.3,
                   ease: "easeOut"
                 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -10 }}
+                whileHover={{ scale: 1.05, y: -10 }}
                 className="group"
               >
-                <Card className="bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-0 rounded-2xl overflow-hidden">
-                  <CardContent className="p-0">
-                    <div className="relative overflow-hidden">
-                      <img 
-                        src={image} 
-                        alt={`SVR Evolution Timeline ${index + 1}`}
-                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105 rounded-2xl"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <Card className="bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-0 rounded-2xl overflow-hidden h-full">
+                  <CardContent className="p-8 text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-white font-bold text-xl">{milestone.year.slice(0, 2)}</span>
                     </div>
+                    <div className="mb-4">
+                      <span className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                        {milestone.year}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">{milestone.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{milestone.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -262,22 +279,16 @@ const Home = () => {
                 {[...partners, ...partners].map((partner, index) => (
                   <motion.div
                     key={`${partner.name}-${index}`}
-                    whileHover={{ y: -15, scale: 1.05 }}
-                    className="group flex-shrink-0 w-60"
+                    whileHover={{ y: -10, scale: 1.1 }}
+                    className="group flex-shrink-0 w-32 h-20"
                   >
-                    <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
-                      <CardContent className="p-6 text-center">
-                        <div className="w-24 h-24 mx-auto mb-4 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
-                          <img 
-                            src={partner.image} 
-                            alt={partner.name}
-                            className="w-full h-full object-contain bg-white p-3"
-                          />
-                        </div>
-                        <h3 className="font-semibold text-gray-900 text-lg leading-tight">{partner.name}</h3>
-                        <div className="mt-4 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      </CardContent>
-                    </Card>
+                    <div className="h-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                      <img 
+                        src={partner.image} 
+                        alt={partner.name}
+                        className="w-full h-full object-contain bg-white"
+                      />
+                    </div>
                   </motion.div>
                 ))}
               </motion.div>

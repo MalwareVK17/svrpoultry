@@ -41,7 +41,7 @@ const AdminLogin = () => {
         description: "Welcome to the admin dashboard",
       });
       
-      navigate('/admin/dashboard');
+      navigate('/svr-admin/dashboard');
     } else {
       toast({
         title: "Invalid credentials",
