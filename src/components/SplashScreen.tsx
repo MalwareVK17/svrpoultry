@@ -25,7 +25,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-blue-600 via-blue-500 to-cyan-400 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-gradient-to-br from-green-700 via-green-600 to-green-500 flex items-center justify-center z-50">
       <div className="text-center">
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
@@ -34,7 +34,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           className="mb-8"
         >
           <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
-            <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
               <span className="text-white font-bold text-xl">S</span>
             </div>
           </div>
@@ -50,7 +50,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.6 }}
-            className="text-blue-100 text-lg"
+            className="text-green-100 text-lg"
           >
             Leading provider of innovative poultry equipment solutions
           </motion.p>

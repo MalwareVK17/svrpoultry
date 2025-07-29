@@ -243,10 +243,10 @@ const Products = () => {
               <motion.div
                 className="flex gap-6"
                 animate={{
-                  x: [0, -1800, 0]
+                  x: [0, -1500]
                 }}
                 transition={{
-                  duration: 15,
+                  duration: 20,
                   repeat: Infinity,
                   ease: "linear"
                 }}
@@ -255,18 +255,18 @@ const Products = () => {
                   <motion.div
                     key={`${partner.name}-${index}`}
                     whileHover={{ y: -15, scale: 1.05 }}
-                    className="group flex-shrink-0 w-80"
+                    className="group flex-shrink-0 w-60"
                   >
                     <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
-                      <CardContent className="p-8 text-center">
-                        <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                      <CardContent className="p-6 text-center">
+                        <div className="w-24 h-24 mx-auto mb-4 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
                           <img 
                             src={partner.image} 
                             alt={partner.name}
                             className="w-full h-full object-contain bg-white p-3"
                           />
                         </div>
-                        <h3 className="font-semibold text-gray-900 text-xl leading-tight">{partner.name}</h3>
+                        <h3 className="font-semibold text-gray-900 text-lg leading-tight">{partner.name}</h3>
                         <div className="mt-4 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </CardContent>
                     </Card>

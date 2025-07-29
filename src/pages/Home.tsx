@@ -38,7 +38,7 @@ const Home = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="relative z-10 text-white px-4 max-w-7xl mx-auto"
         >
-          <div className="text-left max-w-3xl">
+          <div className="text-left max-w-3xl ml-0">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -98,8 +98,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Our Equipment Section */}
-      <section className="py-24 bg-white">
+      {/* Our Evolution Timeline Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -108,66 +108,41 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Premium Equipment</h2>
+            <h2 className="text-5xl font-bold text-gray-900 mb-6">Our Evolution Timeline</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              State-of-the-art machinery and fabrication solutions engineered for excellence and precision
+              Witness our journey of growth and innovation in the poultry industry over the decades
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
             {[
-              {
-                title: "Laser Machine",
-                description: "High-precision fiber laser cutting machine with advanced control systems for superior cutting quality and efficiency.",
-                image: "https://sc04.alicdn.com/kf/H25cdc5609cc74becad785a4d8445f6deC.jpg"
-              },
-              {
-                title: "Bending Machine",
-                description: "Professional hydraulic press brake with precision tooling for accurate bending and forming operations.",
-                image: "https://www.hindustanhydraulics.com/images/hindustan-hydraulics_india_cnc-hydraulic-press-brake_falcon-griffon_series.jpg"
-              },
-              {
-                title: "CNC Lathe Machine",
-                description: "Computer-controlled lathe machine delivering exceptional precision in turning and machining operations.",
-                image: "https://www.focus-cnc.com/web/image/product.template/20/image_1024?unique=d4b959d"
-              },
-              {
-                title: "Laser Machine HSG",
-                description: "Advanced laser cutting system with high-speed processing capabilities for industrial applications.",
-                image: "https://cdn.prod.website-files.com/5fcbb3ec902179357be44b2d/660506e77e2dde4390212180_202306-G4020V%20V1.png"
-              },
-              {
-                title: "Bending Machine AccurPress",
-                description: "Heavy-duty press brake machine designed for high-volume production with consistent accuracy.",
-                image: "https://northsouthmachinery.com/wp-content/uploads/2019/01/ACCEL-U.jpg"
-              },
-              {
-                title: "Automatic Weldmesh Machine",
-                description: "Fully automated welding system for producing high-quality mesh products with exceptional consistency.",
-                image: "https://5.imimg.com/data5/SELLER/Default/2023/11/358449488/TV/NG/AJ/6690679/wire-mesh-welding-machine-500x500.jpg"
-              }
-            ].map((equipment, index) => (
+              '/lovable-uploads/bd95c31d-f9d7-4ca2-987b-4c01788212e5.png',
+              '/lovable-uploads/b407ed67-3e11-4444-8ef1-7bb807ada6a3.png',
+              '/lovable-uploads/eb1143e6-0bfe-4295-8afc-a56d17eeade9.png'
+            ].map((image, index) => (
               <motion.div
-                key={equipment.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                key={index}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ 
+                  duration: 0.8, 
+                  delay: index * 0.5,
+                  ease: "easeOut"
+                }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
+                whileHover={{ scale: 1.02, y: -10 }}
                 className="group"
               >
-                <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
-                  <div className="aspect-video overflow-hidden rounded-t-3xl">
-                    <img 
-                      src={equipment.image} 
-                      alt={equipment.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{equipment.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{equipment.description}</p>
-                    <div className="mt-6 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Card className="bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border-0 rounded-2xl overflow-hidden">
+                  <CardContent className="p-0">
+                    <div className="relative overflow-hidden">
+                      <img 
+                        src={image} 
+                        alt={`SVR Evolution Timeline ${index + 1}`}
+                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105 rounded-2xl"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -247,45 +222,6 @@ const Home = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
                   
-                  {/* Animated location markers */}
-                  <motion.div
-                    className="absolute top-1/3 left-2/3 w-4 h-4 bg-red-500 rounded-full shadow-lg"
-                    animate={{
-                      scale: [1, 1.5, 1],
-                      opacity: [0.7, 1, 0.7]
-                    }}
-                    transition={{
-                      duration: 2,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  <motion.div
-                    className="absolute top-1/2 left-1/4 w-3 h-3 bg-blue-500 rounded-full shadow-lg"
-                    animate={{
-                      scale: [1, 1.3, 1],
-                      opacity: [0.6, 1, 0.6]
-                    }}
-                    transition={{
-                      duration: 2.5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 0.5
-                    }}
-                  />
-                  <motion.div
-                    className="absolute top-2/5 right-1/3 w-3 h-3 bg-orange-500 rounded-full shadow-lg"
-                    animate={{
-                      scale: [1, 1.4, 1],
-                      opacity: [0.8, 1, 0.8]
-                    }}
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                      delay: 1
-                    }}
-                  />
                 </div>
               </motion.div>
             </div>
@@ -315,10 +251,10 @@ const Home = () => {
               <motion.div
                 className="flex gap-6"
                 animate={{
-                  x: [0, -1800, 0]
+                  x: [0, -1500]
                 }}
                 transition={{
-                  duration: 15,
+                  duration: 20,
                   repeat: Infinity,
                   ease: "linear"
                 }}
@@ -327,18 +263,18 @@ const Home = () => {
                   <motion.div
                     key={`${partner.name}-${index}`}
                     whileHover={{ y: -15, scale: 1.05 }}
-                    className="group flex-shrink-0 w-80"
+                    className="group flex-shrink-0 w-60"
                   >
                     <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
-                      <CardContent className="p-8 text-center">
-                        <div className="w-32 h-32 mx-auto mb-6 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
+                      <CardContent className="p-6 text-center">
+                        <div className="w-24 h-24 mx-auto mb-4 rounded-2xl overflow-hidden shadow-md group-hover:shadow-lg transition-all duration-300">
                           <img 
                             src={partner.image} 
                             alt={partner.name}
                             className="w-full h-full object-contain bg-white p-3"
                           />
                         </div>
-                        <h3 className="font-semibold text-gray-900 text-xl leading-tight">{partner.name}</h3>
+                        <h3 className="font-semibold text-gray-900 text-lg leading-tight">{partner.name}</h3>
                         <div className="mt-4 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full mx-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </CardContent>
                     </Card>
