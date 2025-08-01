@@ -136,7 +136,7 @@ const Contact = () => {
               controls
               poster="https://ik.imagekit.io/xu7akp4g0/WhatsApp%20Image%202025-07-28%20at%2011.45.52_8638ced5.jpg?updatedAt=1753683916589"
             >
-              <source src="YOUR_VIDEO_URL_HERE" type="video/mp4" />
+              <source src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos//_project_title_svr_202508011557_iro4k.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </motion.div>
