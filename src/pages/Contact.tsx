@@ -121,8 +121,8 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* SVR Banner */}
-      <section className="py-16">
+      {/* SVR Video Banner */}
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -131,17 +131,20 @@ const Contact = () => {
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg overflow-hidden"
           >
-            <img 
-              src="https://ik.imagekit.io/xu7akp4g0/WhatsApp%20Image%202025-07-28%20at%2011.45.52_8638ced5.jpg?updatedAt=1753683916589" 
-              alt="SVR Smart Solutions for Modern Poultry Farming"
+            <video 
               className="w-full h-auto object-cover rounded-2xl"
-            />
+              controls
+              poster="https://ik.imagekit.io/xu7akp4g0/WhatsApp%20Image%202025-07-28%20at%2011.45.52_8638ced5.jpg?updatedAt=1753683916589"
+            >
+              <source src="YOUR_VIDEO_URL_HERE" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </motion.div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Information */}
@@ -281,7 +284,7 @@ const Contact = () => {
       </section>
 
       {/* Locations Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
