@@ -132,8 +132,11 @@ const Contact = () => {
             className="bg-white rounded-2xl shadow-lg overflow-hidden"
           >
             <video 
-              className="w-full h-auto object-cover rounded-2xl"
-              controls
+              className="w-full h-64 md:h-80 object-cover object-center rounded-2xl"
+              autoPlay
+              loop
+              muted
+              playsInline
               poster="https://ik.imagekit.io/xu7akp4g0/WhatsApp%20Image%202025-07-28%20at%2011.45.52_8638ced5.jpg?updatedAt=1753683916589"
             >
               <source src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos//_project_title_svr_202508011557_iro4k.mp4" type="video/mp4" />
