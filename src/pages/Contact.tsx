@@ -335,7 +335,7 @@ const Contact = () => {
                 </div>
                 <Button 
                   onClick={() => window.open('https://www.google.com/maps/place/Svr+Poultry+Equipments/@17.2808662,78.5893317,3a,75y/data=!3m8!1e2!3m6!1sAF1QipNGDpEJjnNNrYqVRqAUOSWoocUq5uHqSYYzGP-E!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fp%2FAF1QipNGDpEJjnNNrYqVRqAUOSWoocUq5uHqSYYzGP-E%3Dw86-h114-k-no!7i3456!8i4608!4m7!3m6!1s0x3bcba112c855de81:0x482d54417d723ba0!8m2!3d17.2809183!4d78.5893481!10e5!16s%2Fg%2F11gbfk433d?hl=en-US&entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')}
-                  className="w-full bg-green-800 hover:bg-green-900 text-white rounded-lg"
+                  className="w-full rounded-lg"
                 >
                   View on Map
                 </Button>
@@ -377,7 +377,7 @@ const Contact = () => {
                 </div>
                 <Button 
                   onClick={() => window.open('https://www.google.com/maps/place/SVR+Poultry+Equipments+(unit-2)/@17.1633926,78.4618567,16.5z/data=!4m6!3m5!1s0x3bcbbb003c02e303:0xa1faa9ba44030e3f!8m2!3d17.162705!4d78.4626264!16s%2Fg%2F11ww938fy2?entry=ttu&g_ep=EgoyMDI1MDcxNi4wIKXMDSoASAFQAw%3D%3D', '_blank')}
-                  className="w-full bg-green-800 hover:bg-green-900 text-white rounded-lg"
+                  className="w-full rounded-lg"
                 >
                   View on Map
                 </Button>
@@ -418,7 +418,7 @@ const Contact = () => {
                 </div>
                 <Button 
                   onClick={() => setShowConstructionPopup(true)}
-                  className="w-full bg-green-800 hover:bg-green-900 text-white rounded-lg"
+                  className="w-full rounded-lg"
                 >
                   View on Map
                 </Button>
