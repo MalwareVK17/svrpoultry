@@ -215,7 +215,7 @@ const About = () => {
               {
                 title: "Laser Machine",
                 description: "High-precision fiber laser cutting machine with advanced control systems for superior cutting quality and efficiency.",
-                image: "https://sc04.alicdn.com/kf/H25cdc5609cc74becad785a4d8445f6deC.jpg"
+                image: "https://iprorwxhlirrlj5o.leadongcdn.com/cloud/opBpkKijRlkSmlllqollj/3015G-youshi1.png"
               },
               {
                 title: "Bending Machine",
@@ -225,7 +225,7 @@ const About = () => {
               {
                 title: "CNC Lathe Machine",
                 description: "Computer-controlled lathe machine delivering exceptional precision in turning and machining operations.",
-                image: "https://www.focus-cnc.com/web/image/product.template/20/image_1024?unique=d4b959d"
+                image: "https://jyoti.co.in/wp-content/uploads/2021/11/dx-200-3.webp"
               },
               {
                 title: "Laser Machine HSG",
