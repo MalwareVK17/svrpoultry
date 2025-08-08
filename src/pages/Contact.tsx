@@ -78,12 +78,14 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['Telangana 501510', 'Kammaguda, Telangana 123456', 'India']
+      details: ['Telangana 501510', 'Turkayamjal Municipality
+
+Hyderabad', 'India']
     },
     {
       icon: Phone,
       title: 'Phone',
-      details: ['+91 98493 97021']
+      details: ['+91 88866 45122']
     },
     {
       icon: Mail,
@@ -93,7 +95,7 @@ const Contact = () => {
     {
       icon: Clock,
       title: 'Business Hours',
-      details: ['Mon - Fri: 9:00 AM - 6:00 PM','Sat: 9:00 AM - 4:00 PM' ]
+      details: ['Mon - Sat: 9:00 AM - 6:00 PM']
     }
   ];
 
