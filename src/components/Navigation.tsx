@@ -28,7 +28,7 @@ const Navigation = () => {
               <img 
                 src="/lovable-uploads/479897d6-c94d-4fc4-8944-19080977243d.png" 
                 alt="SVR Poultry Equipments header logo"
-                className="h-10 w-auto"
+                className="h-15 w-auto"
               />
             </Link>
           </div>
