@@ -10,8 +10,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">S</span>
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+                <img src="/lovable-uploads/8ab94526-304b-43f1-8252-c09362b75e5d.png" alt="SVR Logo" className="w-full h-full object-contain" />
               </div>
               <span className="font-bold text-xl">SVR Poultry Equipments</span>
             </div>

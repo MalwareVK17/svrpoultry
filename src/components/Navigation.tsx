@@ -26,7 +26,7 @@ const Navigation = () => {
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
               <img 
-                src="/lovable-uploads/14c420aa-68fa-4a3b-8536-49a777adb9cb.png" 
+                src="/lovable-uploads/8ab94526-304b-43f1-8252-c09362b75e5d.png" 
                 alt="SVR Poultry Equipments" 
                 className="h-12 w-auto"
               />

@@ -88,7 +88,7 @@ const About = () => {
             className="text-center mb-20"
           >
             <div className="max-w-5xl mx-auto text-left">
-              <p className="text-lg text-gray-700 leading-relaxed text-left">
+              <p className="text-lg text-gray-700 leading-relaxed text-justify">
                 Sri Venkata Ramana Engineering Works was established in the early '80s. In the early 2000's SVR Poultry Equipment Manufacturing was set up separately in Hyderabad. We have a fully pledged manufacturing facility and a modern CAD-equipped design office, a well-equipped machine and fabrication shop, and a complete team of engineers, technocrats, and professionals, capable of designing, manufacturing, and fully automated feed milling plants, up to 200 tons per day capacity. we have employees of about 150 members, directly and indirectly. Overall, we have 40+ years of experience in the field of manufacturing different machines utilized in the poultry industry. We have an extensive product range with technology in line with the latest. The product range includes R&D products, apart from a wide capacity spectrum feed, Auto Feeding Machines, Auger systems, Feed storage bins, Feed transportation, silos, Auto batching, and Feed plants. We have clients all over India and also, we export our equipment to other foreign countries like Angola, Ghana, etc.
               </p>
             </div>
@@ -98,7 +98,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-primary to-primary/80 rounded-3xl p-16 text-white text-center mb-20 relative overflow-hidden"
+            className="bg-gradient-to-r from-primary to-primary/80 rounded-3xl p-12 md:p-16 text-white text-center mb-16 relative overflow-hidden shadow-2xl ring-1 ring-primary/30"
           >
             <h2 className="text-4xl font-bold mb-6">Transforming Poultry Farming</h2>
             <p className="text-xl max-w-3xl mx-auto leading-relaxed">
@@ -156,7 +156,7 @@ const About = () => {
           </div>
 
           {/* Company Info Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
                 icon: Building,
@@ -184,8 +184,8 @@ const About = () => {
                 className="group"
               >
                 <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <CardContent className="p-8 text-left">
+                    <div className="w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-3xl mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <item.icon className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
@@ -281,7 +281,7 @@ const About = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Core Values</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -293,8 +293,8 @@ const About = () => {
                 className="group"
               >
                 <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl">
-                  <CardContent className="p-8 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mx-auto mb-6 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
+                  <CardContent className="p-8 text-left">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-2xl mb-6 flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
                       <value.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">{value.title}</h3>

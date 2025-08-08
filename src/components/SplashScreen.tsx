@@ -25,7 +25,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 bg-gradient-to-br from-green-700 via-green-600 to-green-500 flex items-center justify-center z-50">
+    <div className="fixed inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80 flex items-center justify-center z-50">
       <div className="text-center">
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
@@ -35,7 +35,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         >
           <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl p-2">
             <img 
-              src="/lovable-uploads/14c420aa-68fa-4a3b-8536-49a777adb9cb.png" 
+              src="/lovable-uploads/8ab94526-304b-43f1-8252-c09362b75e5d.png" 
               alt="SVR Poultry Equipments Logo"
               className="w-full h-full object-contain"
             />
