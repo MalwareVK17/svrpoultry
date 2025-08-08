@@ -132,7 +132,7 @@ const Contact = () => {
             className="bg-white rounded-2xl shadow-lg overflow-hidden"
           >
             <video 
-              className="w-full h-64 md:h-80 object-cover object-center rounded-2xl"
+              className="w-full h-72 md:h-96 object-cover object-center rounded-2xl"
               autoPlay
               loop
               muted
