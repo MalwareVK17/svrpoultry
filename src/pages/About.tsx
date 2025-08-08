@@ -102,7 +102,7 @@ const About = () => {
           >
             <h2 className="text-4xl font-bold mb-6">Transforming Poultry Farming</h2>
             <p className="text-xl max-w-3xl mx-auto leading-relaxed">
-              With over a 40+ years of experience, we've helped thousands of farmers 
+              With over a  40+ years of experience, we've helped thousands of farmers 
               achieve success through innovative equipment solutions
             </p>
             
