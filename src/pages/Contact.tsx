@@ -78,9 +78,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: 'Address',
-      details: ['Telangana 501510', 'Turkayamjal Municipality
-
-Hyderabad', 'India']
+      details: ['Telangana 501510', 'Turkayamjal Municipality,Hyderabad', 'India']
     },
     {
       icon: Phone,
