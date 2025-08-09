@@ -318,7 +318,7 @@ const Home = () => {
                   title: "MSME Recognition",
                   description: "Recognized as a Micro Enterprise under MSME classification.",
                   gradient: "from-cyan-500 to-blue-500",
-                  image: "/lovable-uploads/71326db0-42f7-42d8-9c50-165c3f17b739.png"
+                  image: "https://upload.wikimedia.org/wikipedia/commons/e/ef/MSME_logo_%28colour%29.svg"
                 },
                 {
                   year: "2024",
