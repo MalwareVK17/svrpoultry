@@ -4,7 +4,6 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import JourneyCard from '@/components/JourneyCard';
 
 const Home = () => {
   const partners = [
@@ -144,22 +143,19 @@ const Home = () => {
                   year: "1984",
                   title: "Engineering Foundations",
                   description: "Established as Sri Venkata Ramana Engineering Works, focusing on general engineering solutions.",
-                  gradient: "from-blue-500 to-teal-500",
-                  image: "/lovable-uploads/c30b9428-9ea1-4621-b144-d4aec32f6f05.png"
+                  gradient: "from-blue-500 to-teal-500"
                 },
                 {
                   year: "1990",
                   title: "Poultry Entry",
                   description: "Entered the poultry equipment industry, manufacturing small-scale feeders and drinkers.",
-                  gradient: "from-teal-500 to-green-500",
-                  image: "/lovable-uploads/5741bd58-a88f-4110-9190-69ddea6d2670.png"
+                  gradient: "from-teal-500 to-green-500"
                 },
                 {
                   year: "1995",
                   title: "Manufacturing Expansion",
                   description: "Expanded manufacturing capabilities to include manual and semi-automated feeding systems.",
-                  gradient: "from-green-500 to-emerald-500",
-                  image: "/lovable-uploads/5d104031-b293-4f56-a4db-550853a91376.png"
+                  gradient: "from-green-500 to-emerald-500"
                 }
               ].map((milestone, index) => (
                 <motion.div
@@ -171,13 +167,15 @@ const Home = () => {
                   whileHover={{ scale: 1.03 }}
                   className="relative transform transition-all duration-300 hover:shadow-xl"
                 >
-                  <JourneyCard
-                    year={milestone.year}
-                    title={milestone.title}
-                    description={milestone.description}
-                    image={milestone.image}
-                    gradient={milestone.gradient}
-                  />
+                  <div className="text-center">
+                     <div className={`w-20 h-24 bg-gradient-to-b ${milestone.gradient} rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg`}>
+                       <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold text-xs">{milestone.year}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone.description}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -202,22 +200,19 @@ const Home = () => {
                   year: "2000",
                   title: "SVR Transformation",
                   description: "Officially transitioned into SVR Poultry Equipment Manufacturing, specializing in poultry automation.",
-                  gradient: "from-purple-500 to-pink-500",
-                  image: "/lovable-uploads/8ab94526-304b-43f1-8252-c09362b75e5d.png"
+                  gradient: "from-purple-500 to-pink-500"
                 },
                 {
                   year: "2005",
                   title: "Full Automation",
                   description: "Launched fully automated feeding and watering systems for poultry farms.",
-                  gradient: "from-pink-500 to-rose-500",
-                  image: "/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png"
+                  gradient: "from-pink-500 to-rose-500"
                 },
                 {
                   year: "2010",
                   title: "Auger Systems",
                   description: "Developed auger-based automatic feeding systems, enhancing efficiency for poultry farmers.",
-                  gradient: "from-rose-500 to-orange-500",
-                  image: "/lovable-uploads/8bcac9fe-592a-4bc5-9982-daa9c848d1c0.png"
+                  gradient: "from-rose-500 to-orange-500"
                 }
               ].map((milestone, index) => (
                 <motion.div
@@ -229,13 +224,15 @@ const Home = () => {
                   whileHover={{ scale: 1.03 }}
                   className="relative transform transition-all duration-300 hover:shadow-xl"
                 >
-                  <JourneyCard
-                    year={milestone.year}
-                    title={milestone.title}
-                    description={milestone.description}
-                    image={milestone.image}
-                    gradient={milestone.gradient}
-                  />
+                  <div className="text-center">
+                     <div className={`w-20 h-24 bg-gradient-to-b ${milestone.gradient} rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg`}>
+                       <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                         <span className="text-white font-bold text-xs">{milestone.year}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone.description}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -260,22 +257,19 @@ const Home = () => {
                   year: "2011",
                   title: "Official Incorporation",
                   description: "SVR Poultry Equipments officially incorporated on January 24th.",
-                  gradient: "from-orange-500 to-amber-500",
-                  image: "/lovable-uploads/0998edbb-791f-48a3-b2da-2f8557834e77.png"
+                  gradient: "from-orange-500 to-amber-500"
                 },
                 {
                   year: "2016",
                   title: "National Presence",
                   description: "Achieved milestone of serving clients across India, solidifying market presence.",
-                  gradient: "from-amber-500 to-yellow-500",
-                  image: "/lovable-uploads/847e4da2-2bf0-4da2-b119-699bac1373f1.png"
+                  gradient: "from-amber-500 to-yellow-500"
                 },
                 {
                   year: "2017",
                   title: "Global Expansion",
                   description: "Began exporting equipment to international markets, including Angola and Ghana.",
-                  gradient: "from-yellow-500 to-lime-500",
-                  image: "/lovable-uploads/201fd9a0-96d4-4739-8e9b-0258a6ce4dc8.png"
+                  gradient: "from-yellow-500 to-lime-500"
                 }
               ].map((milestone, index) => (
                 <motion.div
@@ -287,13 +281,15 @@ const Home = () => {
                   whileHover={{ scale: 1.03 }}
                   className="relative transform transition-all duration-300 hover:shadow-xl"
                 >
-                  <JourneyCard
-                    year={milestone.year}
-                    title={milestone.title}
-                    description={milestone.description}
-                    image={milestone.image}
-                    gradient={milestone.gradient}
-                  />
+                  <div className="text-center">
+                     <div className={`w-20 h-24 bg-gradient-to-b ${milestone.gradient} rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg`}>
+                       <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                         <span className="text-white font-bold text-xs">{milestone.year}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone.description}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
@@ -317,22 +313,19 @@ const Home = () => {
                   year: "2021",
                   title: "MSME Recognition",
                   description: "Recognized as a Micro Enterprise under MSME classification.",
-                  gradient: "from-cyan-500 to-blue-500",
-                  image: "https://upload.wikimedia.org/wikipedia/commons/e/ef/MSME_logo_%28colour%29.svg"
+                  gradient: "from-cyan-500 to-blue-500"
                 },
                 {
                   year: "2024",
                   title: "Continued Growth",
                   description: "Further expansion into new global markets, strengthening exports and New Fabrication unit setup.",
-                  gradient: "from-blue-500 to-indigo-500",
-                  image: "/lovable-uploads/ddfd06fb-d157-42f0-86ae-f79a57a46334.png"
+                  gradient: "from-blue-500 to-indigo-500"
                 },
                 {
                   year: "2025",
                   title: "Future Innovation",
                   description: "Expected: Launch of next-generation poultry automation systems and smart farm integration.",
-                  gradient: "from-indigo-500 to-purple-500",
-                  image: "/lovable-uploads/e6c1c0a4-2f52-437f-84d7-2104e8b0cc91.png"
+                  gradient: "from-indigo-500 to-purple-500"
                 }
               ].map((milestone, index) => (
                 <motion.div
@@ -344,13 +337,15 @@ const Home = () => {
                   whileHover={{ scale: 1.03 }}
                   className="relative transform transition-all duration-300 hover:shadow-xl"
                 >
-                  <JourneyCard
-                    year={milestone.year}
-                    title={milestone.title}
-                    description={milestone.description}
-                    image={milestone.image}
-                    gradient={milestone.gradient}
-                  />
+                  <div className="text-center">
+                     <div className={`w-20 h-24 bg-gradient-to-b ${milestone.gradient} rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg`}>
+                       <div className="w-10 h-10 bg-black rounded-full flex items-center justify-center">
+                         <span className="text-white font-bold text-xs">{milestone.year}</span>
+                      </div>
+                    </div>
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{milestone.title}</h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{milestone.description}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
