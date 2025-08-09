@@ -107,22 +107,29 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+            viewport={{ once: false, amount: 0.2 }}
             className="text-center mb-10"
           >
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">The SVR Journey of Innovation</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Over Four Decades of Engineering Excellence in Poultry Automation
             </p>
+            <motion.div
+              className="mx-auto mt-6 h-1 w-24 bg-gradient-to-r from-primary to-primary/50 rounded-full origin-left"
+              initial={{ scaleX: 0, opacity: 0.5 }}
+              whileInView={{ scaleX: 1, opacity: 1 }}
+              transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
+              viewport={{ once: false, amount: 0.2 }}
+            />
           </motion.div>
 
           {/* Era 1: Foundations */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 1, 0.5, 1] }}
+            viewport={{ once: false, amount: 0.2 }}
             className="mb-8"
           >
             <div className="text-center mb-8">
@@ -153,12 +160,12 @@ const Home = () => {
               ].map((milestone, index) => (
                 <motion.div
                   key={milestone.year}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
-                  className="relative"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40, scale: 0.8 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.15, ease: [0.25, 1, 0.5, 1] }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  whileHover={{ scale: 1.03 }}
+                  className="relative transform transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="text-center">
                      <div className={`w-20 h-24 bg-gradient-to-b ${milestone.gradient} rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg`}>
@@ -178,8 +185,8 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
+            viewport={{ once: false, amount: 0.2 }}
             className="mb-8"
           >
             <div className="text-center mb-8">
@@ -210,12 +217,12 @@ const Home = () => {
               ].map((milestone, index) => (
                 <motion.div
                   key={milestone.year}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
-                  className="relative"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40, scale: 0.8 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.15, ease: [0.25, 1, 0.5, 1] }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  whileHover={{ scale: 1.03 }}
+                  className="relative transform transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="text-center">
                      <div className={`w-20 h-24 bg-gradient-to-b ${milestone.gradient} rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg`}>
@@ -235,8 +242,8 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 1, 0.5, 1] }}
+            viewport={{ once: false, amount: 0.2 }}
             className="mb-8"
           >
             <div className="text-center mb-8">
@@ -267,12 +274,12 @@ const Home = () => {
               ].map((milestone, index) => (
                 <motion.div
                   key={milestone.year}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
-                  className="relative"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40, scale: 0.8 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.15, ease: [0.25, 1, 0.5, 1] }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  whileHover={{ scale: 1.03 }}
+                  className="relative transform transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="text-center">
                      <div className={`w-20 h-24 bg-gradient-to-b ${milestone.gradient} rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg`}>
@@ -292,8 +299,8 @@ const Home = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.8, ease: [0.25, 1, 0.5, 1] }}
+            viewport={{ once: false, amount: 0.2 }}
           >
             <div className="text-center mb-8">
               <span className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-semibold">
@@ -323,12 +330,12 @@ const Home = () => {
               ].map((milestone, index) => (
                 <motion.div
                   key={milestone.year}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -10 }}
-                  className="relative"
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40, scale: 0.8 }}
+                  whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                  transition={{ duration: 0.8, delay: index * 0.15, ease: [0.25, 1, 0.5, 1] }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  whileHover={{ scale: 1.03 }}
+                  className="relative transform transition-all duration-300 hover:shadow-xl"
                 >
                   <div className="text-center">
                      <div className={`w-20 h-24 bg-gradient-to-b ${milestone.gradient} rounded-2xl mx-auto mb-3 flex items-center justify-center shadow-lg`}>
