@@ -12,10 +12,10 @@ const TextCarousel = () => {
         <motion.div
           className="flex whitespace-nowrap"
           animate={{
-            x: [0, -1000]
+            x: [0, -2000]
           }}
           transition={{
-            duration: 25,
+            duration: 30,
             repeat: Infinity,
             ease: "linear"
           }}

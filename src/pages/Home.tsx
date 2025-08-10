@@ -106,9 +106,6 @@ const Home = () => {
       {/* Text Carousel */}
       <TextCarousel />
 
-      {/* Timeline Section */}
-      <Timeline />
-
       {/* Market Presence Section */}
       <section className="py-12 bg-gradient-to-br from-primary/5 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -186,6 +183,9 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* Timeline Section */}
+      <Timeline />
 
       {/* Enhanced Partners Section */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">

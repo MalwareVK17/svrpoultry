@@ -117,7 +117,7 @@ const Timeline = () => {
             {/* Timeline Line */}
             <motion.div 
               className="relative h-1 bg-gradient-to-r from-green-600 via-blue-500 to-purple-600 rounded-full mb-16"
-              style={{ width: `${timelineEvents.length * 120}px` }}
+              style={{ width: `${timelineEvents.length * 200}px` }}
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
               transition={{ duration: 2, ease: "easeInOut" }}
@@ -125,7 +125,7 @@ const Timeline = () => {
             />
 
             {/* Timeline Events */}
-            <div className="absolute top-0 left-8 right-8 flex justify-between" style={{ width: `${timelineEvents.length * 120}px` }}>
+            <div className="absolute top-0 left-8 right-8 flex justify-between" style={{ width: `${timelineEvents.length * 200}px` }}>
               {timelineEvents.map((event, index) => (
                 <motion.div
                   key={event.year}
@@ -168,18 +168,18 @@ const Timeline = () => {
                         transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
                         className="absolute top-16 left-1/2 transform -translate-x-1/2 z-20"
                       >
-                        <div className="bg-gradient-to-br from-green-600 to-blue-500 text-white p-6 rounded-2xl shadow-2xl max-w-xs">
+                        <div className="bg-gradient-to-br from-green-700 to-sky-400 text-white p-6 rounded-2xl shadow-2xl max-w-sm">
                           <div className="text-center">
-                            <h3 className="text-lg font-bold mb-2">{event.title}</h3>
-                            <p className="text-sm mb-3">{event.year}</p>
-                            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 mb-4">
+                            <h3 className="text-xl font-bold mb-3">{event.era}</h3>
+                            <p className="text-lg mb-4 font-semibold">{event.year}</p>
+                            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-4">
                               <p className="text-sm leading-relaxed">{event.description}</p>
                             </div>
                             <button
-                              onClick={() => setSelectedEvent(event)}
-                              className="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-full text-sm font-medium transition-all duration-200"
+                              onClick={() => setHoveredEvent(null)}
+                              className="bg-white/20 hover:bg-white/30 text-white w-8 h-8 rounded-full text-lg font-bold transition-all duration-200 flex items-center justify-center mx-auto"
                             >
-                              Click to Close
+                              ×
                             </button>
                           </div>
                         </div>
