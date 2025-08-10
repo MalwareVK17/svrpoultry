@@ -508,15 +508,19 @@ const ProductDetail = () => {
             >
               <Card className="rounded-3xl overflow-hidden shadow-2xl bg-white">
   <CardContent className="p-0">
-    <div className="aspect-video bg-gray-100 flex items-center justify-center">
+    <div className="bg-gray-100 flex items-center justify-center" style={{ height: '400px' }}>
       <video 
-        src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/SVR%20vid%20(1).mp4" // replace with your video path or URL
-        controls
+        src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/SVR%20vid%20(1).mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
         className="w-full h-full object-cover"
       />
     </div>
   </CardContent>
 </Card>
+
 
             </motion.div>
 
