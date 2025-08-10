@@ -492,6 +492,75 @@ const ProductDetail = () => {
         </div>
       </section>
 
+      {/* Video and Product Description Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Video Section */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <Card className="rounded-3xl overflow-hidden shadow-2xl bg-white">
+                <CardContent className="p-0">
+                  <div className="aspect-video bg-gray-100 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div className="w-8 h-8 border-l-4 border-primary ml-1"></div>
+                      </div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Product Demo Video</h3>
+                      <p className="text-gray-600">Coming Soon</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Product Description */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="space-y-6">
+                <Badge className="bg-primary/10 text-primary border-primary/20">
+                  Product Overview
+                </Badge>
+                <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+                  Advanced {product.title} Solutions
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  {product.description}
+                </p>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-gray-900">Key Highlights:</h3>
+                  <div className="grid grid-cols-1 gap-3">
+                    {product.features.slice(0, 4).map((feature, index) => (
+                      <div key={index} className="flex items-start space-x-3">
+                        <CheckCircle className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                        <span className="text-gray-700">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <Link to="/contact">
+                  <Button 
+                    size="lg"
+                    className="bg-primary hover:bg-primary/90 px-8 py-3 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+                  >
+                    Get Quote
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
