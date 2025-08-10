@@ -507,18 +507,17 @@ const ProductDetail = () => {
               viewport={{ once: true }}
             >
               <Card className="rounded-3xl overflow-hidden shadow-2xl bg-white">
-                <CardContent className="p-0">
-                  <div className="aspect-video bg-gray-100 flex items-center justify-center">
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <div className="w-8 h-8 border-l-4 border-primary ml-1"></div>
-                      </div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-2">Product Demo Video</h3>
-                      <p className="text-gray-600">Coming Soon</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+  <CardContent className="p-0">
+    <div className="aspect-video bg-gray-100 flex items-center justify-center">
+      <video 
+        src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/SVR%20vid%20(1).mp4" // replace with your video path or URL
+        controls
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </CardContent>
+</Card>
+
             </motion.div>
 
             {/* Product Description */}
