@@ -158,29 +158,33 @@ const Timeline = () => {
                     <span className="text-sm font-bold text-gray-800">{event.year}</span>
                   </div>
 
-                  {/* Hover Popup */}
+                   {/* Click Popup - Positioned above the dot */}
                   <AnimatePresence>
-                    {hoveredEvent === event && (
+                    {selectedEvent === event && (
                       <motion.div
                         initial={{ opacity: 0, y: 10, scale: 0.9 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.9 }}
                         transition={{ duration: 0.3, ease: [0.25, 1, 0.5, 1] }}
-                        className="absolute top-16 left-1/2 transform -translate-x-1/2 z-20"
+                        className="absolute -top-80 left-1/2 transform -translate-x-1/2 z-30"
                       >
-                        <div className="bg-gradient-to-br from-green-700 to-sky-400 text-white p-6 rounded-2xl shadow-2xl max-w-sm">
-                          <div className="text-center">
-                            <h3 className="text-xl font-bold mb-3">{event.era}</h3>
-                            <p className="text-lg mb-4 font-semibold">{event.year}</p>
-                            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-4">
+                        <div className="bg-gradient-to-br from-green-700 to-sky-400 text-white p-6 rounded-2xl shadow-2xl w-64 h-64 flex flex-col">
+                          <div className="relative flex-1 text-center">
+                            <button
+                              onClick={() => setSelectedEvent(null)}
+                              className="absolute -top-2 -right-2 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200"
+                            >
+                              <X className="w-4 h-4" />
+                            </button>
+                            
+                            <span className="inline-block bg-white/20 text-sm font-medium px-3 py-1 rounded-full mb-3">
+                              {event.era}
+                            </span>
+                            <h3 className="text-xl font-bold mb-2">{event.title}</h3>
+                            <p className="text-lg mb-3 font-semibold">{event.year}</p>
+                            <div className="bg-white/20 backdrop-blur-sm rounded-xl p-3 flex-1">
                               <p className="text-sm leading-relaxed">{event.description}</p>
                             </div>
-                            <button
-                              onClick={() => setHoveredEvent(null)}
-                              className="bg-white/20 hover:bg-white/30 text-white w-8 h-8 rounded-full text-lg font-bold transition-all duration-200 flex items-center justify-center mx-auto"
-                            >
-                              ×
-                            </button>
                           </div>
                         </div>
                       </motion.div>
@@ -192,40 +196,6 @@ const Timeline = () => {
           </div>
         </div>
 
-          {/* Inline Expanded Card */}
-          <AnimatePresence>
-            {selectedEvent && (
-              <motion.div
-                initial={{ opacity: 0, height: 0, y: -20 }}
-                animate={{ opacity: 1, height: "auto", y: 0 }}
-                exit={{ opacity: 0, height: 0, y: -20 }}
-                transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                className="mt-8 overflow-hidden"
-              >
-                <div className="bg-gradient-to-br from-green-600 to-blue-500 text-white p-8 rounded-3xl shadow-2xl max-w-2xl mx-auto">
-                  <div className="relative">
-                    <button
-                      onClick={() => setSelectedEvent(null)}
-                      className="absolute -top-2 -right-2 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                    
-                    <div className="text-center">
-                      <span className="inline-block bg-white/20 text-sm font-medium px-4 py-2 rounded-full mb-4">
-                        {selectedEvent.era}
-                      </span>
-                      <h2 className="text-3xl font-bold mb-4">{selectedEvent.title}</h2>
-                      <p className="text-xl mb-6">{selectedEvent.year}</p>
-                      <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
-                        <p className="text-lg leading-relaxed">{selectedEvent.description}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
       </div>
     </div>
   );

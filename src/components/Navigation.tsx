@@ -24,12 +24,13 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-0">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
+            <Link to="/" className="flex-shrink-0 flex items-center space-x-3">
               <img 
-                src="/lovable-uploads/479897d6-c94d-4fc4-8944-19080977243d.png" 
+                src="/lovable-uploads/253837d0-59ba-46d9-8132-54cd4616acf9.png" 
                 alt="SVR Poultry Equipments header logo"
                 className="h-10 w-auto"
               />
+              <span className="text-lg font-semibold text-gray-800">POULTRY EQUIPMENTS</span>
             </Link>
           </div>
 
