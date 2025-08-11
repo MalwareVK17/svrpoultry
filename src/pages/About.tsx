@@ -77,7 +77,7 @@ const About = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Company Description */}
           <motion.div
@@ -85,7 +85,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-20"
+            className="text-center mb-12"
           >
             <div className="max-w-5xl mx-auto text-left">
               <p className="text-lg text-gray-700 leading-relaxed text-justify">
@@ -98,7 +98,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-primary to-primary/80 rounded-3xl p-12 md:p-16 text-white text-center mb-16 relative overflow-hidden shadow-2xl ring-1 ring-primary/30"
+            className="bg-gradient-to-r from-primary to-primary/80 rounded-3xl p-12 md:p-16 text-white text-center mb-12 relative overflow-hidden shadow-2xl ring-1 ring-primary/30"
           >
             <h2 className="text-4xl font-bold mb-6">Transforming Poultry Farming</h2>
             <p className="text-xl max-w-3xl mx-auto leading-relaxed">
@@ -131,7 +131,7 @@ const About = () => {
           </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -156,7 +156,7 @@ const About = () => {
           </div>
 
           {/* Company Info Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             {[
               {
                 icon: Building,
@@ -202,7 +202,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Premium Equipment</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
@@ -210,7 +210,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
             {[
               {
                 title: "Laser Machine",
@@ -276,12 +276,12 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Core Values</h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {values.map((value, index) => (
               <motion.div
                 key={value.title}
@@ -311,7 +311,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Meet Our Visionary Owners</h2>
           </motion.div>

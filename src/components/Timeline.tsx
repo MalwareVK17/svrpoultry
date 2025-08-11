@@ -112,7 +112,7 @@ const Timeline = () => {
         </motion.div>
 
         {/* Horizontal Timeline */}
-        <div className="relative overflow-x-auto pb-8">
+        <div className="relative overflow-x-auto pb-8 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
           <div className="min-w-max px-8">
             {/* Timeline Line */}
             <motion.div 
@@ -192,47 +192,40 @@ const Timeline = () => {
           </div>
         </div>
 
-        {/* Expanded Modal */}
-        <AnimatePresence>
-          {selectedEvent && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedEvent(null)}
-            >
+          {/* Inline Expanded Card */}
+          <AnimatePresence>
+            {selectedEvent && (
               <motion.div
-                initial={{ opacity: 0, scale: 0.8, y: 30 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8, y: 30 }}
+                initial={{ opacity: 0, height: 0, y: -20 }}
+                animate={{ opacity: 1, height: "auto", y: 0 }}
+                exit={{ opacity: 0, height: 0, y: -20 }}
                 transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
-                className="bg-gradient-to-br from-green-600 to-blue-500 text-white p-8 rounded-3xl shadow-2xl max-w-lg w-full mx-4"
-                onClick={(e) => e.stopPropagation()}
+                className="mt-8 overflow-hidden"
               >
-                <div className="relative">
-                  <button
-                    onClick={() => setSelectedEvent(null)}
-                    className="absolute -top-2 -right-2 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                  
-                  <div className="text-center">
-                    <span className="inline-block bg-white/20 text-sm font-medium px-4 py-2 rounded-full mb-4">
-                      {selectedEvent.era}
-                    </span>
-                    <h2 className="text-3xl font-bold mb-4">{selectedEvent.title}</h2>
-                    <p className="text-xl mb-6">{selectedEvent.year}</p>
-                    <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
-                      <p className="text-lg leading-relaxed">{selectedEvent.description}</p>
+                <div className="bg-gradient-to-br from-green-600 to-blue-500 text-white p-8 rounded-3xl shadow-2xl max-w-2xl mx-auto">
+                  <div className="relative">
+                    <button
+                      onClick={() => setSelectedEvent(null)}
+                      className="absolute -top-2 -right-2 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200"
+                    >
+                      <X className="w-4 h-4" />
+                    </button>
+                    
+                    <div className="text-center">
+                      <span className="inline-block bg-white/20 text-sm font-medium px-4 py-2 rounded-full mb-4">
+                        {selectedEvent.era}
+                      </span>
+                      <h2 className="text-3xl font-bold mb-4">{selectedEvent.title}</h2>
+                      <p className="text-xl mb-6">{selectedEvent.year}</p>
+                      <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-6">
+                        <p className="text-lg leading-relaxed">{selectedEvent.description}</p>
+                      </div>
                     </div>
                   </div>
                 </div>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+            )}
+          </AnimatePresence>
       </div>
     </div>
   );

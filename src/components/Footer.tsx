@@ -34,7 +34,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-3">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="text-gray-300 hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
@@ -45,7 +45,7 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Our Products</h3>
+            <h3 className="font-semibold text-lg mb-3">Our Products</h3>
             <ul className="space-y-2 text-gray-300">
               <li>Auto Batching System</li>
               <li>Flat Bottom Silos</li>
@@ -59,7 +59,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Info</h3>
+            <h3 className="font-semibold text-lg mb-3">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
@@ -75,9 +75,8 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary" />
-                <span className="text-gray-300">svrpoultry</span>
+                <span className="text-gray-300 whitespace-nowrap">svrpoultryequipments@gmail.com</span>
               </div>
-              <span className="text-gray-300">equipments@gmail.com</span>
             </div>
           </div>
         </div>
