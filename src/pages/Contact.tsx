@@ -100,13 +100,13 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-16 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl font-bold text-gray-900 mb-6"
+            className="text-5xl font-bold text-gray-900 mb-4"
           >
             Contact Us
           </motion.h1>

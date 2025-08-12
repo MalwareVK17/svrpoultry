@@ -55,13 +55,13 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-16 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl font-bold text-gray-900 mb-6"
+            className="text-5xl font-bold text-gray-900 mb-4"
           >
             About SVR Poultry Equipments
           </motion.h1>
@@ -210,7 +210,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
             {[
               {
                 title: "Laser Machine",
@@ -252,18 +252,18 @@ const About = () => {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group"
               >
-                <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-3xl overflow-hidden">
-                  <div className="aspect-video overflow-hidden rounded-t-3xl">
+                <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
+                  <div className="aspect-video overflow-hidden rounded-t-2xl">
                     <img 
                       src={equipment.image} 
                       alt={equipment.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </div>
-                  <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{equipment.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{equipment.description}</p>
-                    <div className="mt-6 w-16 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{equipment.title}</h3>
+                    <p className="text-gray-600 leading-relaxed text-sm">{equipment.description}</p>
+                    <div className="mt-4 w-12 h-1 bg-gradient-to-r from-green-600 to-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </CardContent>
                 </Card>
               </motion.div>

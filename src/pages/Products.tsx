@@ -89,13 +89,13 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-16 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl font-bold text-gray-900 mb-6"
+            className="text-5xl font-bold text-gray-900 mb-4"
           >
             Our Products
           </motion.h1>
@@ -172,9 +172,9 @@ const Products = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="py-12">
+      <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {products.map((product, index) => (
               <motion.div
                 key={product.id}
@@ -194,12 +194,12 @@ const Products = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   </div>
-                  <CardContent className="p-8">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{product.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{product.description}</p>
-                    <ul className="space-y-2 mb-6">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{product.title}</h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed text-sm">{product.description}</p>
+                    <ul className="space-y-2 mb-4">
                       {product.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-sm text-gray-600">
+                        <li key={idx} className="flex items-center text-xs text-gray-600">
                           <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
                           {feature}
                         </li>
