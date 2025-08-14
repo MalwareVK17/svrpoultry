@@ -154,31 +154,35 @@ const Home = () => {
               </div>
 
               {/* Image Side */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-                className="relative h-full"
-              >
-                <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden rounded-r-3xl">
-                  <motion.img
-                    src="/lovable-uploads/218c46a4-5748-48bf-a3f2-a4effd131ea4.png"
-                    alt="Global Market Presence - World Map"
-                    className="w-full h-full object-contain p-8"
-                    animate={{
-                      scale: [1, 1.05, 1],
-                    }}
-                    transition={{
-                      duration: 6,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
-                  
-                </div>
-              </motion.div>
+             <motion.div
+  initial={{ opacity: 0, x: 30 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  viewport={{ once: true }}
+  className="relative h-full"
+>
+  <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden rounded-r-3xl">
+    <motion.video
+      src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/World_Map_Animation_With_Marked_Countries.mp4"
+      alt="Global Market Presence Video"
+      className="w-full h-full object-contain p-8"
+      autoPlay
+      loop
+      muted
+      playsInline
+      animate={{
+        scale: [1, 1.05, 1],
+      }}
+      transition={{
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }}
+    />
+    <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+  </div>
+</motion.div>
+
             </div>
           </motion.div>
         </div>
