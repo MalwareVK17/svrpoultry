@@ -215,7 +215,7 @@ const About = () => {
               {
                 title: "Laser Machine",
                 description: "High-precision fiber laser cutting machine with advanced control systems for superior cutting quality and efficiency.",
-                image: "https://iprorwxhlirrlj5o.leadongcdn.com/cloud/opBpkKijRlkSmlllqollj/3015G-youshi1.png"
+                image: "https://5.imimg.com/data5/SELLER/Default/2022/1/DT/QF/YE/74914063/2.jpg"
               },
               {
                 title: "Bending Machine",
