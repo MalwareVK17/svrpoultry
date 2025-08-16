@@ -110,7 +110,7 @@ const Products = () => {
         id: 401,
         title: 'Tractor Tanker',
         description: 'Mobile feed cleaning and processing unit for on-site feed quality enhancement.',
-        image: 'https://image2url.com/images/1755369808267-875f30b1-0d3c-40d7-88d9-6c1673c456f8.jpg',
+        image: 'https://i.ytimg.com/vi/I6ZCAasnQ3A/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGE4gYChlMA8=&rs=AOn4CLDSnY4mj_AktXChzML6w637bMiucg',
         features: ['Mobile operation', 'Feed cleaning', 'Quality enhancement'],
         isDirect: true
       },
@@ -118,7 +118,7 @@ const Products = () => {
         id: 402,
         title: 'Bulk Feeding Tanker',
         description: 'Industrial bulk feeding system with automated delivery for large-scale operations.',
-        image: 'https://image2url.com/images/1755369859115-2b5d257e-f361-4371-840b-863fbbb8a861.jpg',
+        image: 'https://svrpoultryequipments.com/static/images/Bulk%20feed%20Tanker.jpg',
         features: ['Bulk delivery', 'Automated systems', 'Industrial capacity'],
         isDirect: true
       }
