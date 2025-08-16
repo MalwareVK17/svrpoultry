@@ -110,7 +110,7 @@ const Products = () => {
         id: 401,
         title: 'Tractor Tanker',
         description: 'Mobile feed cleaning and processing unit for on-site feed quality enhancement.',
-        image: '/lovable-uploads/5d104031-b293-4f56-a4db-550853a91376.png',
+        image: 'https://image2url.com/images/1755369808267-875f30b1-0d3c-40d7-88d9-6c1673c456f8.jpg',
         features: ['Mobile operation', 'Feed cleaning', 'Quality enhancement'],
         isDirect: true
       },
@@ -118,7 +118,7 @@ const Products = () => {
         id: 402,
         title: 'Bulk Feeding Tanker',
         description: 'Industrial bulk feeding system with automated delivery for large-scale operations.',
-        image: '/lovable-uploads/b38e8ccd-bb1b-40f2-bc05-12579bc3472f.png',
+        image: 'https://image2url.com/images/1755369859115-2b5d257e-f361-4371-840b-863fbbb8a861.jpg',
         features: ['Bulk delivery', 'Automated systems', 'Industrial capacity'],
         isDirect: true
       }
