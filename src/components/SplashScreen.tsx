@@ -33,11 +33,11 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="mb-8"
         >
-          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl p-2">
+          <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl p-3">
             <img 
               src="https://image2url.com/images/1755362255096-5cfacdf3-2c52-4651-bdac-ed5ab98156e9.jpg" 
               alt="SVR Poultry Equipments Logo"
-              className="w-full h-full object-contain"
+              className="w-full h-full object-cover rounded-full"
             />
           </div>
           <motion.h1
@@ -46,7 +46,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
             transition={{ delay: 0.3, duration: 0.6 }}
             className="text-4xl font-bold text-white mb-2"
           >
-            SVR Poultry Equipments
+            <span className="text-yellow-300 font-extrabold">SVR</span> Poultry Equipments
           </motion.h1>
           <motion.p
             initial={{ y: 20, opacity: 0 }}

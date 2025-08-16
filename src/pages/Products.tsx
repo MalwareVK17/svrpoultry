@@ -1,79 +1,15 @@
-
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ProductPopup from '@/components/ProductPopup';
 
 const Products = () => {
-  const products = [
-    {
-      id: 1,
-      title: 'Auto Batching System',
-      description: 'Advanced feed mill equipment for optimal poultry nutrition processing.',
-      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
-      features: ['Automated processing', 'Quality control', 'High efficiency']
-    },
-    {
-      id: 2,
-      title: 'Cage Systems',
-      description: 'Modern, comfortable housing solutions for different poultry types.',
-      image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-      features: ['Modular design', 'Easy access', 'Durability tested']
-    },
-    {
-      id: 3,
-      title: 'Feed Storage',
-      description: 'Industrial feed storage and mixing systems for large-scale operations.',
-      image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
-      features: ['Temperature control', 'Moisture management', 'Easy loading']
-    },
-    {
-      id: 4,
-      title: 'Feed Transportation',
-      description: 'Mobile feed delivery systems for efficient farm operations.',
-      image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
-      features: ['Large capacity', 'Precision delivery', 'Easy operation']
-    },
-    {
-      id: 5,
-      title: 'Flat Bottom Silos',
-      description: 'Large capacity storage solutions for bulk feed materials with flat bottom design.',
-      image: '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png',
-      features: ['Large storage capacity', 'Weather resistant', 'Easy maintenance']
-    },
-    {
-      id: 6,
-      title: 'Hopper Bottom Silos',
-      description: 'Efficient feed storage with hopper bottom design for easy discharge.',
-      image: 'https://www.annapurnaagronics.com/wp-content/uploads/2023/07/hopper-silo-estonia.jpg',
-      features: ['Gravity discharge', 'Cone bottom design', 'Complete feed flow']
-    },
-    {
-      id: 7,
-      title: 'Weld Mesh',
-      description: 'High-quality welded mesh panels for poultry housing and security fencing.',
-      image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
-      features: ['Corrosion resistant', 'Strong construction', 'Multiple sizes']
-    },
-    {
-      id: 8,
-      title: 'Tractor Tanker',
-      description: 'Mobile feed cleaning and processing unit for on-site feed quality enhancement.',
-      image: '/lovable-uploads/5d104031-b293-4f56-a4db-550853a91376.png',
-      features: ['Mobile operation', 'Feed cleaning', 'Quality enhancement']
-    },
-    {
-      id: 9,
-      title: 'Bulk Feeding Tanker',
-      description: 'Industrial bulk feeding system with automated delivery for large-scale operations.',
-      image: '/lovable-uploads/b38e8ccd-bb1b-40f2-bc05-12579bc3472f.png',
-      features: ['Bulk delivery', 'Automated systems', 'Industrial capacity']
-    },
-  ];
+  const [activePopup, setActivePopup] = useState<string | null>(null);
 
   const partners = [
-   
     { name: 'Urja Foods', image: '/lovable-uploads/3a42b103-573c-43ea-a266-060717114838.png' },
     { name: 'SNEHA', image: '/lovable-uploads/26d0269c-c0a1-49f5-a5de-320f745dd9e5.png' },
     { name: 'Jayshree Group', image: '/lovable-uploads/320b0afa-a43a-4bfd-9f02-a0b6ab233c2e.png' },
@@ -83,19 +19,138 @@ const Products = () => {
     { name: 'Suppa Chicken', image: '/lovable-uploads/ef3e7d0f-2ef4-402e-8070-977d9859a75c.png' },
     { name: 'Tata Coffee', image: '/lovable-uploads/6edd9b0e-1e6a-44ea-ad4f-378059a491c4.png' },
     { name: 'Ovo Farm Fresh', image: '/lovable-uploads/ce70d724-ff38-40bd-a99f-9f7d289b8d78.png' },
-    
   ];
+
+  const productCategories = {
+    cages: [
+      {
+        id: 101,
+        title: 'Cage Systems',
+        description: 'Modern, comfortable housing solutions for different poultry types with advanced design.',
+        image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
+        subProducts: [
+          { id: 1001, title: 'Chicks', description: 'Specially designed cage systems for young chicks with optimal spacing and comfort.', image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png' },
+          { id: 1002, title: 'Layer', description: 'Professional layer cages designed for maximum egg production and bird welfare.', image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png' },
+          { id: 1003, title: 'Grower', description: 'Robust grower cages that provide ample space for developing birds.', image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png' }
+        ]
+      },
+      {
+        id: 102,
+        title: 'Cage Accessories',
+        description: 'Essential accessories and components to enhance your cage systems performance.',
+        image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
+        subProducts: [
+          { id: 1004, title: 'Water Nipples', description: 'High-quality water nipples ensuring clean and efficient water supply for birds.', image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png' },
+          { id: 1005, title: 'PVC/Giffers', description: 'Durable PVC components and giffers for reliable cage system operation.', image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png' },
+          { id: 1006, title: 'Pipes', description: 'Professional-grade pipes for water and feed distribution systems.', image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png' }
+        ]
+      },
+      {
+        id: 103,
+        title: 'Weld Mesh',
+        description: 'High-quality welded mesh panels for poultry housing and security applications.',
+        image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
+        subProducts: [
+          { id: 1007, title: 'Weld Mesh', description: 'Strong welded mesh panels with corrosion resistance and multiple size options.', image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg' },
+          { id: 1008, title: 'Chain Link', description: 'Durable chain link fencing solutions for secure poultry enclosures.', image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg' }
+        ]
+      }
+    ],
+    feedManufacturing: [
+      {
+        id: 201,
+        title: 'Feed Trolley',
+        description: 'Mobile feed delivery systems for efficient and convenient farm operations.',
+        image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
+        subProducts: [
+          { id: 2001, title: 'Rooter Feed', description: 'Specialized rooter feed trolley systems for precise feed distribution.', image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png' },
+          { id: 2002, title: 'Garata Feed', description: 'Advanced Garata feed trolley with enhanced mobility and capacity.', image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png' }
+        ]
+      },
+      {
+        id: 202,
+        title: 'Feed Plants',
+        description: 'Complete feed manufacturing plants for large-scale production operations.',
+        image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
+        subProducts: [
+          { id: 2003, title: 'Feed Plants', description: 'Comprehensive feed manufacturing plants with automated systems.', image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png' },
+          { id: 2004, title: 'Full Screen Grinder', description: 'High-efficiency full screen grinder for optimal feed processing.', image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png' },
+          { id: 2005, title: 'Weighing Bins', description: 'Precision weighing bins for accurate feed measurement and batching.', image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png' },
+          { id: 2006, title: 'Mixers', description: 'Industrial mixers ensuring uniform feed composition and quality.', image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png' }
+        ]
+      },
+      {
+        id: 203,
+        title: 'Auto Batching Systems',
+        description: 'Advanced automated batching systems for optimal poultry nutrition processing.',
+        image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+        isDirect: true
+      }
+    ],
+    feedStorage: [
+      {
+        id: 301,
+        title: 'Flat Bottom Silos',
+        description: 'Large capacity storage solutions for bulk feed materials with flat bottom design.',
+        image: '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png',
+        features: ['Large storage capacity', 'Weather resistant', 'Easy maintenance'],
+        isDirect: true
+      },
+      {
+        id: 302,
+        title: 'Hopper Bottom Silos',
+        description: 'Efficient feed storage with hopper bottom design for easy discharge.',
+        image: 'https://www.annapurnaagronics.com/wp-content/uploads/2023/07/hopper-silo-estonia.jpg',
+        features: ['Gravity discharge', 'Cone bottom design', 'Complete feed flow'],
+        isDirect: true
+      }
+    ],
+    feedTransportation: [
+      {
+        id: 401,
+        title: 'Tractor Tanker',
+        description: 'Mobile feed cleaning and processing unit for on-site feed quality enhancement.',
+        image: '/lovable-uploads/5d104031-b293-4f56-a4db-550853a91376.png',
+        features: ['Mobile operation', 'Feed cleaning', 'Quality enhancement'],
+        isDirect: true
+      },
+      {
+        id: 402,
+        title: 'Bulk Feeding Tanker',
+        description: 'Industrial bulk feeding system with automated delivery for large-scale operations.',
+        image: '/lovable-uploads/b38e8ccd-bb1b-40f2-bc05-12579bc3472f.png',
+        features: ['Bulk delivery', 'Automated systems', 'Industrial capacity'],
+        isDirect: true
+      }
+    ]
+  };
+
+  const handleProductClick = (product: any) => {
+    if (product.isDirect) {
+      // Navigate directly to product detail page
+      window.location.href = `/products/${product.id}`;
+    } else {
+      // Open popup with sub-products
+      setActivePopup(product.title);
+    }
+  };
+
+  const getSubProducts = (title: string) => {
+    const allProducts = [...productCategories.cages, ...productCategories.feedManufacturing];
+    const product = allProducts.find(p => p.title === title);
+    return product?.subProducts || [];
+  };
 
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-12 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl font-bold text-gray-900 mb-4"
+            className="text-4xl font-bold text-gray-900 mb-4"
           >
             Our Products
           </motion.h1>
@@ -111,14 +166,14 @@ const Products = () => {
       </section>
 
       {/* Project Showcase Section */}
-      <section className="py-16 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl p-8 md:p-12 shadow-xl"
+            className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-3xl p-8 md:p-12 shadow-xl mb-8"
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-2 lg:order-1">
@@ -171,65 +226,217 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
-      <section className="py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {products.map((product, index) => (
-              <motion.div
-                key={product.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className="group"
-              >
-                <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
-                    <img 
-                      src={product.image} 
-                      alt={product.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">{product.title}</h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed text-sm">{product.description}</p>
-                    <ul className="space-y-2 mb-4">
-                      {product.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-xs text-gray-600">
-                          <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link to={`/products/${product.id}`}>
+      {/* Product Categories */}
+      <section className="py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          {/* Cages Category */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Cages</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {productCategories.cages.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="group cursor-pointer"
+                  onClick={() => handleProductClick(product)}
+                >
+                  <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
+                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                      <img 
+                        src={product.image} 
+                        alt={product.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardContent className="p-5">
+                      <h3 className="text-lg font-bold text-gray-900 mb-3">{product.title}</h3>
+                      <p className="text-gray-600 mb-4 leading-relaxed text-sm">{product.description}</p>
                       <Button 
                         className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300"
                       >
-                        View Details
+                        Click Here
                         <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Feed Manufacturing Category */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Feed Manufacturing</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {productCategories.feedManufacturing.map((product, index) => (
+                <motion.div
+                  key={product.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="group cursor-pointer"
+                  onClick={() => handleProductClick(product)}
+                >
+                  <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
+                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                      <img 
+                        src={product.image} 
+                        alt={product.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardContent className="p-5">
+                      <h3 className="text-lg font-bold text-gray-900 mb-3">{product.title}</h3>
+                      <p className="text-gray-600 mb-4 leading-relaxed text-sm">{product.description}</p>
+                      <Button 
+                        className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300"
+                      >
+                        Click Here
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Feed Storage Category */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Feed Storage</h2>
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl px-8">
+                {productCategories.feedStorage.map((product, index) => (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -10, scale: 1.02 }}
+                    className="group cursor-pointer"
+                    onClick={() => handleProductClick(product)}
+                  >
+                    <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
+                      <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                        <img 
+                          src={product.image} 
+                          alt={product.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <CardContent className="p-5">
+                        <h3 className="text-lg font-bold text-gray-900 mb-3">{product.title}</h3>
+                        <p className="text-gray-600 mb-4 leading-relaxed text-sm">{product.description}</p>
+                        <ul className="space-y-2 mb-4">
+                          {product.features?.map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-xs text-gray-600">
+                              <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                        <Button 
+                          className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300"
+                        >
+                          View Details
+                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Feed Transportation Category */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Feed Transportation</h2>
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl px-8">
+                {productCategories.feedTransportation.map((product, index) => (
+                  <motion.div
+                    key={product.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -10, scale: 1.02 }}
+                    className="group cursor-pointer"
+                    onClick={() => handleProductClick(product)}
+                  >
+                    <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
+                      <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                        <img 
+                          src={product.image} 
+                          alt={product.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <CardContent className="p-5">
+                        <h3 className="text-lg font-bold text-gray-900 mb-3">{product.title}</h3>
+                        <p className="text-gray-600 mb-4 leading-relaxed text-sm">{product.description}</p>
+                        <ul className="space-y-2 mb-4">
+                          {product.features?.map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-xs text-gray-600">
+                              <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                        <Button 
+                          className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300"
+                        >
+                          View Details
+                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Partners Section */}
-      <section className="py-12 bg-gray-50">
+      <section className="py-6 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Trusted Clients</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -237,41 +444,73 @@ const Products = () => {
             </p>
           </motion.div>
 
-          {/* Auto-Scrolling Carousel Container */}
-          <div className="relative">
-            <div className="overflow-hidden">
+          {/* Sleek Scrolling Logo Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex">
               <motion.div
-                className="flex gap-6"
+                className="flex gap-12 items-center"
                 animate={{
-                  x: [0, -1500]
+                  x: [0, -100 * partners.length]
                 }}
                 transition={{
-                  duration: 20,
+                  duration: 25,
                   repeat: Infinity,
                   ease: "linear"
                 }}
               >
-              {[...partners, ...partners].map((partner, index) => (
-                <motion.div
-                  key={`${partner.name}-${index}`}
-                  whileHover={{ y: -10, scale: 1.1 }}
-                  className="group flex-shrink-0 w-32 h-20"
-                >
-                  <div className="h-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
+                {[...partners, ...partners, ...partners].map((partner, index) => (
+                  <motion.div
+                    key={`${partner.name}-${index}`}
+                    className="flex-shrink-0 w-24 h-16 opacity-70 hover:opacity-100 transition-all duration-300"
+                    whileHover={{ 
+                      scale: 1.1,
+                      filter: "brightness(1.2)"
+                    }}
+                  >
                     <img 
                       src={partner.image} 
                       alt={partner.name}
-                      className="w-full h-full object-contain bg-white"
+                      className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                     />
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                ))}
               </motion.div>
             </div>
           </div>
-
         </div>
       </section>
+
+      {/* Product Popups */}
+      <ProductPopup
+        isOpen={activePopup === 'Cage Systems'}
+        onClose={() => setActivePopup(null)}
+        title="Cage Systems"
+        subProducts={getSubProducts('Cage Systems')}
+      />
+      <ProductPopup
+        isOpen={activePopup === 'Cage Accessories'}
+        onClose={() => setActivePopup(null)}
+        title="Cage Accessories"
+        subProducts={getSubProducts('Cage Accessories')}
+      />
+      <ProductPopup
+        isOpen={activePopup === 'Weld Mesh'}
+        onClose={() => setActivePopup(null)}
+        title="Weld Mesh"
+        subProducts={getSubProducts('Weld Mesh')}
+      />
+      <ProductPopup
+        isOpen={activePopup === 'Feed Trolley'}
+        onClose={() => setActivePopup(null)}
+        title="Feed Trolley"
+        subProducts={getSubProducts('Feed Trolley')}
+      />
+      <ProductPopup
+        isOpen={activePopup === 'Feed Plants'}
+        onClose={() => setActivePopup(null)}
+        title="Feed Plants"
+        subProducts={getSubProducts('Feed Plants')}
+      />
     </div>
   );
 };

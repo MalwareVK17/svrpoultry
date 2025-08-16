@@ -161,17 +161,16 @@ const Home = () => {
   viewport={{ once: true }}
   className="relative h-full"
 >
-  <div className="aspect-square lg:aspect-auto lg:h-full relative overflow-hidden rounded-r-3xl">
+  <div className="aspect-video lg:aspect-auto lg:h-full relative overflow-hidden rounded-r-3xl bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
     <motion.video
       src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/World_Map_Animation_With_Marked_Countries.mp4"
-      alt="Global Market Presence Video"
-      className="w-full h-full object-contain p-8"
+      className="w-full h-full object-cover"
       autoPlay
       loop
       muted
       playsInline
       animate={{
-        scale: [1, 1.05, 1],
+        scale: [1, 1.02, 1],
       }}
       transition={{
         duration: 6,
@@ -204,33 +203,34 @@ const Home = () => {
             </p>
           </motion.div>
 
-          {/* Auto-Scrolling Carousel Container */}
-          <div className="relative">
-            <div className="overflow-hidden">
+          {/* Sleek Scrolling Logo Carousel */}
+          <div className="relative overflow-hidden">
+            <div className="flex">
               <motion.div
-                className="flex gap-6"
+                className="flex gap-12 items-center"
                 animate={{
-                  x: [0, -1500]
+                  x: [0, -100 * partners.length]
                 }}
                 transition={{
-                  duration: 20,
+                  duration: 25,
                   repeat: Infinity,
                   ease: "linear"
                 }}
               >
-                {[...partners, ...partners].map((partner, index) => (
+                {[...partners, ...partners, ...partners].map((partner, index) => (
                   <motion.div
                     key={`${partner.name}-${index}`}
-                    whileHover={{ y: -10, scale: 1.1 }}
-                    className="group flex-shrink-0 w-32 h-20"
+                    className="flex-shrink-0 w-24 h-16 opacity-70 hover:opacity-100 transition-all duration-300"
+                    whileHover={{ 
+                      scale: 1.1,
+                      filter: "brightness(1.2)"
+                    }}
                   >
-                    <div className="h-full rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300">
-                      <img 
-                        src={partner.image} 
-                        alt={partner.name}
-                        className="w-full h-full object-contain bg-white"
-                      />
-                    </div>
+                    <img 
+                      src={partner.image} 
+                      alt={partner.name}
+                      className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    />
                   </motion.div>
                 ))}
               </motion.div>
