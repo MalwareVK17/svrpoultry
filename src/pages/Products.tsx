@@ -127,8 +127,17 @@ const Products = () => {
 
   const handleProductClick = (product: any) => {
     if (product.isDirect) {
-      // Navigate directly to product detail page
-      window.location.href = `/products/${product.id}`;
+      // Navigate directly to product detail page for single products
+      if (product.id === 203) {
+        // Auto Batching Systems - direct to detail page
+        window.location.href = `/products/203`;
+      } else if (product.id === 401 || product.id === 402) {
+        // Feed Transportation products - direct to detail page
+        window.location.href = `/products/${product.id}`;
+      } else {
+        // Feed Storage products - direct to specialized pages
+        window.location.href = `/products/storage/${product.id}`;
+      }
     } else {
       // Open popup with sub-products
       setActivePopup(product.title);

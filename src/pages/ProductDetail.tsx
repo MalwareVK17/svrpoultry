@@ -387,6 +387,114 @@ const ProductDetail = () => {
         'Warranty': '5 years',
         'Operation': 'Industrial grade'
       }
+    },
+    '203': {
+      title: 'Auto Batching Systems',
+      image: '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
+      description: 'Advanced automated batching systems for optimal poultry nutrition processing. Precision engineering for consistent feed quality and efficiency.',
+      features: [
+        'Automated ingredient handling',
+        'Precision weighing systems',
+        'Recipe management',
+        'Quality control monitoring',
+        'Data logging capabilities',
+        'Remote operation control'
+      ],
+      usage: [
+        'Automated feed production',
+        'Consistent batch quality',
+        'Reduced labor requirements',
+        'Improved accuracy',
+        'Production monitoring',
+        'Inventory management'
+      ],
+      applications: [
+        'Commercial feed mills',
+        'Large poultry operations',
+        'Feed manufacturing plants',
+        'Industrial processing',
+        'Quality-controlled production',
+        'Automated facilities'
+      ],
+      specifications: {
+        'Capacity': '5-50 tons/batch',
+        'Accuracy': '±0.1%',
+        'Control': 'PLC-based system',
+        'Warranty': '3 years',
+        'Integration': 'Complete automation'
+      }
+    },
+    '401': {
+      title: 'Tractor Tanker',
+      image: '/lovable-uploads/5d104031-b293-4f56-a4db-550853a91376.png',
+      description: 'Mobile feed cleaning and processing unit for on-site feed quality enhancement. Portable solution for feed preparation and quality control.',
+      features: [
+        'Mobile operation capability',
+        'Feed cleaning systems',
+        'Quality enhancement technology',
+        'Dust removal systems',
+        'Grading mechanisms',
+        'Compact efficient design'
+      ],
+      usage: [
+        'On-site feed cleaning',
+        'Quality improvement processing',
+        'Dust and debris removal',
+        'Mobile processing operations',
+        'Field-based operations',
+        'Remote location services'
+      ],
+      applications: [
+        'Farm feed preparation',
+        'Mobile processing services',
+        'Remote operation sites',
+        'Quality control applications',
+        'Field processing needs',
+        'Custom cleaning services'
+      ],
+      specifications: {
+        'Capacity': '2-5 tons/hour',
+        'Power': 'Tractor PTO driven',
+        'Mobility': 'Trailer mounted',
+        'Warranty': '3 years',
+        'Operation': 'Mobile processing unit'
+      }
+    },
+    '402': {
+      title: 'Bulk Feeding Tanker',
+      image: '/lovable-uploads/b38e8ccd-bb1b-40f2-bc05-12579bc3472f.png',
+      description: 'Industrial bulk feeding system with automated delivery for large-scale operations. High-capacity feed distribution solution with advanced automation.',
+      features: [
+        'Bulk delivery capacity',
+        'Automated distribution systems',
+        'Industrial grade capacity',
+        'Pneumatic discharge system',
+        'Load monitoring technology',
+        'Advanced safety systems'
+      ],
+      usage: [
+        'Large-scale feed delivery',
+        'Automated feeding operations',
+        'Bulk material handling',
+        'Reduced operational costs',
+        'Efficient distribution networks',
+        'High-volume operations'
+      ],
+      applications: [
+        'Industrial poultry farms',
+        'Large commercial operations',
+        'Feed distribution networks',
+        'Bulk handling facilities',
+        'Automated feeding systems',
+        'High-capacity operations'
+      ],
+      specifications: {
+        'Capacity': '15-30 tons',
+        'Discharge': 'Pneumatic system',
+        'Control': 'Automated operation',
+        'Warranty': '5 years',
+        'Operation': 'Industrial grade'
+      }
     }
   };
 

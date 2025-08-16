@@ -53,27 +53,46 @@ const ProductPopup = ({ isOpen, onClose, title, subProducts }: ProductPopupProps
             {/* Content */}
             <div className="p-6 overflow-y-auto h-full">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {subProducts.map((product) => (
+                {subProducts.map((product, index) => (
                   <motion.div
                     key={product.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * product.id }}
-                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
+                    initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ 
+                      delay: index * 0.15,
+                      duration: 0.6,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 12
+                    }}
+                    whileHover={{ 
+                      y: -10, 
+                      scale: 1.05,
+                      transition: { duration: 0.2 }
+                    }}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 group"
                   >
-                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5">
-                      <img 
+                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                      <motion.img 
                         src={product.image} 
                         alt={product.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{product.title}</h3>
-                      <p className="text-gray-600 mb-4 text-sm">{product.description}</p>
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{product.title}</h3>
+                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">{product.description}</p>
                       <Link to={`/products/${product.id}`}>
-                        <Button className="w-full bg-primary hover:bg-primary/90 rounded-full">
+                        <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
                           View Details
+                          <motion.div
+                            className="ml-2"
+                            whileHover={{ x: 5 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            →
+                          </motion.div>
                         </Button>
                       </Link>
                     </div>

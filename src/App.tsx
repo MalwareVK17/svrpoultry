@@ -17,6 +17,7 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import BecomePartner from "./pages/BecomePartner";
 import ProductDetail from "./pages/ProductDetail";
+import StorageDetail from './pages/StorageDetail';
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -45,7 +46,8 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/products" element={<Products />} />
-                <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="/products/storage/:id" element={<StorageDetail />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/become-partner" element={<BecomePartner />} />
                 <Route path="/svr-admin" element={<AdminLogin />} />
