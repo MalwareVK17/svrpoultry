@@ -36,7 +36,7 @@ const ProductPopup = ({ isOpen, onClose, title, subProducts }: ProductPopupProps
             initial={{ opacity: 0, scale: 0.8, y: 50 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 50 }}
-            className="fixed inset-4 md:inset-8 lg:inset-16 bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl z-50 overflow-hidden"
+            className="fixed inset-4 md:inset-8 lg:inset-12 xl:inset-16 bg-white/95 backdrop-blur-md rounded-3xl shadow-2xl z-50 overflow-hidden flex flex-col max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -51,8 +51,8 @@ const ProductPopup = ({ isOpen, onClose, title, subProducts }: ProductPopupProps
             </div>
 
             {/* Content */}
-            <div className="p-6 overflow-y-auto h-full">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="p-6 overflow-y-auto flex-1">
+              <div className={`grid gap-6 ${subProducts.length === 4 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4' : subProducts.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'}`}>
                 {subProducts.map((product, index) => (
                   <motion.div
                     key={product.id}

@@ -229,7 +229,7 @@ const Home = () => {
                     <img 
                       src={partner.image} 
                       alt={partner.name}
-                      className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-16 object-contain hover:scale-110 hover:brightness-110 transition-all duration-300"
                     />
                   </motion.div>
                 ))}

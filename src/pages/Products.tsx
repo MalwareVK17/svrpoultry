@@ -131,12 +131,6 @@ const Products = () => {
       if (product.id === 203) {
         // Auto Batching Systems - direct to detail page
         window.location.href = `/products/203`;
-      } else if (product.id === 401 || product.id === 402) {
-        // Feed Transportation products - direct to detail page
-        window.location.href = `/products/${product.id}`;
-      } else {
-        // Feed Storage products - direct to specialized pages
-        window.location.href = `/products/storage/${product.id}`;
       }
     } else {
       // Open popup with sub-products
@@ -335,49 +329,70 @@ const Products = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Feed Storage</h2>
-            <div className="flex justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl px-8">
-                {productCategories.feedStorage.map((product, index) => (
-                  <motion.div
-                    key={product.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -10, scale: 1.02 }}
-                    className="group cursor-pointer"
-                    onClick={() => handleProductClick(product)}
-                  >
-                    <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
-                      <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
-                        <img 
-                          src={product.image} 
-                          alt={product.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardContent className="p-5">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3">{product.title}</h3>
-                        <p className="text-gray-600 mb-4 leading-relaxed text-sm">{product.description}</p>
-                        <ul className="space-y-2 mb-4">
-                          {product.features?.map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-xs text-gray-600">
-                              <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                        <Button 
-                          className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300"
-                        >
-                          View Details
-                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="flex justify-center space-x-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="w-72"
+              >
+                <Card className="bg-white shadow-xl rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer h-full"
+                  onClick={() => window.location.href = '/storage/301'}
+                >
+                  <CardContent className="p-0">
+                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png" 
+                        alt="Flat Bottom Silos"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Flat Bottom Silos</h3>
+                      <ul className="text-gray-600 space-y-1 mb-4 text-sm">
+                        <li>• Large capacity storage solutions</li>
+                        <li>• Weather resistant construction</li>
+                        <li>• Easy maintenance access</li>
+                      </ul>
+                      <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
+                        View Details
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="w-72"
+              >
+                <Card className="bg-white shadow-xl rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer h-full"
+                  onClick={() => window.location.href = '/storage/302'}
+                >
+                  <CardContent className="p-0">
+                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/71326db0-42f7-42d8-9c50-165c3f17b739.png" 
+                        alt="Hopper Bottom Silos"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Hopper Bottom Silos</h3>
+                      <ul className="text-gray-600 space-y-1 mb-4 text-sm">
+                        <li>• Gravity discharge system</li>
+                        <li>• Complete material flow</li>
+                        <li>• Automated operation integration</li>
+                      </ul>
+                      <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
+                        View Details
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -389,49 +404,70 @@ const Products = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Feed Transportation</h2>
-            <div className="flex justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl px-8">
-                {productCategories.feedTransportation.map((product, index) => (
-                  <motion.div
-                    key={product.id}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    whileHover={{ y: -10, scale: 1.02 }}
-                    className="group cursor-pointer"
-                    onClick={() => handleProductClick(product)}
-                  >
-                    <Card className="h-full bg-white shadow-lg hover:shadow-2xl transition-all duration-300 border-0 rounded-2xl overflow-hidden">
-                      <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
-                        <img 
-                          src={product.image} 
-                          alt={product.title}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                      <CardContent className="p-5">
-                        <h3 className="text-lg font-bold text-gray-900 mb-3">{product.title}</h3>
-                        <p className="text-gray-600 mb-4 leading-relaxed text-sm">{product.description}</p>
-                        <ul className="space-y-2 mb-4">
-                          {product.features?.map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-xs text-gray-600">
-                              <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
-                              {feature}
-                            </li>
-                          ))}
-                        </ul>
-                        <Button 
-                          className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300"
-                        >
-                          View Details
-                          <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
+            <div className="flex justify-center space-x-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="w-72"
+              >
+                <Card className="bg-white shadow-xl rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer h-full"
+                  onClick={() => window.location.href = '/products/401'}
+                >
+                  <CardContent className="p-0">
+                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png" 
+                        alt="Tractor Tanker"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Tractor Tanker</h3>
+                      <ul className="text-gray-600 space-y-1 mb-4 text-sm">
+                        <li>• Mobile feed transportation</li>
+                        <li>• High capacity storage</li>
+                        <li>• Efficient distribution system</li>
+                      </ul>
+                      <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
+                        View Details
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="w-72"
+              >
+                <Card className="bg-white shadow-xl rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer h-full"
+                  onClick={() => window.location.href = '/products/402'}
+                >
+                  <CardContent className="p-0">
+                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/8bcac9fe-592a-4bc5-9982-daa9c848d1c0.png" 
+                        alt="Bulk Feeding Tanker"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="p-5">
+                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Bulk Feeding Tanker</h3>
+                      <ul className="text-gray-600 space-y-1 mb-4 text-sm">
+                        <li>• Large volume transportation</li>
+                        <li>• Pneumatic discharge system</li>
+                        <li>• Weather sealed compartments</li>
+                      </ul>
+                      <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
+                        View Details
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             </div>
           </motion.div>
         </div>
@@ -479,7 +515,7 @@ const Products = () => {
                     <img 
                       src={partner.image} 
                       alt={partner.name}
-                      className="w-full h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                      className="h-16 object-contain hover:scale-110 hover:brightness-110 transition-all duration-300"
                     />
                   </motion.div>
                 ))}

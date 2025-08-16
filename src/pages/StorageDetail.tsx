@@ -2,12 +2,13 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useParams, Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Zap, Shield, Clock } from 'lucide-react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { ArrowRight, CheckCircle, Zap, Shield, Clock, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
 const StorageDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Storage product data
@@ -96,8 +97,22 @@ const StorageDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background to-primary/5">
+      {/* Back Button */}
+      <div className="pt-6 pb-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Button
+            onClick={() => navigate('/products')}
+            variant="outline"
+            className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm hover:bg-white border-primary/20 hover:border-primary/40 transition-all duration-300"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Products</span>
+          </Button>
+        </div>
+      </div>
+
       {/* Hero Section with Two Column Layout */}
-      <section className="py-20">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left Column - Title and Description */}
