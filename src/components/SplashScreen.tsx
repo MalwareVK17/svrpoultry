@@ -35,7 +35,7 @@ const SplashScreen = ({ onComplete }: SplashScreenProps) => {
         >
           <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl p-3">
             <img 
-              src="https://image2url.com/images/1755362255096-5cfacdf3-2c52-4651-bdac-ed5ab98156e9.jpg" 
+              src="https://image2url.com/images/1755429269509-6d219173-f524-4ed4-a2cf-ce85cf2b17e3.png" 
               alt="SVR Poultry Equipments Logo"
               className="w-full h-full object-cover rounded-full"
             />
