@@ -150,52 +150,68 @@ const SVRTimelineInnovation = () => {
       case 1:
         return {
           gradient: "from-emerald-500 to-blue-600",
-          glow: "shadow-emerald-500/50",
+          glow: "shadow-xl shadow-emerald-500/25",
           dot: "bg-emerald-500"
         };
       case 2:
         return {
           gradient: "from-orange-500 to-red-600", 
-          glow: "shadow-orange-500/50",
+          glow: "shadow-xl shadow-orange-500/25",
           dot: "bg-orange-500"
         };
       case 3:
         return {
           gradient: "from-purple-500 to-blue-600",
-          glow: "shadow-purple-500/50", 
+          glow: "shadow-xl shadow-purple-500/25",
           dot: "bg-purple-500"
         };
       default:
         return {
           gradient: "from-primary to-secondary",
-          glow: "shadow-primary/50",
+          glow: "shadow-xl shadow-primary/25",
           dot: "bg-primary"
         };
     }
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      // Show card
+    let cardTimeout: NodeJS.Timeout;
+    
+    const showNextCard = () => {
       setShowCard(true);
       
       // Hide card after 4 seconds and move to next
-      setTimeout(() => {
+      cardTimeout = setTimeout(() => {
         setShowCard(false);
         setTimeout(() => {
           setCurrentIndex((prev) => (prev + 1) % timelineData.length);
-        }, 300); // Wait for fade out
+        }, 500); // Wait for fade out
       }, 4000);
-    }, 5000); // Total cycle time: 4s display + 1s transition
+    };
 
-    return () => clearInterval(interval);
+    // Start with first card after initial delay
+    const initialTimeout = setTimeout(showNextCard, 1000);
+    
+    // Continue with regular intervals
+    const interval = setInterval(showNextCard, 6000); // 4s display + 2s transition
+
+    return () => {
+      clearTimeout(initialTimeout);
+      clearTimeout(cardTimeout);
+      clearInterval(interval);
+    };
   }, [timelineData.length]);
 
+  // Duplicate timeline data for seamless infinite scroll
+  const duplicatedData = [...timelineData, ...timelineData, ...timelineData];
   const currentEvent = timelineData[currentIndex];
   const colors = getEraColors(currentEvent.eraNumber);
+  
+  // Calculate scroll position for smooth infinite scroll
+  const scrollPosition = -(currentIndex * 200) % (timelineData.length * 200);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-slate-50 to-gray-100 overflow-hidden">
+    <section className="py-12 bg-gradient-to-br from-slate-50 to-gray-100 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -203,7 +219,7 @@ const SVRTimelineInnovation = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             SVR Timeline <span className="text-primary">Innovation</span>
@@ -213,123 +229,110 @@ const SVRTimelineInnovation = () => {
           </p>
         </motion.div>
 
-        {/* Timeline Container */}
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute top-24 left-0 right-0 h-1 bg-gradient-to-r from-emerald-200 via-orange-200 to-purple-200 rounded-full shadow-lg"></div>
+        {/* Scrolling Timeline Container */}
+        <div className="relative h-80 overflow-hidden">
+          {/* Horizontal Timeline Line */}
+          <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-emerald-300 via-orange-300 to-purple-300 transform -translate-y-1/2"></div>
           
-          {/* Timeline Dots Container */}
-          <div className="relative flex justify-between items-center px-8">
-            <motion.div
-              className="flex justify-between w-full"
-              animate={{
-                x: [0, -20, 0]
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-            >
-              {timelineData.map((event, index) => {
-                const isActive = index === currentIndex;
-                const eventColors = getEraColors(event.eraNumber);
-                
-                return (
+          {/* Scrolling Timeline Track */}
+          <motion.div
+            className="absolute top-1/2 left-1/2 flex items-center space-x-48 transform -translate-y-1/2"
+            animate={{ x: scrollPosition }}
+            transition={{
+              duration: 2,
+              ease: "easeInOut"
+            }}
+            style={{ width: `${duplicatedData.length * 200}px` }}
+          >
+            {duplicatedData.map((event, index) => {
+              const actualIndex = index % timelineData.length;
+              const isActive = actualIndex === currentIndex && Math.floor(index / timelineData.length) === 1;
+              const eventColors = getEraColors(event.eraNumber);
+              
+              return (
+                <motion.div
+                  key={`${event.year}-${index}`}
+                  className="relative flex flex-col items-center min-w-32"
+                >
+                  {/* Title Above Dot */}
+                  <div className="mb-8 text-center max-w-32">
+                    <p className="text-sm font-semibold text-gray-700 leading-tight">
+                      {event.title.length > 25 ? `${event.title.substring(0, 25)}...` : event.title}
+                    </p>
+                  </div>
+                  
+                  {/* Timeline Dot */}
                   <motion.div
-                    key={event.year}
-                    className="relative flex flex-col items-center"
-                    animate={isActive ? { scale: [1, 1.2, 1] } : { scale: 1 }}
+                    className={`w-4 h-4 rounded-full border-4 border-white shadow-lg ${eventColors.dot}`}
+                    animate={isActive ? { scale: 1.2 } : { scale: 1 }}
                     transition={{ duration: 0.3 }}
-                  >
-                    {/* Year Label */}
-                    <motion.div
-                      className="mb-4 text-sm font-bold text-gray-700 bg-white px-3 py-1 rounded-full shadow-md"
-                      animate={isActive ? { y: [0, -5, 0] } : { y: 0 }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    >
+                  />
+                  
+                  {/* Year Below Dot */}
+                  <div className="mt-4 text-center">
+                    <p className="text-lg font-bold text-gray-800">
                       {event.year}
-                    </motion.div>
-                    
-                    {/* Timeline Dot */}
-                    <motion.div
-                      className={`w-4 h-4 rounded-full border-4 border-white shadow-lg ${eventColors.dot} ${
-                        isActive ? `${eventColors.glow} animate-pulse` : ''
-                      }`}
-                      animate={isActive ? {
-                        scale: [1, 1.3, 1],
-                        boxShadow: [
-                          "0 0 0 0 rgba(59, 130, 246, 0.7)",
-                          "0 0 0 10px rgba(59, 130, 246, 0)",
-                          "0 0 0 0 rgba(59, 130, 246, 0)"
-                        ]
-                      } : { scale: 1 }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                    />
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </motion.div>
 
           {/* Popup Card */}
           <AnimatePresence>
             {showCard && (
               <motion.div
-                initial={{ opacity: 0, y: 50, scale: 0.8 }}
+                initial={{ opacity: 0, y: 40, scale: 0.9 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -30, scale: 0.9 }}
+                exit={{ opacity: 0, y: -20, scale: 0.95 }}
                 transition={{ 
                   type: "spring",
-                  stiffness: 300,
-                  damping: 20
+                  stiffness: 400,
+                  damping: 25
                 }}
-                className="absolute top-40 left-1/2 transform -translate-x-1/2 z-10"
+                className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20"
               >
-                <div className={`bg-gradient-to-br ${colors.gradient} p-8 rounded-3xl shadow-2xl ${colors.glow} max-w-md text-white`}>
+                <div className={`bg-gradient-to-br ${colors.gradient} p-6 rounded-2xl ${colors.glow} max-w-sm text-white`}>
                   {/* ERA Badge */}
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-bold mb-4"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.1 }}
+                    className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold mb-3"
                   >
                     ERA {currentEvent.eraNumber} – {currentEvent.era}
                   </motion.div>
                   
                   {/* Year */}
                   <motion.div
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-4xl font-bold mb-2"
+                    transition={{ delay: 0.2 }}
+                    className="text-3xl font-bold mb-2"
                   >
                     {currentEvent.year}
                   </motion.div>
                   
                   {/* Title */}
                   <motion.h3
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="text-xl font-bold mb-3 leading-tight"
+                    transition={{ delay: 0.3 }}
+                    className="text-lg font-bold mb-2 leading-tight"
                   >
                     {currentEvent.title}
                   </motion.h3>
                   
                   {/* Description */}
                   <motion.p
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="text-white/90 leading-relaxed"
+                    transition={{ delay: 0.4 }}
+                    className="text-white/90 text-sm leading-relaxed"
                   >
                     {currentEvent.description}
                   </motion.p>
-
-                  {/* Decorative Elements */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-white/30 rounded-full animate-ping"></div>
-                  <div className="absolute -bottom-1 -left-1 w-4 h-4 bg-white/20 rounded-full animate-pulse"></div>
                 </div>
               </motion.div>
             )}
@@ -338,7 +341,7 @@ const SVRTimelineInnovation = () => {
 
         {/* Progress Indicator */}
         <motion.div
-          className="mt-16 flex justify-center"
+          className="mt-8 flex justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -347,11 +350,11 @@ const SVRTimelineInnovation = () => {
             {timelineData.map((_, index) => (
               <motion.div
                 key={index}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? 'bg-primary w-8' : 'bg-gray-300'
+                className={`h-2 rounded-full transition-all duration-500 ${
+                  index === currentIndex ? 'bg-primary w-8' : 'bg-gray-300 w-2'
                 }`}
-                animate={index === currentIndex ? { scale: [1, 1.2, 1] } : { scale: 1 }}
-                transition={{ duration: 0.3 }}
+                animate={index === currentIndex ? { scale: [1, 1.1, 1] } : { scale: 1 }}
+                transition={{ duration: 0.5 }}
               />
             ))}
           </div>
