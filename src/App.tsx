@@ -17,6 +17,7 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import BecomePartner from "./pages/BecomePartner";
 import ProductDetail from "./pages/ProductDetail";
+import SubProductDetail from "./pages/SubProductDetail";
 import StorageDetail from './pages/StorageDetail';
 import NotFound from "./pages/NotFound";
 
@@ -47,6 +48,7 @@ const App = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/products" element={<Products />} />
             <Route path="/products/:id" element={<ProductDetail />} />
+            <Route path="/products/sub/:id" element={<SubProductDetail />} />
             <Route path="/products/storage/:id" element={<StorageDetail />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/become-partner" element={<BecomePartner />} />
