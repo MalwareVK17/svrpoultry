@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-white">
-                <img src="https://image2url.com/images/1755362255096-5cfacdf3-2c52-4651-bdac-ed5ab98156e9.jpg" alt="SVR Logo" className="w-8 h-8 object-cover rounded-full" />
+                <img src="https://image2url.com/images/1755429269509-6d219173-f524-4ed4-a2cf-ce85cf2b17e3.png" alt="SVR Logo" className="w-8 h-8 object-cover rounded-full" />
               </div>
               <span className="font-bold text-xl">SVR Poultry Equipments</span>
             </div>
