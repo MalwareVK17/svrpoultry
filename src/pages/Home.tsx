@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
 import Timeline from '@/components/Timeline';
 import TextCarousel from '@/components/TextCarousel';
+import SVRTimelineInnovation from '@/components/SVRTimelineInnovation';
 
 const Home = () => {
   const partners = [
@@ -186,6 +187,9 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* SVR Timeline Innovation */}
+      <SVRTimelineInnovation />
 
       {/* Enhanced Partners Section */}
       <section className="py-24 bg-gradient-to-br from-gray-50 to-blue-50">
