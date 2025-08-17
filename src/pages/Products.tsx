@@ -118,7 +118,7 @@ const Products = () => {
         id: 402,
         title: 'Bulk Feeding Tanker',
         description: 'Industrial bulk feeding system with automated delivery for large-scale operations.',
-        image: 'https://svrpoultryequipments.com/static/images/Bulk%20feed%20Tanker.jpg',
+        image: "https://svrpoultryequipments.com/static/images/Bulk%20feed%20Tanker.jpg",
         features: ['Bulk delivery', 'Automated systems', 'Industrial capacity'],
         isDirect: true
       }
