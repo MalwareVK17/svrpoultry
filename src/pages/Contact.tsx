@@ -98,56 +98,48 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-primary/10 to-primary/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl font-bold text-gray-900 mb-4"
-          >
-            Contact Us
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl text-gray-600 max-w-3xl mx-auto"
-          >
-            Get in touch with us for all your poultry equipment needs
-          </motion.p>
-        </div>
-      </section>
+    <div className="min-h-screen relative">
+      {/* Fixed Background Image */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: `url(/lovable-uploads/48821b40-e079-4c47-80f8-b1fdc8c8da10.png)`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed',
+          borderRadius: '10px'
+        }}
+      >
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
+      </div>
 
-      {/* SVR Video Banner */}
-      <section className="py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden"
-          >
-            <video 
-              className="w-full h-72 md:h-96 object-cover object-center rounded-2xl"
-              autoPlay
-              loop
-              muted
-              playsInline
-              poster="https://ik.imagekit.io/xu7akp4g0/WhatsApp%20Image%202025-07-28%20at%2011.45.52_8638ced5.jpg?updatedAt=1753683916589"
+      {/* Content Container */}
+      <div className="relative z-10">
+        {/* Hero Section */}
+        <section className="py-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-5xl font-bold text-gray-900 mb-4"
             >
-              <source src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos//_project_title_svr_202508011557_iro4k.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </motion.div>
-        </div>
-      </section>
+              Contact Us
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-xl text-gray-600 max-w-3xl mx-auto"
+            >
+              Get in touch with us for all your poultry equipment needs
+            </motion.p>
+          </div>
+        </section>
 
-      {/* Contact Section */}
-      <section className="py-8">
+        {/* Contact Section */}
+        <section className="py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             {/* Contact Information */}
@@ -286,9 +278,9 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Locations Section */}
-      <section className="py-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Locations Section */}
+        <section className="py-8 bg-white/90 backdrop-blur-sm rounded-2xl mx-4 my-8">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -427,6 +419,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      </div>
 
       {/* Under Construction Popup */}
       {showConstructionPopup && (

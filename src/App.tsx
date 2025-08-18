@@ -19,6 +19,8 @@ import BecomePartner from "./pages/BecomePartner";
 import ProductDetail from "./pages/ProductDetail";
 import SubProductDetail from "./pages/SubProductDetail";
 import StorageDetail from './pages/StorageDetail';
+import TransportationDetail from './pages/TransportationDetail';
+import ManufacturingDetail from './pages/ManufacturingDetail';
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -50,6 +52,8 @@ const App = () => {
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route path="/products/sub/:id" element={<SubProductDetail />} />
             <Route path="/products/storage/:id" element={<StorageDetail />} />
+            <Route path="/products/transportation/:id" element={<TransportationDetail />} />
+            <Route path="/products/manufacturing/:id" element={<ManufacturingDetail />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/become-partner" element={<BecomePartner />} />
                 <Route path="/svr-admin" element={<AdminLogin />} />

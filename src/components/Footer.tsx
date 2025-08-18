@@ -10,8 +10,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center bg-white">
-                <img src="https://image2url.com/images/1755429269509-6d219173-f524-4ed4-a2cf-ce85cf2b17e3.png" alt="SVR Logo" className="w-8 h-8 object-cover rounded-full" />
+              <div className="w-14 h-14 flex items-center justify-center">
+                <img src="https://image2url.com/images/1755429269509-6d219173-f524-4ed4-a2cf-ce85cf2b17e3.png" alt="SVR Logo" className="w-12 h-12 object-contain" />
               </div>
               <span className="font-bold text-xl">SVR Poultry Equipments</span>
             </div>
@@ -45,14 +45,13 @@ const Footer = () => {
 
           {/* Products */}
           <div>
-            <h3 className="font-semibold text-lg mb-3">Our Products</h3>
+            <h3 className="font-semibold text-lg mb-3">Product Categories</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Auto Batching System</li>
-              <li>Flat Bottom Silos</li>
-              <li>Hopper Bottom Silos</li>
-              <li>Cage Systems</li>
-              <li>Tractor Tanker</li>
-              <li>Bulk Feeding Tanker</li>
+              <li>Cages & Accessories</li>
+              <li>Feed Manufacturing</li>
+              <li>Feed Storage</li>
+              <li>Feed Transportation</li>
+              <li>Auto Batching Systems</li>
               <li>Weld Mesh</li>
             </ul>
           </div>
