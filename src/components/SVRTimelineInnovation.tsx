@@ -230,7 +230,7 @@ const SVRTimelineInnovation = () => {
         </motion.div>
 
         {/* Scrolling Timeline Container */}
-        <div className="relative h-80 overflow-hidden">
+        <div className="relative h-64 overflow-hidden">
           {/* Horizontal Timeline Line */}
           <div className="absolute top-1/2 left-0 w-full h-1 bg-gradient-to-r from-emerald-300 via-orange-300 to-purple-300 transform -translate-y-1/2"></div>
           
@@ -250,31 +250,24 @@ const SVRTimelineInnovation = () => {
               const eventColors = getEraColors(event.eraNumber);
               
               return (
-                <motion.div
-                  key={`${event.year}-${index}`}
-                  className="relative flex flex-col items-center min-w-32"
-                >
-                  {/* Title Above Dot */}
-                  <div className="mb-8 text-center max-w-32">
-                    <p className="text-sm font-semibold text-gray-700 leading-tight">
-                      {event.title.length > 25 ? `${event.title.substring(0, 25)}...` : event.title}
-                    </p>
-                  </div>
-                  
-                  {/* Timeline Dot */}
-                  <motion.div
-                    className={`w-4 h-4 rounded-full border-4 border-white shadow-lg ${eventColors.dot}`}
-                    animate={isActive ? { scale: 1.2 } : { scale: 1 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                  
-                  {/* Year Below Dot */}
-                  <div className="mt-4 text-center">
-                    <p className="text-lg font-bold text-gray-800">
-                      {event.year}
-                    </p>
-                  </div>
-                </motion.div>
+                 <motion.div
+                   key={`${event.year}-${index}`}
+                   className="relative flex flex-col items-center min-w-32"
+                 >
+                   {/* Timeline Dot */}
+                   <motion.div
+                     className={`w-4 h-4 rounded-full border-4 border-white shadow-lg ${eventColors.dot}`}
+                     animate={isActive ? { scale: 1.2 } : { scale: 1 }}
+                     transition={{ duration: 0.3 }}
+                   />
+                   
+                   {/* Year Below Dot */}
+                   <div className="mt-4 text-center">
+                     <p className="text-lg font-bold text-gray-800">
+                       {event.year}
+                     </p>
+                   </div>
+                 </motion.div>
               );
             })}
           </motion.div>
@@ -282,59 +275,49 @@ const SVRTimelineInnovation = () => {
           {/* Popup Card */}
           <AnimatePresence>
             {showCard && (
-              <motion.div
-                initial={{ opacity: 0, y: 40, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: -20, scale: 0.95 }}
-                transition={{ 
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 25
-                }}
-                className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20"
-              >
-                <div className={`bg-gradient-to-br ${colors.gradient} p-6 rounded-2xl ${colors.glow} max-w-sm text-white`}>
-                  {/* ERA Badge */}
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.1 }}
-                    className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold mb-3"
-                  >
-                    ERA {currentEvent.eraNumber} – {currentEvent.era}
-                  </motion.div>
-                  
-                  {/* Year */}
-                  <motion.div
-                    initial={{ opacity: 0, x: -15 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 }}
-                    className="text-3xl font-bold mb-2"
-                  >
-                    {currentEvent.year}
-                  </motion.div>
-                  
-                  {/* Title */}
-                  <motion.h3
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.3 }}
-                    className="text-lg font-bold mb-2 leading-tight"
-                  >
-                    {currentEvent.title}
-                  </motion.h3>
-                  
-                  {/* Description */}
-                  <motion.p
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="text-white/90 text-sm leading-relaxed"
-                  >
-                    {currentEvent.description}
-                  </motion.p>
-                </div>
-              </motion.div>
+               <motion.div
+                 initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                 animate={{ opacity: 1, y: 0, scale: 1 }}
+                 exit={{ opacity: 0, y: -20, scale: 0.95 }}
+                 transition={{ 
+                   type: "spring",
+                   stiffness: 400,
+                   damping: 25
+                 }}
+                 className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20"
+               >
+                 <div className={`bg-gradient-to-br ${colors.gradient} p-5 rounded-xl ${colors.glow} max-w-xs text-white`}>
+                   {/* Year */}
+                   <motion.div
+                     initial={{ opacity: 0, x: -15 }}
+                     animate={{ opacity: 1, x: 0 }}
+                     transition={{ delay: 0.1 }}
+                     className="text-2xl font-bold mb-2"
+                   >
+                     {currentEvent.year}
+                   </motion.div>
+                   
+                   {/* Title */}
+                   <motion.h3
+                     initial={{ opacity: 0, y: 15 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ delay: 0.2 }}
+                     className="text-lg font-bold mb-2 leading-tight"
+                   >
+                     {currentEvent.title}
+                   </motion.h3>
+                   
+                   {/* Description */}
+                   <motion.p
+                     initial={{ opacity: 0, y: 15 }}
+                     animate={{ opacity: 1, y: 0 }}
+                     transition={{ delay: 0.3 }}
+                     className="text-white/90 text-sm leading-relaxed"
+                   >
+                     {currentEvent.description}
+                   </motion.p>
+                 </div>
+               </motion.div>
             )}
           </AnimatePresence>
         </div>

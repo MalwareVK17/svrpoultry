@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import Timeline from '@/components/Timeline';
 import TextCarousel from '@/components/TextCarousel';
 import SVRTimelineInnovation from '@/components/SVRTimelineInnovation';
+import WorldMap from '@/components/WorldMap';
 
 const Home = () => {
   const partners = [
@@ -155,33 +156,17 @@ const Home = () => {
               </div>
 
               {/* Image Side */}
-             <motion.div
-  initial={{ opacity: 0, x: 30 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.8, delay: 0.4 }}
-  viewport={{ once: true }}
-  className="relative h-full"
->
-  <div className="aspect-video lg:aspect-auto lg:h-full relative overflow-hidden rounded-r-3xl bg-gradient-to-br from-primary/5 to-primary/10 flex items-center justify-center">
-    <motion.video
-      src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/World_Map_Animation_With_Marked_Countries.mp4"
-      className="w-full h-full object-cover"
-      autoPlay
-      loop
-      muted
-      playsInline
-      animate={{
-        scale: [1, 1.02, 1],
-      }}
-      transition={{
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }}
-    />
-    <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
-  </div>
-</motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+                className="relative h-full"
+              >
+                <div className="aspect-video lg:aspect-auto lg:h-full relative overflow-hidden">
+                  <WorldMap />
+                </div>
+              </motion.div>
 
             </div>
           </motion.div>

@@ -130,7 +130,7 @@ const Products = () => {
       // Navigate directly to product detail page for single products
       if (product.id === 203) {
         // Auto Batching Systems - direct to detail page
-        window.location.href = `/products/203`;
+        window.location.href = `/products/manufacturing/203`;
       }
     } else {
       // Open popup with sub-products
@@ -147,7 +147,7 @@ const Products = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-6 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -169,7 +169,7 @@ const Products = () => {
       </section>
 
       {/* Project Showcase Section */}
-      <section className="py-12 bg-white">
+      <section className="py-6 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -428,71 +428,97 @@ const Products = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">Feed Transportation</h2>
-            <div className="flex justify-center space-x-6">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
-                className="w-72"
-              >
-                <Card className="bg-white shadow-xl rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer h-full"
-                  onClick={() => window.location.href = '/products/401'}
+            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">Feed Transportation</h2>
+            <div className="flex justify-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl w-full px-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="group"
                 >
-                  <CardContent className="p-0">
-                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png" 
-                        alt="Tractor Tanker"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Tractor Tanker</h3>
-                      <ul className="text-gray-600 space-y-1 mb-4 text-sm">
-                        <li>• Mobile feed transportation</li>
-                        <li>• High capacity storage</li>
-                        <li>• Efficient distribution system</li>
-                      </ul>
-                      <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
-                        View Details
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                  <Link to="/products/transportation/401">
+                    <Card className="bg-white shadow-xl rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] h-full group cursor-pointer">
+                      <CardContent className="p-0">
+                        <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                          <img 
+                            src="https://i.ytimg.com/vi/I6ZCAasnQ3A/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGE4gYChlMA8=&rs=AOn4CLDSnY4mj_AktXChzML6w637bMiucg" 
+                            alt="Tractor Tanker"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                        <div className="p-8">
+                          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">Tractor Tanker</h3>
+                          <p className="text-gray-600 mb-6 leading-relaxed">Mobile feed cleaning and processing unit for on-site feed quality enhancement.</p>
+                          <ul className="space-y-3 mb-8">
+                            <li className="flex items-center">
+                              <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                              Mobile operation
+                            </li>
+                            <li className="flex items-center">
+                              <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                              Feed cleaning
+                            </li>
+                            <li className="flex items-center">
+                              <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                              Quality enhancement
+                            </li>
+                          </ul>
+                          <Button size="lg" className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
+                            View Details
+                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="w-72"
-              >
-                <Card className="bg-white shadow-xl rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 group cursor-pointer h-full"
-                  onClick={() => window.location.href = '/products/402'}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="group"
                 >
-                  <CardContent className="p-0">
-                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/8bcac9fe-592a-4bc5-9982-daa9c848d1c0.png" 
-                        alt="Bulk Feeding Tanker"
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      />
-                    </div>
-                    <div className="p-5">
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">Bulk Feeding Tanker</h3>
-                      <ul className="text-gray-600 space-y-1 mb-4 text-sm">
-                        <li>• Large volume transportation</li>
-                        <li>• Pneumatic discharge system</li>
-                        <li>• Weather sealed compartments</li>
-                      </ul>
-                      <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
-                        View Details
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
+                  <Link to="/products/transportation/402">
+                    <Card className="bg-white shadow-xl rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-[1.02] h-full group cursor-pointer">
+                      <CardContent className="p-0">
+                        <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 relative overflow-hidden">
+                          <img 
+                            src="https://svrpoultryequipments.com/static/images/Bulk%20feed%20Tanker.jpg" 
+                            alt="Bulk Feeding Tanker"
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        </div>
+                        <div className="p-8">
+                          <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors">Bulk Feeding Tanker</h3>
+                          <p className="text-gray-600 mb-6 leading-relaxed">Industrial bulk feeding system with automated delivery for large-scale operations.</p>
+                          <ul className="space-y-3 mb-8">
+                            <li className="flex items-center">
+                              <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                              Bulk delivery
+                            </li>
+                            <li className="flex items-center">
+                              <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                              Automated systems
+                            </li>
+                            <li className="flex items-center">
+                              <span className="w-2 h-2 bg-primary rounded-full mr-3"></span>
+                              Industrial capacity
+                            </li>
+                          </ul>
+                          <Button size="lg" className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
+                            View Details
+                            <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
