@@ -239,7 +239,7 @@ const SVRTimelineInnovation = () => {
             className="absolute top-1/2 left-1/2 flex items-center space-x-48 transform -translate-y-1/2"
             animate={{ x: scrollPosition }}
             transition={{
-              duration: 2,
+              duration: 1.2,
               ease: "easeInOut"
             }}
             style={{ width: `${duplicatedData.length * 200}px` }}
@@ -322,26 +322,6 @@ const SVRTimelineInnovation = () => {
           </AnimatePresence>
         </div>
 
-        {/* Progress Indicator */}
-        <motion.div
-          className="mt-8 flex justify-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <div className="flex space-x-2">
-            {timelineData.map((_, index) => (
-              <motion.div
-                key={index}
-                className={`h-2 rounded-full transition-all duration-500 ${
-                  index === currentIndex ? 'bg-primary w-8' : 'bg-gray-300 w-2'
-                }`}
-                animate={index === currentIndex ? { scale: [1, 1.1, 1] } : { scale: 1 }}
-                transition={{ duration: 0.5 }}
-              />
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

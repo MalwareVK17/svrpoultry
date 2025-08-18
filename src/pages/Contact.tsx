@@ -8,6 +8,7 @@ import { MapPin, Phone, Mail, Clock, X } from 'lucide-react';
 import { useState } from 'react';
 import { supabase } from '@/integrations/supabase/client';
 import { useToast } from '@/hooks/use-toast';
+import Footer from '@/components/Footer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -111,7 +112,7 @@ const Contact = () => {
         }}
       >
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-white/85 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
       </div>
 
       {/* Content Container */}
@@ -453,6 +454,9 @@ const Contact = () => {
           </motion.div>
         </motion.div>
       )}
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };

@@ -30,7 +30,7 @@ const Navigation = () => {
                 alt="SVR Poultry Equipments header logo"
                 className="h-10 w-auto"
               />
-              <span className="text-lg font-semibold text-gray-800">POULTRY EQUIPMENTS</span>
+              <span className="text-lg font-semibold text-gray-800 flex items-center">POULTRY EQUIPMENTS</span>
             </Link>
           </div>
 
