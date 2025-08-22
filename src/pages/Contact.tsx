@@ -99,7 +99,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen h-auto relative">
+    <div className=" h-auto relative">
       {/* Fixed Background Image */}
       <div 
         className="fixed inset-0 z-0"
