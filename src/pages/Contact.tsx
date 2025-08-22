@@ -100,10 +100,10 @@ const Contact = () => {
 
   return (
      <div>
-          <div className=" h-auto relative -mt-96">
+          <div className=" h-auto relative ">
       {/* Fixed Background Image */}
   <div 
-        className="fixed inset-0 z-0"
+        className="fixed"
         style={{
           backgroundImage: `url(/lovable-uploads/48821b40-e079-4c47-80f8-b1fdc8c8da10.png)`,
           backgroundSize: 'cover',
