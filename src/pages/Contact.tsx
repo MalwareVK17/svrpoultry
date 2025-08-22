@@ -124,7 +124,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-5xl font-bold text-gray-900 mb-4"
+              className="text-5xl font-bold text-white mb-4"
             >
               Contact Us
             </motion.h1>
@@ -132,7 +132,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-600 max-w-3xl mx-auto"
+              className="text-xl text-white max-w-3xl mx-auto"
             >
               Get in touch with us for all your poultry equipment needs
             </motion.p>
@@ -150,8 +150,8 @@ const Contact = () => {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Get In Touch</h2>
-              <p className="text-gray-600 mb-8 text-lg leading-relaxed">
+              <h2 className="text-3xl font-bold text-white mb-8">Get In Touch</h2>
+              <p className="text-white mb-8 text-lg leading-relaxed">
                 We're here to help you with all your poultry equipment needs. 
                 Reach out to us and our expert team will get back to you promptly.
               </p>
@@ -171,9 +171,9 @@ const Contact = () => {
                       <info.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-900 text-lg mb-2">{info.title}</h3>
+                      <h3 className="font-semibold text-white text-lg mb-2">{info.title}</h3>
                       {info.details.map((detail, idx) => (
-                        <p key={idx} className="text-gray-600">{detail}</p>
+                        <p key={idx} className="text-white">{detail}</p>
                       ))}
                     </div>
                   </motion.div>
