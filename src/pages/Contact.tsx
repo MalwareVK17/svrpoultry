@@ -421,7 +421,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-        <Footer />
+        <Footer/>
       </div>
 
       {/* Under Construction Popup */}
