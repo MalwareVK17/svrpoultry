@@ -454,9 +454,6 @@ const Contact = () => {
           </motion.div>
         </motion.div>
       )}
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
