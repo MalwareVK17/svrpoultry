@@ -99,7 +99,8 @@ const Contact = () => {
   ];
 
   return (
-    <div className=" h-auto relative">
+     <div>
+          <div className=" h-auto relative">
       {/* Fixed Background Image */}
       <div 
         className="fixed inset-0 z-0"
@@ -455,6 +456,7 @@ const Contact = () => {
         </motion.div>
       )}
     </div>
+     </div>
   );
 };
 
