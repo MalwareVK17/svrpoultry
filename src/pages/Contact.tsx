@@ -102,7 +102,11 @@ const Contact = () => {
      <div>
           <div className=" h-auto relative">
       {/* Fixed Background Image */}
-      <div 
+  
+      {/* Content Container */}
+      <div className="relative">
+        {/* Hero Section */}
+        <div 
         className="fixed inset-0 z-0"
         style={{
           backgroundImage: `url(/lovable-uploads/48821b40-e079-4c47-80f8-b1fdc8c8da10.png)`,
@@ -115,10 +119,6 @@ const Contact = () => {
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
       </div>
-
-      {/* Content Container */}
-      <div className="relative">
-        {/* Hero Section */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.h1
