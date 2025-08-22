@@ -99,7 +99,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen h-auto relative">
       {/* Fixed Background Image */}
       <div 
         className="fixed inset-0 z-0"
@@ -116,7 +116,7 @@ const Contact = () => {
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10">
+      <div className="relative">
         {/* Hero Section */}
         <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
