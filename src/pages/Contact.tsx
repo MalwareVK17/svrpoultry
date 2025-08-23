@@ -451,10 +451,10 @@ const Contact = () => {
             </Button>
           </motion.div>
         </motion.div>
-      )}
+            )}
     </div>
-     </div>
   );
 };
 
 export default Contact;
+
