@@ -99,10 +99,9 @@ const Contact = () => {
   ];
 
   return (
-     <div>
-          <div className=" h-auto relative ">
-      {/* Fixed Background Image */}
-    <div 
+     <div className="relative min-h-screen">
+  {/* Background */}
+  <div 
     className="absolute inset-0 -z-10"
     style={{
       backgroundImage: `url(/lovable-uploads/48821b40-e079-4c47-80f8-b1fdc8c8da10.png)`,
