@@ -102,19 +102,17 @@ const Contact = () => {
      <div>
           <div className=" h-auto relative ">
       {/* Fixed Background Image */}
-  <div 
-        className="fixed z-0"
-        style={{
-          backgroundImage: `url(/lovable-uploads/48821b40-e079-4c47-80f8-b1fdc8c8da10.png)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed',
-          borderRadius: '10px'
-        }}
-      >
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
-      </div>
+    <div 
+    className="absolute inset-0 -z-10"
+    style={{
+      backgroundImage: `url(/lovable-uploads/48821b40-e079-4c47-80f8-b1fdc8c8da10.png)`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}
+  >
+    <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+  </div>
+
       {/* Content Container */}
       <div className="relative">
         {/* Hero Section */}
