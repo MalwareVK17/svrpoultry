@@ -1,6 +1,5 @@
-
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Youtube, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Youtube, MapPin, Phone, Mail, MailCheckIcon, MailCheck } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -16,7 +15,7 @@ const Footer = () => {
               <span className="font-bold text-xl">SVR Poultry Equipments</span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Leading provider of innovative poultry equipment solutions for modern farming. 
+              Leading provider of innovative poultry equipment solutions for modern farming.
               Quality products, competitive pricing, and excellent customer service.
             </p>
             <div className="flex space-x-4">
@@ -47,13 +46,20 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-lg mb-3">Product Categories</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Cages & Accessories</li>
-              <li>Feed Manufacturing</li>
-              <li>Feed Storage</li>
-              <li>Feed Transportation</li>
-              <li>Auto Batching Systems</li>
-              <li>Weld Mesh</li>
+              <li className="hover:text-white transition-colors mb-2">
+                <Link to="/products#cages">Cages & Accessories</Link>
+              </li>
+              <li className="hover:text-white transition-colors mb-2">
+                <Link to="/products#feedmanufacturing">Feed Manufacturing</Link>
+              </li>
+              <li className="hover:text-white transition-colors mb-2">
+                <Link to="/products#feedstorage">Feed Storage</Link>
+              </li>
+              <li className="hover:text-white transition-colors mb-2">
+                <Link to="/products#feedtransportation">Feed Transportation</Link>
+              </li>
             </ul>
+
           </div>
 
           {/* Contact Info */}
@@ -73,7 +79,7 @@ const Footer = () => {
                 <span className="text-gray-300">+91 88866 45122 </span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-primary" />
+                <MailCheck className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <span className="text-gray-300 whitespace-nowrap">svrpoultryequipments@gmail.com</span>
               </div>
             </div>

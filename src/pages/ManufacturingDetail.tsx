@@ -15,13 +15,13 @@ const ManufacturingDetail = () => {
   const manufacturingProducts = {
     '203': {
       title: 'Auto Batching Systems',
-      description: 'Advanced automated batching systems for optimal poultry nutrition processing. State-of-the-art technology for precise ingredient mixing and feed formula management.',
+      description: 'Auto batching system can give the best results in production for its accuracy in feed formula. Batching is suitable for 50,000 and above birds. Batching bin available in 2, 4, 5, 6, 7, 8, 10 bins.',
       images: [
-        '/lovable-uploads/819b4d78-1fce-4557-90af-e1526d3a60e2.png',
-        '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
-        '/lovable-uploads/96f80145-67f7-4ecf-9009-d039c9cccbf6.png'
+        'https://image2url.com/images/1756530978711-59e7f08f-4dd1-48f5-85ec-440b619ff120.jpg',
+        'https://image2url.com/images/1756529796915-f987f0c0-2d17-4383-acf5-b00e9e7279a6.jpg',
+        'https://image2url.com/images/1756529372288-1a000ffa-8fb1-482b-95b0-4a08d3ad7247.jpg'
       ],
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      videoUrl: 'https://www.youtube.com/embed/XEUWLSMzFRw',
       keyFeatures: [
         'Automated ingredient batching and mixing',
         'Precise formula management system',
@@ -42,7 +42,9 @@ const ManufacturingDetail = () => {
   };
 
   const product = manufacturingProducts[id as keyof typeof manufacturingProducts];
-
+   useEffect(() => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  }, []);
   // Auto-slide effect for images
   useEffect(() => {
     if (product && product.images.length > 1) {
@@ -77,7 +79,7 @@ const ManufacturingDetail = () => {
           <Button
             onClick={() => navigate('/products')}
             variant="outline"
-            className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm hover:bg-white border-primary/20 hover:border-primary/40 transition-all duration-300"
+            className="mb-4 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Products</span>
@@ -103,7 +105,7 @@ const ManufacturingDetail = () => {
                 <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
                   {product.title}
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed text-justify">
                   {product.description}
                 </p>
               </div>
@@ -217,7 +219,7 @@ const ManufacturingDetail = () => {
                         className="flex items-start space-x-3 group"
                       >
                         <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors text-justify">
                           {feature}
                         </span>
                       </motion.div>
@@ -255,7 +257,7 @@ const ManufacturingDetail = () => {
                         <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                           <div className="w-2 h-2 bg-primary rounded-full" />
                         </div>
-                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors text-justify">
                           {advantage}
                         </span>
                       </motion.div>
@@ -283,7 +285,7 @@ const ManufacturingDetail = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Ready to Automate Your Manufacturing?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
               Get in touch with our experts to discuss your specific requirements and receive a customized solution.
             </p>
             <Link to="/contact">

@@ -2,6 +2,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 
 interface SubProduct {
   id: number;
@@ -18,6 +20,12 @@ interface ProductPopupProps {
 }
 
 const ProductPopup = ({ isOpen, onClose, title, subProducts }: ProductPopupProps) => {
+  const navigate = useNavigate();
+
+  const handleRouter = (product) => {
+    navigate(`/products/sub/${product?.id}`, { state: { product } } ); 
+  };
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -45,6 +53,8 @@ const ProductPopup = ({ isOpen, onClose, title, subProducts }: ProductPopupProps
               <button
                 onClick={onClose}
                 className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors"
+                title="Close"
+                aria-label="Close"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -83,8 +93,9 @@ const ProductPopup = ({ isOpen, onClose, title, subProducts }: ProductPopupProps
                     <div className="p-6">
                       <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors">{product.title}</h3>
                       <p className="text-gray-600 mb-4 text-sm leading-relaxed">{product.description}</p>
-                      <Link to={`/products/sub/${product.id}`}>
-                        <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105">
+                        <Button className="w-full bg-primary hover:bg-primary/90 rounded-full group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105"
+                          onClick={()=>handleRouter(product)}
+                        >
                           View Details
                           <motion.div
                             className="ml-2"
@@ -94,7 +105,6 @@ const ProductPopup = ({ isOpen, onClose, title, subProducts }: ProductPopupProps
                             →
                           </motion.div>
                         </Button>
-                      </Link>
                     </div>
                   </motion.div>
                 ))}

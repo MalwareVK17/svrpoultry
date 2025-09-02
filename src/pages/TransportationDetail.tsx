@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Truck, Shield, Clock, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -10,18 +10,24 @@ const TransportationDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const location = useLocation();
+  const passedProduct = location.state?.product || null;  
 
+
+  useEffect(()=>{
+    window.scrollTo({top:0, behavior:'smooth'});
+  },[])
   // Transportation product data
   const transportationProducts = {
     '401': {
       title: 'Tractor Tanker',
       description: 'Mobile feed cleaning and processing unit for on-site feed quality enhancement. Advanced mobile solution for efficient feed transportation and processing.',
       images: [
-        'https://i.ytimg.com/vi/I6ZCAasnQ3A/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGE4gYChlMA8=&rs=AOn4CLDSnY4mj_AktXChzML6w637bMiucg',
-        '/lovable-uploads/812c8b07-736e-4b01-a661-924086ff120a.png',
-        '/lovable-uploads/479897d6-c94d-4fc4-8944-19080977243d.png'
+        'https://image2url.com/images/1756392517733-6990c7d4-40ef-41cf-ae0c-4dc4bfefc704.jpg',
+        'https://image2url.com/images/1756372043359-130b0bf0-a134-4aef-9340-b6d2247ea83c.jpg',
+        'https://image2url.com/images/1756386082198-4b6e77b4-9cd3-44a4-81ae-41c9373ea239.jpg'
       ],
-      videoUrl: 'https://www.youtube.com/embed/I6ZCAasnQ3A',
+      videoUrl: 'https://www.youtube.com/embed/DzID-eR5BPU',
       keyFeatures: [
         'Mobile operation with tractor compatibility',
         'Feed cleaning and quality enhancement',
@@ -44,10 +50,10 @@ const TransportationDetail = () => {
       description: 'Industrial bulk feeding system with automated delivery for large-scale operations. Designed for efficient bulk feed transportation and automated dispensing.',
       images: [
         'https://svrpoultryequipments.com/static/images/Bulk%20feed%20Tanker.jpg',
-        '/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png',
-        '/lovable-uploads/eb1143e6-0bfe-4295-8afc-a56d17eeade9.png'
+        'https://image2url.com/images/1756374234782-0d91870a-62c3-4ffb-84d6-712aaa102b90.jpg',
+        'https://image2url.com/images/1756375575878-8492194f-9801-40c4-9085-801dbd0b60c6.jpg'
       ],
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      videoUrl: 'https://www.youtube.com/embed/m4ajzBub4mQ',
       keyFeatures: [
         'Large capacity bulk delivery system',
         'Automated dispensing mechanism',
@@ -103,7 +109,7 @@ const TransportationDetail = () => {
           <Button
             onClick={() => navigate('/products')}
             variant="outline"
-            className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm hover:bg-white border-primary/20 hover:border-primary/40 transition-all duration-300"
+            className="mb-4 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Products</span>
@@ -129,7 +135,7 @@ const TransportationDetail = () => {
                 <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
                   {product.title}
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed text-justify">
                   {product.description}
                 </p>
               </div>
@@ -191,7 +197,7 @@ const TransportationDetail = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">See It In Action</h2>
-            <p className="text-xl text-gray-600">Watch how our {product.title.toLowerCase()} revolutionize feed transportation</p>
+            <p className="text-xl text-gray-600 text-center">Watch how our {product.title.toLowerCase()} revolutionize feed transportation</p>
           </motion.div>
           
           <motion.div
@@ -243,7 +249,7 @@ const TransportationDetail = () => {
                         className="flex items-start space-x-3 group"
                       >
                         <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors text-justify">
                           {feature}
                         </span>
                       </motion.div>
@@ -281,7 +287,7 @@ const TransportationDetail = () => {
                         <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                           <div className="w-2 h-2 bg-primary rounded-full" />
                         </div>
-                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors text-justify">
                           {advantage}
                         </span>
                       </motion.div>
@@ -309,10 +315,9 @@ const TransportationDetail = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Ready to Upgrade Your Transportation?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed text-center">
               Get in touch with our experts to discuss your specific requirements and receive a customized solution.
             </p>
-            <Link to="/contact">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -320,12 +325,12 @@ const TransportationDetail = () => {
                 <Button 
                   size="lg"
                   className="bg-primary hover:bg-primary/90 px-12 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transform transition-all duration-300"
+                  onClick={()=>navigate('/contact', { state: { product : passedProduct} } ) }
                 >
                   Contact Us
                   <ArrowRight className="ml-3 w-6 h-6" />
                 </Button>
               </motion.div>
-            </Link>
           </motion.div>
         </div>
       </section>

@@ -5,13 +5,23 @@ import { Badge } from '@/components/ui/badge';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Settings, Users, Zap, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { stat } from 'fs';
+import { useLocation } from 'react-router-dom';
+import { table } from 'console';
+
+
 
 const SubProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const location = useLocation();
+  console.log("product form the product page", location.state?.product);
 
   // Sub-product data with detailed information
+    useEffect(() => {
+      window.scrollTo({top:0, behavior:'smooth'});
+    }, []);
   const subProducts = {
     // Cages Category
     '1001': {
@@ -19,9 +29,9 @@ const SubProductDetail = () => {
       category: 'Cages',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       images: [
-        '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-        '/lovable-uploads/b43eae74-224b-4b97-9c97-fee060bfbce1.png',
-        '/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png'
+        'https://image2url.com/images/1756412931467-33af9eee-62be-4afe-a8ea-81c003d2e073.jpeg',
+        'https://image2url.com/images/1756719762432-0f25b2cf-5814-4b91-b2fe-5808d2a0a5bb.webp',
+        'https://image2url.com/images/1756718975836-faae6350-88e0-4f01-af22-ac0075826d92.webp'
       ],
       description: 'Specially designed cage systems for young chicks with optimal spacing, temperature control, and comfort features to ensure healthy growth during the critical early stages.',
       features: [
@@ -61,9 +71,9 @@ const SubProductDetail = () => {
       category: 'Cages',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       images: [
-        '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-        '/lovable-uploads/b43eae74-224b-4b97-9c97-fee060bfbce1.png',
-        '/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png'
+        'https://image2url.com/images/1756413215475-7cee7a07-7def-4a26-8bed-11ed135c7a3b.jpg',
+        'https://image2url.com/images/1756718854195-76abc330-bfe1-4762-bbb2-735813e2cf8e.jpg',
+        'https://image2url.com/images/1756413268975-112a83b5-8f8b-40ad-ace6-51b494881558.jpg'
       ],
       description: 'Professional layer cages designed for maximum egg production and bird welfare with advanced nest boxes, feeding systems, and easy egg collection.',
       features: [
@@ -104,7 +114,7 @@ const SubProductDetail = () => {
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       images: [
         '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-        '/lovable-uploads/b43eae74-224b-4b97-9c97-fee060bfbce1.png',
+        'https://image2url.com/images/1756413398125-1ed78a63-a196-47be-b9c9-ede219203e8b.webp',
         '/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png'
       ],
       description: 'Robust grower cages that provide ample space for developing birds with adjustable features to accommodate growth from 6 weeks to maturity.',
@@ -137,19 +147,19 @@ const SubProductDetail = () => {
         'Capacity': '15-25 birds/cage',
         'Material': 'Heavy-duty galvanized',
         'Warranty': '12 years',
-        'Adjustability': 'Growth-adaptive'
+        'Adjustability ': 'Growth-adaptive'
       }
     },
     '1004': {
       title: 'Water Nipples',
       category: 'Cage Accessories',
-      image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
+      image: 'https://image2url.com/images/1756412000861-b97511ad-9904-4186-a473-a1c41fddfabc.webp',
       images: [
-        '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-        '/lovable-uploads/b43eae74-224b-4b97-9c97-fee060bfbce1.png',
-        '/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png'
+        'https://image2url.com/images/1756412000861-b97511ad-9904-4186-a473-a1c41fddfabc.webp',
+        'https://image2url.com/images/1756411779318-d7506b54-000b-4816-ab2c-2b34d21cdc49.jpeg',
+        'https://image2url.com/images/1756718175527-f6305db6-05a5-4ece-9234-c15e62e25f2f.jpg'
       ],
-      description: 'High-quality water nipples ensuring clean and efficient water supply for birds with leak-proof design and easy maintenance features.',
+      description: 'Our advanced water nipples feature a 360-degree swivel design, manufactured with precision laser-cut stainless steel and food-grade plastic components. The parts are assembled using high-speed automated assembly lines that ensure a leak-proof seal, capable of handling pressures up to 100 PSL. The design minimizes water waste by up to 40%, and each unit is rigorously pressure-tested to guarantee reliability, making it perfect for high-volume poultry operations.',
       features: [
         'Leak-proof design',
         'Easy activation',
@@ -183,15 +193,15 @@ const SubProductDetail = () => {
       }
     },
     '1005': {
-      title: 'PVC/Giffers',
+      title: 'PVC/GI-Feeders',
       category: 'Cage Accessories',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       images: [
-        '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-        '/lovable-uploads/b43eae74-224b-4b97-9c97-fee060bfbce1.png',
-        '/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png'
+        'https://image2url.com/images/1756411393949-ab90bef3-fed9-48de-b27a-2ce7b6e8bf8e.jpeg',
+        'https://image2url.com/images/1756719320272-79c48274-7236-49d9-966b-d61738edded7.avif',
+        'https://image2url.com/images/1756719411267-591d213a-ec80-4f59-b99c-95c9bb564d7a.webp'
       ],
-      description: 'Durable PVC components and giffers for reliable cage system operation with weather resistance and easy installation features.',
+      description: 'Our feeders are crafted using injection molding techniques with UV-stabilized PVC for outstanding durability, even in extreme outdoor conditions. Each feeder undergoes automated extrusion and cutting processes, ensuring precision and uniformity in every piece. The materials are anti-scratch coated and treated with anti-clogging technology. Available in sizes from 10 to 15 feet, they are customizable for various feeding systems, ensuring efficient and effective feed disbursement.',
       features: [
         'Weather resistant PVC',
         'UV stabilized material',
@@ -229,11 +239,11 @@ const SubProductDetail = () => {
       category: 'Cage Accessories',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
       images: [
-        '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
-        '/lovable-uploads/b43eae74-224b-4b97-9c97-fee060bfbce1.png',
-        '/lovable-uploads/8ae29c95-16e1-4c4b-995b-1e6ee604111d.png'
+        'https://image2url.com/images/1756411631696-d31ff49e-7b0d-437a-ac27-7d8f637723ea.webp',
+        'https://image2url.com/images/1756411570206-4b032d6c-c72e-4c30-8d2a-9d3979edac8a.jpg',
+        'https://image2url.com/images/1756411603207-8edcae55-41ab-4332-8e4f-119193d1c927.webp'
       ],
-      description: 'Professional-grade pipes for water and feed distribution systems with corrosion resistance and optimal flow characteristics.',
+      description: 'Our PVC pipes are engineered with extrusion moulding, using a unique polymer blend for increased flexibility and durability. They are reinforced with UV-resistant additives to handle a wide temperature range from -20°C to 60°C. Each pipe undergoes ultrasonic welding for secure joints, and is tested under high-pressure environments to ensure resistance to bursts. Available in diameters from 20mm to 50mm, our pipes are built for easy integration with various coupling systems.',
       features: [
         'Corrosion resistant coating',
         'Optimal flow design',
@@ -272,10 +282,10 @@ const SubProductDetail = () => {
       image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
       images: [
         'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
-        '/lovable-uploads/77413970-4bb0-40b6-943d-ec5d851a92aa.png',
+        'https://image2url.com/images/1756718603006-2148b235-fcbd-417f-995d-500e6ea63c61.jpg',
         '/lovable-uploads/e1fab63a-52b7-4282-86b5-75c0b4a79b15.png'
       ],
-      description: 'Strong welded mesh panels with corrosion resistance and multiple size options for versatile poultry housing applications.',
+      description: 'SVR is a leader in poultry equipment, delivering precision-engineered cage mesh made from high-grade galvanized steel with a zinc coating from 90 GSM to 275 GSM, ensuring superior corrosion resistance. Our mesh is produced using state-of-the-art automated welding techniques, providing consistent spacing and strength with a tensile strength of up to 500 N/mm². Utilizing CNC-cutting & controlled bending machines, we achieve flawless angles and shapes, ensuring easy installation and long-lasting stability in a variety of climates.',
       features: [
         'High-strength welded joints',
         'Corrosion resistant coating',
@@ -313,11 +323,11 @@ const SubProductDetail = () => {
       category: 'Weld Mesh',
       image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
       images: [
-        'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
-        '/lovable-uploads/77413970-4bb0-40b6-943d-ec5d851a92aa.png',
-        '/lovable-uploads/e1fab63a-52b7-4282-86b5-75c0b4a79b15.png'
+        'https://image2url.com/images/1756718674672-18b61b8a-b355-431d-b29d-a51df0ad2070.jpg',
+        'https://image2url.com/images/1756412398063-d7b892c6-b545-4cdf-bbb2-7d973198b7ce.webp',
+        'https://image2url.com/images/1756412425318-d1635325-f750-4ebe-8928-4cc8c91ecba6.webp'
       ],
-      description: 'Durable chain link fencing solutions for secure poultry enclosures with flexible installation and high security features.',
+      description: ' Chain Link Fencing also popularly known as Galvanized Chain Link Fence are Rust Proof with Silver Finish, manufactured from Heavy Coated Hot Dip Galvanized GI Wires with minimum from 90 to max of 275 gsm Zinc Coating',
       features: [
         'Interlocked wire design',
         'Flexible installation',
@@ -354,13 +364,13 @@ const SubProductDetail = () => {
     '2001': {
       title: 'Rooter Feed Trolley',
       category: 'Feed Trolley',
-      image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
+      image: 'https://image2url.com/images/1756717371699-2be5326b-54f6-4012-b2be-81231d416a89.png',
       images: [
-        '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
-        '/lovable-uploads/37b19977-d765-4669-b6bc-c7d59a28d39f.png',
-        '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png'
+        'https://image2url.com/images/1756717317930-5d171128-870a-4554-9f15-3ed0877eda1f.jpg',
+        'https://image2url.com/images/1756544678430-081e341a-1b57-42c2-b4ca-163738421601.jpg',
+        'https://image2url.com/images/1756544819802-5bd1b828-8e95-4375-addb-65238519e35a.jpg'
       ],
-      description: 'Specialized rooter feed trolley systems for precise feed distribution with advanced mobility and capacity features.',
+      description: 'The system is very accurate and maintains a uniform flow fans (Aluminum rooter) in rooters are made of hard aluminum material and can be operated electrically & manually Auger system with silos are installed outside the shed by which feed wastage can be controlled less man power ,feeding can be done within 10 minutes.',
       features: [
         'Precision feed distribution',
         'Advanced mobility system',
@@ -398,11 +408,10 @@ const SubProductDetail = () => {
       category: 'Feed Trolley',
       image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
       images: [
-        '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
-        '/lovable-uploads/37b19977-d765-4669-b6bc-c7d59a28d39f.png',
-        '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png'
+        'https://image2url.com/images/1756545203150-136b49aa-177d-4494-aeec-e40ab4238f29.jpg',
+        'https://image2url.com/images/1756545233797-95433c30-3911-4eea-a9d3-4b196f1a7f7d.jpg',
       ],
-      description: 'Advanced Garata feed trolley with enhanced mobility and capacity for efficient feed distribution in large-scale operations.',
+      description: 'The system is very accurate and maintains feed in uniform level from starting to ending of shed and can be operated electrically & manually ,feed saving is very high compared to rooter trolley.',
       features: [
         'Enhanced mobility design',
         'High capacity storage',
@@ -440,11 +449,11 @@ const SubProductDetail = () => {
       category: 'Feed Plants',
       image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
       images: [
-        '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
+        'https://image2url.com/images/1756727297611-60225ba7-e51b-4ef3-a961-919595537a4c.jpg',
         '/lovable-uploads/e6c1c0a4-2f52-437f-84d7-2104e8b0cc91.png',
         '/lovable-uploads/f2c1441c-8630-47f7-a4cc-284e064d2ee3.png'
       ],
-      description: 'Comprehensive feed manufacturing plants with automated systems for large-scale feed production and quality control.',
+      description: 'This feed plant is designed to produce feed efficiently and economically for small-scale poultry farming operations Capacity of this plant Ranges from 500 kg/hr to 2 tons/hr, suitable for small to medium poultry terms As it occupies minimal space while ensuring optimal performance. This plant uses-energy-efficient motors and equipment to reduce operational costs.\n This plant consists of full-screen grinder which is used to crush raw materials like com, wheat soybeans, and other grains into fine particles Ensures uniform particle Size for better feed digestibility.\n Weighing System uses electronic for accurate measurement of ingredients Ensures precise feed formulation for balanced poultry nutrition.',
       features: [
         'Complete manufacturing line',
         'Automated control systems',
@@ -475,18 +484,40 @@ const SubProductDetail = () => {
         'Quality': 'ISO certified',
         'Warranty': '7 years',
         'Monitoring': 'Real-time systems'
-      }
+      },
+      table: [
+        {
+          Model: 'SVRDG10',
+          Capacity: '1-2 tons/hour',
+          Power: '22 kW',
+        },
+        {
+          Model: 'SVRDG20',
+          Capacity: '2-5 tons/hour',
+          Power: '37 kW',
+        },
+        {
+          Model: 'SVRDG30',
+          Capacity: '5-10 tons/hour',
+          Power: '55 kW',
+        },
+        {
+          Model: 'SVRDG50',
+          Capacity: '10-20 tons/hour',
+          Power: '75 kW',
+        }
+      ]
     },
     '2004': {
       title: 'Full Screen Grinder',
       category: 'Feed Plants',
-      image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
+      image: 'https://image2url.com/images/1756052616063-ef8f22ca-a041-46d5-8cc3-e1f3523bf34f.jpg',
       images: [
-        '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
-        '/lovable-uploads/e6c1c0a4-2f52-437f-84d7-2104e8b0cc91.png',
-        '/lovable-uploads/f2c1441c-8630-47f7-a4cc-284e064d2ee3.png'
+        'https://image2url.com/images/1756543454084-439558c9-2955-43ff-a369-3fb9ab166487.jpg',
+        'https://image2url.com/images/1756543419745-dc9d6ab2-01bc-4bb6-a202-d78e43ecd9f5.jpg',
+        'https://image2url.com/images/1756543498678-097ad69b-9869-413e-9713-ead18083fd1a.jpg'
       ],
-      description: 'High-efficiency full screen grinder for optimal feed processing with advanced grinding technology and particle size control.',
+      description: 'A full-screen grinder features an 85% screening area, significantly larger than the 50% found in half-screen grinders This design effectively addresses various fine and coarse grinding challenges Additionally, it is widely used in cattle feed production. Our full-screen grinders, with capacities ranging from 1 ton hour to 12 tons/hour and beyond, come with several advanced features that make them a preferred choice in the industry',
       features: [
         'Full screen grinding technology',
         'Particle size control',
@@ -524,11 +555,11 @@ const SubProductDetail = () => {
       category: 'Feed Plants',
       image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
       images: [
-        '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
-        '/lovable-uploads/e6c1c0a4-2f52-437f-84d7-2104e8b0cc91.png',
-        '/lovable-uploads/f2c1441c-8630-47f7-a4cc-284e064d2ee3.png'
+        'https://image2url.com/images/1756545513458-1ac748f3-a057-43b2-a83d-e9add2d3ee8b.jpg',
+        'https://image2url.com/images/1756545574764-4463bb38-613c-43e3-8ef6-e2159edf7fa8.jpg',
+        'https://image2url.com/images/1756545605169-88e0c93d-fdd0-400b-9554-e207dc5b0999.jpg'
       ],
-      description: 'Precision weighing bins for accurate feed measurement and batching with advanced load cell technology and data logging.',
+      description: 'Weighing bins operate either electronically or mechanically, with electronic systems being on the more modern and preferred option. Electronic Weigh Bins Featuring electronic scales suspended by load cells, these bins convert force into measurable electrical signals for accurate and reliable weight measurements They are low maintenance and highly precise Electronic weighing bins are available in various configurations, depending the type of batch plant/feed plant.',
       features: [
         'High-precision load cells',
         'Data logging capability',
@@ -566,11 +597,11 @@ const SubProductDetail = () => {
       category: 'Feed Plants',
       image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
       images: [
-        '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
-        '/lovable-uploads/e6c1c0a4-2f52-437f-84d7-2104e8b0cc91.png',
-        '/lovable-uploads/f2c1441c-8630-47f7-a4cc-284e064d2ee3.png'
+        'https://image2url.com/images/1756545685590-96ee8a53-cc84-4ec6-aaca-124b5663e0cf.jpg',
+        'https://image2url.com/images/1756545725732-885f8889-4759-4591-9a26-5c34f3090422.jpg',
+        'https://image2url.com/images/1756545766560-c33027f0-7cfe-4dce-8ea5-03fe4806e2bb.jpg'
       ],
-      description: 'Industrial mixers ensuring uniform feed composition and quality with advanced mixing technology and consistent output.',
+      description: 'Ribbon Mixers A U-shaped horizontal trough with helical ribbons on a central shaft Ribbons move materials in opposing directions to achieve a uniform mix, A uniform blend. Paddle Mixers A horizontal cylindrical shell with paddles mounted on a central shaft Paddles lift and drop materials to create a uniform mix Both mixers are available in various sizes and capacities, ranging from 500 kg/batch to 5000 kg/batch and beyond, to suit different production needs',
       features: [
         'Uniform mixing technology',
         'Variable speed control',
@@ -611,7 +642,7 @@ const SubProductDetail = () => {
   useEffect(() => {
     if (product?.images && product.images.length > 1) {
       const interval = setInterval(() => {
-        setCurrentImageIndex((prevIndex) => 
+        setCurrentImageIndex((prevIndex) =>
           prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
         );
       }, 4000);
@@ -619,6 +650,12 @@ const SubProductDetail = () => {
       return () => clearInterval(interval);
     }
   }, [id, product]);
+
+
+  const handleGoToContactUsPage = () => {
+    console.log("navigating to contact us page with product:", product);
+    navigate('/contact', { state: { product } });
+  }
 
   if (!product) {
     return (
@@ -660,7 +697,10 @@ const SubProductDetail = () => {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <Card className="overflow-hidden shadow-2xl">
+            <Card className="overflow-hidden shadow-2xl "
+
+              style={{ maxHeight: '500px' }}
+            >
               <CardContent className="p-0">
                 <div className="aspect-square bg-gradient-to-br from-primary/5 to-secondary/10 relative overflow-hidden">
                   <motion.img
@@ -676,7 +716,7 @@ const SubProductDetail = () => {
                 </div>
               </CardContent>
             </Card>
-            
+
             {/* Image indicators */}
             {product.images && product.images.length > 1 && (
               <div className="flex justify-center space-x-2">
@@ -684,11 +724,12 @@ const SubProductDetail = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentImageIndex 
-                        ? 'bg-primary scale-125' 
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex
+                        ? 'bg-primary scale-125'
                         : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                    }`}
+                      }`}
+                    aria-label={`Show image ${index + 1}`}
+                    title={`Show image ${index + 1}`}
                   />
                 ))}
               </div>
@@ -709,7 +750,7 @@ const SubProductDetail = () => {
               <h1 className="text-4xl font-bold mb-4 text-foreground">
                 {product.title}
               </h1>
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-muted-foreground text-lg leading-relaxed text-justify">
                 {product.description}
               </p>
             </div>
@@ -752,7 +793,7 @@ const SubProductDetail = () => {
                     className="flex items-start"
                   >
                     <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{feature}</span>
+                    <span className="text-muted-foreground text-justify">{feature}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -776,7 +817,7 @@ const SubProductDetail = () => {
                     className="flex items-start"
                   >
                     <CheckCircle className="h-5 w-5 text-blue-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{usage}</span>
+                    <span className="text-muted-foreground text-justify">{usage}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -800,7 +841,7 @@ const SubProductDetail = () => {
                     className="flex items-start"
                   >
                     <CheckCircle className="h-5 w-5 text-orange-500 mr-3 mt-0.5 flex-shrink-0" />
-                    <span className="text-muted-foreground">{application}</span>
+                    <span className="text-muted-foreground text-justify">{application}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -814,25 +855,22 @@ const SubProductDetail = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <Card className="shadow-lg">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-6 text-center">Technical Specifications</h3>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <h2 className="text-2xl font-bold mb-6 text-foreground">Specifications</h2>
+          <div className="overflow-x-auto">
+            <table className="w-full table-auto border-collapse">
+              <tbody>
                 {Object.entries(product.specifications).map(([key, value], index) => (
-                  <motion.div
-                    key={key}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.1 * index }}
-                    className="bg-secondary/10 rounded-lg p-4 hover:bg-secondary/20 transition-colors duration-300"
+                  <tr
+                    key={index}
+                    className={index % 2 === 0 ? 'bg-background/50' : 'bg-background/30'}
                   >
-                    <dt className="font-semibold text-primary mb-1">{key}</dt>
-                    <dd className="text-muted-foreground">{value}</dd>
-                  </motion.div>
+                    <td className="border px-4 py-2 font-medium text-foreground w-1/3">{key}</td>
+                    <td className="border px-4 py-2 text-muted-foreground text-justify">{value}</td>
+                  </tr>
                 ))}
-              </div>
-            </CardContent>
-          </Card>
+              </tbody>
+            </table>
+          </div>
         </motion.div>
 
         {/* CTA Section */}
@@ -845,16 +883,16 @@ const SubProductDetail = () => {
           <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto ">
                 Contact our team to learn more about this product and how it can benefit your operation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300">
-                    Contact Us
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={handleGoToContactUsPage}
+                >
+                  Contact Us
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
                 <Link to="/products">
                   <Button variant="outline" size="lg">
                     View More Products

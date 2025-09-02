@@ -49,11 +49,11 @@ const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/products" element={<Products />} />
-            <Route path="/products/:id" element={<ProductDetail />} />
-            <Route path="/products/sub/:id" element={<SubProductDetail />} />
-            <Route path="/products/storage/:id" element={<StorageDetail />} />
-            <Route path="/products/transportation/:id" element={<TransportationDetail />} />
-            <Route path="/products/manufacturing/:id" element={<ManufacturingDetail />} />
+                <Route path="/products/:id" element={<ProductDetail />} />
+                <Route path="/products/sub/:id" element={<SubProductDetail />} />
+                <Route path="/products/storage/:id" element={<StorageDetail />} />
+                <Route path="/products/transportation/:id" element={<TransportationDetail />} />
+                <Route path="/products/manufacturing/:id" element={<ManufacturingDetail />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/become-partner" element={<BecomePartner />} />
                 <Route path="/svr-admin" element={<AdminLogin />} />

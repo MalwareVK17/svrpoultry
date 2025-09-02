@@ -10,7 +10,7 @@ interface TimelineEvent {
 }
 
 const SVRTimelineInnovation = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0); // Start at first element (1984)
   const [showCard, setShowCard] = useState(false);
 
   const timelineData: TimelineEvent[] = [
@@ -59,89 +59,25 @@ const SVRTimelineInnovation = () => {
     },
     // ERA 2 – Expansion & Market Leadership (2011–2019)
     {
-      year: 2011,
+      year: 2015,
       era: "Expansion & Market Leadership",
       title: "Official Incorporation",
       description: "SVR Poultry Equipments officially incorporated on January 24th.",
       eraNumber: 2
     },
     {
-      year: 2014,
+      year: 2020,
       era: "Expansion & Market Leadership",
       title: "Expanded Product Line",
       description: "Added Auto Feeding Machines, Auger Systems, and Bulk Feeders to the portfolio.",
       eraNumber: 2
     },
     {
-      year: 2016,
+      year: 2025,
       era: "Expansion & Market Leadership",
       title: "Nationwide Client Base",
       description: "Achieved the milestone of serving clients across India, solidifying market presence.",
       eraNumber: 2
-    },
-    {
-      year: 2017,
-      era: "Expansion & Market Leadership",
-      title: "Global Export Beginnings",
-      description: "Began exporting equipment to Angola and Ghana, marking an international presence.",
-      eraNumber: 2
-    },
-    {
-      year: 2018,
-      era: "Expansion & Market Leadership",
-      title: "Upgraded Manufacturing Facility",
-      description: "Installed a modern CAD-equipped design office for precision and innovation.",
-      eraNumber: 2
-    },
-    {
-      year: 2019,
-      era: "Expansion & Market Leadership",
-      title: "Workforce & Process Expansion",
-      description: "Expanded workforce and automated production processes for enhanced efficiency.",
-      eraNumber: 2
-    },
-    // ERA 3 – Global Expansion & Next-Gen Solutions (2020–2025)
-    {
-      year: 2020,
-      era: "Global Expansion & Next-Gen Solutions",
-      title: "Adapted During Global Challenges",
-      description: "Ensured business continuity with resilient operations during global disruptions.",
-      eraNumber: 3
-    },
-    {
-      year: 2021,
-      era: "Global Expansion & Next-Gen Solutions",
-      title: "MSME Recognition",
-      description: "Classified as a Micro Enterprise under MSME, ensuring growth with recognition.",
-      eraNumber: 3
-    },
-    {
-      year: 2022,
-      era: "Global Expansion & Next-Gen Solutions",
-      title: "Workforce Expansion",
-      description: "Grew to 150+ employees (direct and indirect), strengthening capacity.",
-      eraNumber: 3
-    },
-    {
-      year: 2023,
-      era: "Global Expansion & Next-Gen Solutions",
-      title: "35+ Years of Excellence",
-      description: "Celebrated over 35 years of industry experience, reinforcing leadership in poultry automation.",
-      eraNumber: 3
-    },
-    {
-      year: 2024,
-      era: "Global Expansion & Next-Gen Solutions",
-      title: "Global Market Expansion",
-      description: "Expanded exports and established a new fabrication unit to meet growing demand.",
-      eraNumber: 3
-    },
-    {
-      year: 2025,
-      era: "Global Expansion & Next-Gen Solutions",
-      title: "Next-Generation Automation Launch",
-      description: "Expected launch of next-gen poultry automation systems and smart farm integration.",
-      eraNumber: 3
     }
   ];
 
@@ -208,10 +144,11 @@ const SVRTimelineInnovation = () => {
   const colors = getEraColors(currentEvent.eraNumber);
   
   // Calculate scroll position for smooth infinite scroll
-  const scrollPosition = -(currentIndex * 200) % (timelineData.length * 200);
+  const dotSpacing = 192;
+  const scrollPosition = -(currentIndex * dotSpacing);
 
   return (
-    <section className="py-12 bg-gradient-to-br from-slate-50 to-gray-100 overflow-hidden">
+    <section className="py-12 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -221,7 +158,7 @@ const SVRTimelineInnovation = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 style={{textDecoration:'underline'}} className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             SVR Timeline <span className="text-primary">Innovation</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -242,7 +179,7 @@ const SVRTimelineInnovation = () => {
               duration: 1.2,
               ease: "easeInOut"
             }}
-            style={{ width: `${duplicatedData.length * 200}px` }}
+            style={{ width: `${duplicatedData.length * dotSpacing}px` }}
           >
             {duplicatedData.map((event, index) => {
               const actualIndex = index % timelineData.length;
@@ -252,18 +189,21 @@ const SVRTimelineInnovation = () => {
               return (
                  <motion.div
                    key={`${event.year}-${index}`}
-                   className="relative flex flex-col items-center min-w-32"
+                   className="relative flex flex-col items-center min-w-0"
+                   style={{ width: `${dotSpacing}px` }}
                  >
                    {/* Timeline Dot */}
                    <motion.div
-                     className={`w-4 h-4 rounded-full border-4 border-white shadow-lg ${eventColors.dot}`}
-                     animate={isActive ? { scale: 1.2 } : { scale: 1 }}
+                     className={`w-4 h-4 rounded-full border-4 border-white shadow-lg ${eventColors.dot} relative z-20`}
+                     animate={isActive ? { scale: 1.3 } : { scale: 1 }}
                      transition={{ duration: 0.3 }}
                    />
                    
                    {/* Year Below Dot */}
                    <div className="mt-4 text-center">
-                     <p className="text-lg font-bold text-gray-800">
+                     <p className={`text-lg font-bold transition-colors duration-300 ${
+                       isActive ? 'text-gray-900' : 'text-gray-600'
+                     }`}>
                        {event.year}
                      </p>
                    </div>
@@ -284,9 +224,12 @@ const SVRTimelineInnovation = () => {
                    stiffness: 400,
                    damping: 25
                  }}
-                 className="absolute top-4 left-1/2 transform -translate-x-1/2 z-20"
+                 className="absolute top-4 left-1/2 transform -translate-x-1/2 z-30"
                >
-                 <div className={`bg-gradient-to-br ${colors.gradient} p-5 rounded-xl ${colors.glow} max-w-xs text-white`}>
+                 <div className={`bg-gradient-to-br ${colors.gradient} p-6 rounded-xl ${colors.glow} max-w-sm text-white relative`}>
+                   {/* Card pointer arrow */}
+                   <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 rotate-45 bg-gradient-to-br from-current to-current opacity-90"></div>
+                   
                    {/* Year */}
                    <motion.div
                      initial={{ opacity: 0, x: -15 }}
@@ -321,7 +264,6 @@ const SVRTimelineInnovation = () => {
             )}
           </AnimatePresence>
         </div>
-
       </div>
     </section>
   );

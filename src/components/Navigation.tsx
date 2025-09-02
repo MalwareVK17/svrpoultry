@@ -23,16 +23,16 @@ const Navigation = () => {
     <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-0">
         <div className="flex justify-between h-20">
-          <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/253837d0-59ba-46d9-8132-54cd4616acf9.png" 
-                alt="SVR Poultry Equipments header logo"
-                className="h-10 w-auto"
-              />
-              <span className="text-lg font-semibold text-gray-800 flex items-center">POULTRY EQUIPMENTS</span>
-            </Link>
-          </div>
+          <div className="flex items-center gap-3">
+  <img
+    src="/lovable-uploads/253837d0-59ba-46d9-8132-54cd4616acf9.png"
+    alt="side"
+    className="w-auto h-10 object-contain"
+  />
+  <span className="text-lg font-bold text-gray-800 flex items-center translate-y-1">
+    POULTRY EQUIPMENTS
+  </span>
+</div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

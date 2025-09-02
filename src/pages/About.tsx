@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 import { Award, Users, Package, Headphones, Building, Target, Heart, Lightbulb, Sprout } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import { useEffect } from 'react';
 
 const About = () => {
   const stats = [
@@ -10,7 +11,9 @@ const About = () => {
     { icon: Package, value: '50+', label: 'Product Range' },
     { icon: Headphones, value: '24/7', label: 'Support Available' },
   ];
-
+    useEffect(() => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  }, []);
   const values = [
     { 
       icon: Award, 
@@ -55,7 +58,7 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-16 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-6 bg-gradient-to-br from-primary/10 to-primary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -204,7 +207,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Premium Equipment</h2>
+            <h2 style={{textDecoration:'underline'}} className="text-4xl font-bold text-gray-900 mb-8">Our Premium Equipment</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
               State-of-the-art machinery and fabrication solutions engineered for excellence and precision
             </p>
@@ -240,7 +243,7 @@ const About = () => {
               {
                 title: "Automatic Weldmesh Machine",
                 description: "Fully automated welding system for producing high-quality mesh products with exceptional consistency.",
-                image: "https://5.imimg.com/data5/SELLER/Default/2023/11/358449488/TV/NG/AJ/6690679/wire-mesh-welding-machine-500x500.jpg"
+                image: "https://image2url.com/images/1756209660351-733a6426-e78f-4311-8d74-f0878ace72e3.jpg"
               }
             ].map((equipment, index) => (
               <motion.div
@@ -278,7 +281,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Our Core Values</h2>
+            <h2 style={{textDecoration:'underline'}} className="text-4xl font-bold text-gray-900 mb-8">Our Core Values</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -313,7 +316,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Meet Our Visionary Owners</h2>
+            <h2 style={{textDecoration:'underline'}} className="text-4xl font-bold text-gray-900 mb-8">Meet Our Pioneers</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-8">
@@ -332,7 +335,7 @@ const About = () => {
                     <div className="w-24 h-24 bg-gradient-to-br from-primary/10 to-primary/20 rounded-full mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <member.icon className="w-12 h-12 text-primary" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{member.name}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 whitespace-nowrap">{member.name}</h3>
                     <p className="text-gray-600 text-sm">{member.experience}</p>
                   </CardContent>
                 </Card>

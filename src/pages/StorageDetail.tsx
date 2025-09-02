@@ -2,26 +2,31 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Zap, Shield, Clock, ArrowLeft } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState,useEffect  } from 'react';
 
 const StorageDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const location = useLocation();
+
+  const passedProduct = location.state?.product;  
+
+  console.log('Passed product from navigation:', passedProduct);
 
   // Storage product data
   const storageProducts = {
     '301': {
       title: 'Flat Bottom Silos',
-      description: 'Large capacity storage solutions for bulk feed materials with flat bottom design. Perfect for long-term storage with easy maintenance access and superior weather protection.',
+      description: 'Flat bottom silos are manufactured in range of 350 son up to 5000 ton. The bottom of the silo is flat concrete base. These silos are used for storage of grains for longer period. These silos are cheaper than the hopper bottom type of silos, Silo are equipped with accessories like level switches, aeration system, temperature monitoring device and sweeping auger etc.The silo is designed considering various conditions at site like heavy rain falling area, humidity, cold, hot & heavy winds etc i.e. for all seismic zone.',
       images: [
-        '/lovable-uploads/4cd6c42b-8fd9-4a6d-bb0a-b2db84876889.png',
-        '/lovable-uploads/a9bfc5e5-a28d-4c66-b56e-3fa04b8dfb50.png',
+        'https://image2url.com/images/1756383898937-bbf2b3a3-5c90-41fe-939b-b5189ab8a1c7.jpg',
+        'https://image2url.com/images/1756384105240-e99df46a-afa0-49b1-83b1-24b9db638041.jpg',
         '/lovable-uploads/201fd9a0-96d4-4739-8e9b-0258a6ce4dc8.png'
       ],
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder - replace with actual video
+      videoUrl: 'https://www.youtube.com/embed/W5MG7cb4a6s', // Placeholder - replace with actual video
       keyFeatures: [
         'Large storage capacity up to 1000 tons',
         'Weather resistant galvanized steel construction',
@@ -41,13 +46,15 @@ const StorageDetail = () => {
     },
     '302': {
       title: 'Hopper Bottom Silos',
-      description: 'Efficient feed storage with hopper bottom design for easy discharge. Ideal for automated feeding systems with gravity flow and complete material discharge.',
+      description:
+      'Efficient feed storage with hopper bottom design for easy discharge. Ideal for automated feeding systems with gravity flow and complete material discharge.',
+  
       images: [
         '/lovable-uploads/71326db0-42f7-42d8-9c50-165c3f17b739.png',
-        '/lovable-uploads/25a37988-34e6-44c5-9198-3c3926fe49b0.png',
-        'https://pradosilos.com/wp-content/uploads/2021/06/fondo-conico-silo.jpg'
+        'https://image2url.com/images/1756385650821-5f6ec3ff-26ba-4594-9443-ca4a56094261.jpg',
+        'https://image2url.com/images/1756385823844-52bc62c8-c4dd-49ad-96f8-536b6ed2f5d0.jpg'
       ],
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ', // Placeholder - replace with actual video
+      videoUrl: 'https://www.youtube.com/embed/DzID-eR5BPU', // Placeholder - replace with actual video
       keyFeatures: [
         'Gravity discharge system for complete flow',
         'Cone bottom design eliminates material residue',
@@ -68,6 +75,15 @@ const StorageDetail = () => {
   };
 
   const product = storageProducts[id as keyof typeof storageProducts];
+
+
+  const handleNavigateToContact = () => {
+    navigate('/contact', { state: { product : passedProduct} } );
+  }
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo({top:0, behavior:'smooth'});
+  }, []);
 
   // Auto-slide effect for images
   useEffect(() => {
@@ -103,7 +119,7 @@ const StorageDetail = () => {
           <Button
             onClick={() => navigate('/products')}
             variant="outline"
-            className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm hover:bg-white border-primary/20 hover:border-primary/40 transition-all duration-300"
+            className="mb-4 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Products</span>
@@ -112,8 +128,8 @@ const StorageDetail = () => {
       </div>
 
       {/* Hero Section with Two Column Layout */}
-      <section className="py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-10">
+        <div className="max-w-7x1 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left Column - Title and Description */}
             <motion.div
@@ -129,7 +145,7 @@ const StorageDetail = () => {
                 <h1 className="text-5xl font-bold text-gray-900 mb-6 leading-tight">
                   {product.title}
                 </h1>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed text-justify">
                   {product.description}
                 </p>
               </div>
@@ -191,7 +207,7 @@ const StorageDetail = () => {
             className="text-center mb-12"
           >
             <h2 className="text-4xl font-bold text-gray-900 mb-4">See It In Action</h2>
-            <p className="text-xl text-gray-600">Watch how our {product.title.toLowerCase()} revolutionize feed storage</p>
+            <p className="text-xl text-gray-600 text-center">Watch how our {product.title.toLowerCase()} revolutionize feed storage</p>
           </motion.div>
           
           <motion.div
@@ -243,7 +259,7 @@ const StorageDetail = () => {
                         className="flex items-start space-x-3 group"
                       >
                         <CheckCircle className="w-6 h-6 text-primary mt-1 flex-shrink-0 group-hover:scale-110 transition-transform" />
-                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors text-justify">
                           {feature}
                         </span>
                       </motion.div>
@@ -281,7 +297,7 @@ const StorageDetail = () => {
                         <div className="w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center mt-1 flex-shrink-0 group-hover:bg-primary/20 transition-colors">
                           <div className="w-2 h-2 bg-primary rounded-full" />
                         </div>
-                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
+                        <span className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors text-justify">
                           {advantage}
                         </span>
                       </motion.div>
@@ -309,15 +325,15 @@ const StorageDetail = () => {
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Ready to Transform Your Feed Storage?
             </h2>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed text-center">
               Get in touch with our experts to discuss your specific requirements and receive a customized solution.
             </p>
-            <Link to="/contact">
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Button 
+                  onClick={handleNavigateToContact}
                   size="lg"
                   className="bg-primary hover:bg-primary/90 px-12 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transform transition-all duration-300"
                 >
@@ -325,7 +341,6 @@ const StorageDetail = () => {
                   <ArrowRight className="ml-3 w-6 h-6" />
                 </Button>
               </motion.div>
-            </Link>
           </motion.div>
         </div>
       </section>
