@@ -1,5 +1,4 @@
-
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,10 +16,11 @@ import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
 import BecomePartner from "./pages/BecomePartner";
 import ProductDetail from "./pages/ProductDetail";
-import SubProductDetail from "./pages/SubProductDetail";
+import SubProductDetail from "./pages/SubProductDetail"
 import StorageDetail from './pages/StorageDetail';
 import TransportationDetail from './pages/TransportationDetail';
 import ManufacturingDetail from './pages/ManufacturingDetail';
+import FeedPlantPage from './pages/FeedPlantPage';
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -54,7 +54,15 @@ const App = () => {
                 <Route path="/products/storage/:id" element={<StorageDetail />} />
                 <Route path="/products/transportation/:id" element={<TransportationDetail />} />
                 <Route path="/products/manufacturing/:id" element={<ManufacturingDetail />} />
-                <Route path="/contact" element={<Contact />} />
+                <Route path="/feed-plant" element={<FeedPlantPage />} />
+                <Route 
+                  path="/contact" 
+                  element={
+                    <Suspense fallback={<div>Loading...</div>}>
+                      <Contact />
+                    </Suspense>
+                  } 
+                />
                 <Route path="/become-partner" element={<BecomePartner />} />
                 <Route path="/svr-admin" element={<AdminLogin />} />
                 <Route path="/svr-admin/dashboard" element={<AdminDashboard />} />

@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -59,6 +59,14 @@ const AdminLogin = () => {
       [e.target.name]: e.target.value
     });
   };
+
+
+  useEffect(()=>{
+    const isAuthenticated = localStorage.getItem('adminAuthenticated');
+    if(isAuthenticated === 'true'){
+      navigate('/svr-admin/dashboard');
+    }
+  },[]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 flex items-center justify-center p-4">

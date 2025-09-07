@@ -116,7 +116,7 @@ const Timeline = () => {
           <div className="min-w-max px-8">
             {/* Timeline Line */}
             <motion.div
-              className="relative h-1 bg-gradient-to-r from-green-600 via-blue-500 to-purple-600 rounded-full mb-16"
+              className="relative h-0.5 bg-gradient-to-r from-green-600 via-blue-500 to-purple-600 rounded-full mb-16"
               style={{ width: `${timelineEvents.length * 200}px` }}
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
@@ -154,7 +154,7 @@ const Timeline = () => {
                   />
 
                   {/* Year Label (Below) */}
-                  <div className="absolute top-8 text-center">
+                  <div className="absolute top-6 text-center">
                     <span className="text-sm font-bold text-gray-800">{event.year}</span>
                   </div>
 
@@ -173,6 +173,8 @@ const Timeline = () => {
                             <button
                               onClick={() => setSelectedEvent(null)}
                               className="absolute -top-2 -right-2 w-8 h-8 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-200"
+                              title="Close"
+                              aria-label="Close"
                             >
                               <X className="w-4 h-4" />
                             </button>

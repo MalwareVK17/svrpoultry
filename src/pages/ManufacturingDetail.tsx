@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Cog, Shield, Clock, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -10,7 +10,11 @@ const ManufacturingDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const location = useLocation();
 
+  const passedProduct = location.state?.product;  
+
+  console.log('Passed product from navigation:', passedProduct);
   // Manufacturing product data
   const manufacturingProducts = {
     '203': {
@@ -42,6 +46,43 @@ const ManufacturingDetail = () => {
   };
 
   const product = manufacturingProducts[id as keyof typeof manufacturingProducts];
+  const handleNavigateToContact = () => {
+    console.log("Navigating to contact page with product:", product);
+    
+    if (!product) {
+      console.error("No product found for navigation");
+      return;
+    }
+
+    const productData = {
+      id: id,
+      title: product.title,
+      category: 'Feed Storage',
+      fromProductPage: true,
+      image: product.images?.[0] || '',
+      description: product.description,
+      features: product.keyFeatures || []
+    };
+
+    try {
+      // First try programmatic navigation with state
+      navigate('/contact', { 
+        state: { 
+          product: productData,
+          selectedProduct: productData.title,
+          selectedCategory: 'Auto Batching System'
+        },
+        replace: false
+      });
+      
+      // Force a page reload to ensure the contact page loads correctly
+      // window.location.href = '/contact';
+    } catch (error) {
+      console.error("Navigation error:", error);
+      // Fallback navigation without state
+      // window.location.href = '/contact';
+    }
+  };
    useEffect(() => {
     window.scrollTo({top:0, behavior:'smooth'});
   }, []);
@@ -57,6 +98,13 @@ const ManufacturingDetail = () => {
       return () => clearInterval(interval);
     }
   }, [product]);
+  const handleGoToContactUsPage = () => {
+    console.log("navigating to contact us page with product:", product);
+    navigate('/contact', { 
+      state: { 
+        product: product}
+      } 
+    );}
 
   if (!product) {
     return (

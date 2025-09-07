@@ -16,8 +16,8 @@ const WorldMap = () => {
 
   return (
     <div className="relative w-full h-full bg-white rounded-r-3xl overflow-hidden">
-      <video width="1300" height="780" autoPlay loop muted className="object-cover w-full h-full">
-  <source src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/canva2.mp4" type="video/mp4" />
+      <video width="1500" height="980" autoPlay loop muted className="object-cover w-full h-full">
+  <source src="https://cvukkqrjfrzvnytpcfjj.supabase.co/storage/v1/object/public/videos/canva99.mp4" type="video/mp4" />
 </video>
 
 

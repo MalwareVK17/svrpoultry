@@ -27,9 +27,9 @@ const Navigation = () => {
   <img
     src="/lovable-uploads/253837d0-59ba-46d9-8132-54cd4616acf9.png"
     alt="side"
-    className="w-auto h-10 object-contain"
+    className="w-auto h-12 object-contain"
   />
-  <span className="text-lg font-bold text-gray-800 flex items-center translate-y-1">
+  <span className="text-lg font-bold text-gray-800 flex items-center translate-y-2">
     POULTRY EQUIPMENTS
   </span>
 </div>

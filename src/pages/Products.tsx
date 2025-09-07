@@ -285,7 +285,7 @@ const Products = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center underline">Cages</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 font-bold text-center text-black bg-white/10 px-6 py-4 max-w-sm mx-auto rounded-2xl shadow-lg border-b-4 border-primary">Cages</h2>
             <div id="cages" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {productCategories.cages.map((product, index) => (
                 <motion.div
@@ -331,7 +331,7 @@ const Products = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center underline">Feed Manufacturing</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 font-bold text-center text-black bg-white/10 px-6 py-4 max-w-md mx-auto rounded-2xl shadow-lg border-b-4 border-primary">Feed Manufacturing</h2>
             <div id="feedmanufacturing" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {productCategories.feedManufacturing.map((product, index) => (
                 <motion.div
@@ -377,7 +377,7 @@ const Products = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center underline">Feed Storage</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 font-bold text-center text-black bg-white/10 px-6 py-4 max-w-sm mx-auto rounded-2xl shadow-lg border-b-4 border-primary">Feed Storage</h2>
             <div id="feedstorage" className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {productCategories.feedStorage.map((product, index) => (
                 <motion.div
@@ -430,7 +430,7 @@ const Products = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center underline">Feed Transportation</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 font-bold text-center text-black bg-white/10 px-6 py-4 max-w-md mx-auto rounded-2xl shadow-lg border-b-4 border-primary">Feed Transportation</h2>
             <div id="feedtransportation" className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
               {productCategories.feedTransportation.map((product, index) => (
                 <motion.div
@@ -488,7 +488,7 @@ const Products = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 underline">Our Trusted Clients</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 font-bold text-center text-black bg-white/10 px-6 py-4 max-w-md mx-auto rounded-2xl shadow-lg border-b-4 border-primary">Our Trusted Clients</h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
               Working together with industry leaders to deliver the best poultry equipment solutions
             </p>

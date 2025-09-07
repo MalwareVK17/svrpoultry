@@ -76,10 +76,44 @@ const StorageDetail = () => {
 
   const product = storageProducts[id as keyof typeof storageProducts];
 
-
   const handleNavigateToContact = () => {
-    navigate('/contact', { state: { product : passedProduct} } );
-  }
+    console.log("Navigating to contact page with product:", product);
+    
+    if (!product) {
+      console.error("No product found for navigation");
+      return;
+    }
+
+    const productData = {
+      id: id,
+      title: product.title,
+      category: 'Feed Storage',
+      fromProductPage: true,
+      image: product.images?.[0] || '',
+      description: product.description,
+      features: product.keyFeatures || []
+    };
+
+    try {
+      // First try programmatic navigation with state
+      navigate('/contact', { 
+        state: { 
+          product: productData,
+          selectedProduct: productData.title,
+          selectedCategory: 'Feed Storage'
+        },
+        replace: false
+      });
+      
+      // Force a page reload to ensure the contact page loads correctly
+      // window.location.href = '/contact';
+    } catch (error) {
+      console.error("Navigation error:", error);
+      // Fallback navigation without state
+      // window.location.href = '/contact';
+    }
+  };
+
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo({top:0, behavior:'smooth'});
@@ -97,7 +131,13 @@ const StorageDetail = () => {
       return () => clearInterval(interval);
     }
   }, [product]);
-
+  const handleGoToContactUsPage = () => {
+    console.log("navigating to contact us page with product:", product);
+    navigate('/contact', { 
+      state: { 
+        product: product}
+      } 
+    );}
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">

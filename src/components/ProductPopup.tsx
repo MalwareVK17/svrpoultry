@@ -64,6 +64,7 @@ const ProductPopup = ({ isOpen, onClose, title, subProducts }: ProductPopupProps
             <div className="p-6 overflow-y-auto flex-1">
               <div className={`grid gap-6 ${subProducts.length === 4 ? 'grid-cols-1 md:grid-cols-2 xl:grid-cols-4' : subProducts.length === 3 ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'}`}>
                 {subProducts.map((product, index) => (
+                  console.log(product),
                   <motion.div
                     key={product.id}
                     initial={{ opacity: 0, y: 50, scale: 0.9 }}

@@ -207,8 +207,8 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 style={{textDecoration:'underline'}} className="text-4xl font-bold text-gray-900 mb-8">Our Premium Equipment</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 font-bold text-black bg-white/10 px-6 py-4 max-w-xl mx-auto rounded-2xl shadow-lg border-b-4 border-primary">Our Premium Equipment</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-12 ">
               State-of-the-art machinery and fabrication solutions engineered for excellence and precision
             </p>
           </motion.div>
@@ -281,7 +281,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 style={{textDecoration:'underline'}} className="text-4xl font-bold text-gray-900 mb-8">Our Core Values</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 font-bold text-black bg-white/10 px-6 py-4 max-w-md mx-auto rounded-2xl shadow-lg border-b-4 border-primary">Our Core Values</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -316,7 +316,7 @@ const About = () => {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 style={{textDecoration:'underline'}} className="text-4xl font-bold text-gray-900 mb-8">Meet Our Pioneers</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 font-bold text-black bg-white/10 px-6 py-4 max-w-md mx-auto rounded-2xl shadow-lg border-b-4 border-primary">Meet Our Pioneers</h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 mb-8">

@@ -5,26 +5,28 @@ import { Badge } from '@/components/ui/badge';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Settings, Users, Zap, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { stat } from 'fs';
 import { useLocation } from 'react-router-dom';
-import { table } from 'console';
-
-
 
 const SubProductDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const location = useLocation();
-  console.log("product form the product page", location.state?.product);
+  
+  const passedProduct = location.state?.product;  
+
+  console.log('Passed product from navigation:', passedProduct);
+
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   // Sub-product data with detailed information
-    useEffect(() => {
-      window.scrollTo({top:0, behavior:'smooth'});
-    }, []);
   const subProducts = {
     // Cages Category
     '1001': {
+      id: '1001',
       title: 'Chicks Cage Systems',
       category: 'Cages',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
@@ -67,6 +69,7 @@ const SubProductDetail = () => {
       }
     },
     '1002': {
+      id: '1002',
       title: 'Layer Cage Systems',
       category: 'Cages',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
@@ -109,6 +112,7 @@ const SubProductDetail = () => {
       }
     },
     '1003': {
+      id: '1003',
       title: 'Grower Cage Systems',
       category: 'Cages',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
@@ -147,10 +151,11 @@ const SubProductDetail = () => {
         'Capacity': '15-25 birds/cage',
         'Material': 'Heavy-duty galvanized',
         'Warranty': '12 years',
-        'Adjustability ': 'Growth-adaptive'
+        'Adjustability': 'Growth-adaptive'
       }
     },
     '1004': {
+      id: '1004',
       title: 'Water Nipples',
       category: 'Cage Accessories',
       image: 'https://image2url.com/images/1756412000861-b97511ad-9904-4186-a473-a1c41fddfabc.webp',
@@ -159,7 +164,7 @@ const SubProductDetail = () => {
         'https://image2url.com/images/1756411779318-d7506b54-000b-4816-ab2c-2b34d21cdc49.jpeg',
         'https://image2url.com/images/1756718175527-f6305db6-05a5-4ece-9234-c15e62e25f2f.jpg'
       ],
-      description: 'Our advanced water nipples feature a 360-degree swivel design, manufactured with precision laser-cut stainless steel and food-grade plastic components. The parts are assembled using high-speed automated assembly lines that ensure a leak-proof seal, capable of handling pressures up to 100 PSL. The design minimizes water waste by up to 40%, and each unit is rigorously pressure-tested to guarantee reliability, making it perfect for high-volume poultry operations.',
+      description: 'Our advanced water nipples feature a 360-degree swivel design, manufactured with precision laser-cut stainless steel and food-grade plastic components. The parts are assembled using high-speed automated assembly lines that ensure a leak-proof seal, capable of handling pressures up to 100 PSI. The design minimizes water waste by up to 40%, and each unit is rigorously pressure-tested to guarantee reliability, making it perfect for high-volume poultry operations.',
       features: [
         'Leak-proof design',
         'Easy activation',
@@ -193,6 +198,7 @@ const SubProductDetail = () => {
       }
     },
     '1005': {
+      id: '1005',
       title: 'PVC/GI-Feeders',
       category: 'Cage Accessories',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
@@ -235,6 +241,7 @@ const SubProductDetail = () => {
       }
     },
     '1006': {
+      id: '1006',
       title: 'Distribution Pipes',
       category: 'Cage Accessories',
       image: '/lovable-uploads/8afb721d-0c4b-4523-aa58-c2997a491b54.png',
@@ -277,6 +284,7 @@ const SubProductDetail = () => {
       }
     },
     '1007': {
+      id: '1007',
       title: 'Weld Mesh Panels',
       category: 'Weld Mesh',
       image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
@@ -319,6 +327,7 @@ const SubProductDetail = () => {
       }
     },
     '1008': {
+      id: '1008',
       title: 'Chain Link Fencing',
       category: 'Weld Mesh',
       image: 'https://www.cadischprecisionmeshes.co.uk/images/guides/211.jpg',
@@ -327,7 +336,7 @@ const SubProductDetail = () => {
         'https://image2url.com/images/1756412398063-d7b892c6-b545-4cdf-bbb2-7d973198b7ce.webp',
         'https://image2url.com/images/1756412425318-d1635325-f750-4ebe-8928-4cc8c91ecba6.webp'
       ],
-      description: ' Chain Link Fencing also popularly known as Galvanized Chain Link Fence are Rust Proof with Silver Finish, manufactured from Heavy Coated Hot Dip Galvanized GI Wires with minimum from 90 to max of 275 gsm Zinc Coating',
+      description: 'Chain Link Fencing also popularly known as Galvanized Chain Link Fence are Rust Proof with Silver Finish, manufactured from Heavy Coated Hot Dip Galvanized GI Wires with minimum from 90 to max of 275 gsm Zinc Coating',
       features: [
         'Interlocked wire design',
         'Flexible installation',
@@ -362,6 +371,7 @@ const SubProductDetail = () => {
     },
     // Feed Manufacturing Category
     '2001': {
+      id: '2001',
       title: 'Rooter Feed Trolley',
       category: 'Feed Trolley',
       image: 'https://image2url.com/images/1756717371699-2be5326b-54f6-4012-b2be-81231d416a89.png',
@@ -404,6 +414,7 @@ const SubProductDetail = () => {
       }
     },
     '2002': {
+      id: '2002',
       title: 'Garata Feed Trolley',
       category: 'Feed Trolley',
       image: '/lovable-uploads/d7703451-5a3e-42ab-8566-1c44f16fdeca.png',
@@ -445,6 +456,7 @@ const SubProductDetail = () => {
       }
     },
     '2003': {
+      id: '2003',
       title: 'Feed Manufacturing Plants',
       category: 'Feed Plants',
       image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
@@ -485,30 +497,16 @@ const SubProductDetail = () => {
         'Warranty': '7 years',
         'Monitoring': 'Real-time systems'
       },
-      table: [
-        {
-          Model: 'SVRDG10',
-          Capacity: '1-2 tons/hour',
-          Power: '22 kW',
-        },
-        {
-          Model: 'SVRDG20',
-          Capacity: '2-5 tons/hour',
-          Power: '37 kW',
-        },
-        {
-          Model: 'SVRDG30',
-          Capacity: '5-10 tons/hour',
-          Power: '55 kW',
-        },
-        {
-          Model: 'SVRDG50',
-          Capacity: '10-20 tons/hour',
-          Power: '75 kW',
-        }
+      tableData: [
+        { model: 'SVRDG10', power: '23 hp', capacity: '2-3 TPH' },
+        { model: 'SVRDG20', power: '36 hp', capacity: '4-5 TPH' },
+        { model: 'SVRDG30', power: '46 hp', capacity: '6-7 TPH' },
+        { model: 'SVRDG40', power: '61 hp', capacity: '7-8 TPH' },
+        { model: 'SVRDG50', power: '71 hp', capacity: '10-12 TPH' },
       ]
     },
     '2004': {
+      id: '2004',
       title: 'Full Screen Grinder',
       category: 'Feed Plants',
       image: 'https://image2url.com/images/1756052616063-ef8f22ca-a041-46d5-8cc3-e1f3523bf34f.jpg',
@@ -551,6 +549,7 @@ const SubProductDetail = () => {
       }
     },
     '2005': {
+      id: '2005',
       title: 'Precision Weighing Bins',
       category: 'Feed Plants',
       image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
@@ -593,7 +592,8 @@ const SubProductDetail = () => {
       }
     },
     '2006': {
-      title: 'Industrial Feed Mixers',
+      id: '2006',
+      title: 'Feed Mixers',
       category: 'Feed Plants',
       image: '/lovable-uploads/8da81a5b-ee76-447b-bcda-9e3ae3c66350.png',
       images: [
@@ -651,17 +651,77 @@ const SubProductDetail = () => {
     }
   }, [id, product]);
 
+  // Enhanced function to handle navigation to contact page with product data
+  const handleNavigateToContact = () => {
+    console.log("Navigating to contact page with product ID:", id);
+    
+    if (!product) {
+      console.error("No product found for navigation");
+      return;
+    }
 
-  const handleGoToContactUsPage = () => {
-    console.log("navigating to contact us page with product:", product);
-    navigate('/contact', { state: { product } });
-  }
+    // Create a minimal product data object to avoid circular references
+    const productData = {
+      id: id,
+      title: product.title || 'Product',
+      category: product.category || 'General Inquiry',
+      image: product.image || '',
+      description: product.description || ''
+    };
+
+    console.log("Product data being passed:", productData);
+    
+    try {
+      // Navigate to contact page with minimal required data
+      navigate('/contact', { 
+        state: { 
+          selectedProduct: productData.title,
+          selectedCategory: productData.category,
+          fromProductPage: true
+        },
+        replace: false
+      });
+    } catch (error) {
+      console.error("Navigation error:", error);
+      // Fallback to simple navigation without state
+      navigate('/contact');
+    }
+  };
+
+  // Function to handle back navigation
+  const handleBackNavigation = () => {
+    try {
+      // Check if we came from a specific route or use default
+      if (location.state?.from) {
+        navigate(location.state.from);
+      } else {
+        navigate('/products');
+      }
+    } catch (error) {
+      console.error("Back navigation error:", error);
+      navigate('/products');
+    }
+  };
+
+  // Enhanced function for Get Quote button with error handling
+  const handleGetQuote = () => {
+    console.log("Get Quote button clicked for product:", product?.title);
+    handleNavigateToContact();
+  };
+  navigate('/contact', { 
+    state: { 
+      product: product
+    },
+  });
 
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold mb-4">Product Not Found</h1>
+          <p className="text-muted-foreground mb-4">
+            The product you're looking for doesn't exist or has been moved.
+          </p>
           <Link to="/products">
             <Button>Back to Products</Button>
           </Link>
@@ -681,7 +741,7 @@ const SubProductDetail = () => {
         >
           <Button
             variant="outline"
-            onClick={() => navigate('/products')}
+            onClick={handleBackNavigation}
             className="mb-4 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
@@ -697,10 +757,7 @@ const SubProductDetail = () => {
             transition={{ duration: 0.6 }}
             className="space-y-4"
           >
-            <Card className="overflow-hidden shadow-2xl "
-
-              style={{ maxHeight: '500px' }}
-            >
+            <Card className="overflow-hidden shadow-2xl" style={{ maxHeight: '500px' }}>
               <CardContent className="p-0">
                 <div className="aspect-square bg-gradient-to-br from-primary/5 to-secondary/10 relative overflow-hidden">
                   <motion.img
@@ -711,6 +768,11 @@ const SubProductDetail = () => {
                     initial={{ opacity: 0, scale: 1.1 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
+                    onError={(e) => {
+                      console.error('Image failed to load:', e.currentTarget.src);
+                      // Fallback to default image if current image fails
+                      e.currentTarget.src = product.image;
+                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 </div>
@@ -724,10 +786,11 @@ const SubProductDetail = () => {
                   <button
                     key={index}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex
                         ? 'bg-primary scale-125'
                         : 'bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                      }`}
+                    }`}
                     aria-label={`Show image ${index + 1}`}
                     title={`Show image ${index + 1}`}
                   />
@@ -756,13 +819,21 @@ const SubProductDetail = () => {
             </div>
 
             <div className="flex gap-4">
-              <Link to="/contact">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300">
-                  Get Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Button variant="outline" size="lg" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={handleGetQuote}
+                type="button"
+              >
+                Get Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                type="button"
+              >
                 Learn More
               </Button>
             </div>
@@ -871,6 +942,38 @@ const SubProductDetail = () => {
               </tbody>
             </table>
           </div>
+
+          {/* Add Table for Feed Manufacturing Plants */}
+          {product.id === '2003' && product.tableData && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              className="mt-8"
+            >
+              <h3 className="text-xl font-bold mb-4">Technical Specifications</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full table-auto border-collapse border border-gray-300">
+                  <thead>
+                    <tr className="bg-primary/10">
+                      <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Model</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Power</th>
+                      <th className="border border-gray-300 px-4 py-2 text-left font-semibold">Capacity</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {product.tableData.map((row, index) => (
+                      <tr key={index} className={index % 2 === 0 ? 'bg-background/50' : 'bg-background/30'}>
+                        <td className="border border-gray-300 px-4 py-2">{row.model}</td>
+                        <td className="border border-gray-300 px-4 py-2">{row.power}</td>
+                        <td className="border border-gray-300 px-4 py-2">{row.capacity}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+          )}
         </motion.div>
 
         {/* CTA Section */}
@@ -883,18 +986,21 @@ const SubProductDetail = () => {
           <Card className="bg-gradient-to-r from-primary/5 to-secondary/5 border-primary/20">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">Ready to Get Started?</h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto ">
+              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                 Contact our team to learn more about this product and how it can benefit your operation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
-                  onClick={handleGoToContactUsPage}
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300"
+                  onClick={handleGetQuote}
+                  type="button"
                 >
                   Contact Us
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Link to="/products">
-                  <Button variant="outline" size="lg">
+                  <Button variant="outline" size="lg" type="button">
                     View More Products
                   </Button>
                 </Link>

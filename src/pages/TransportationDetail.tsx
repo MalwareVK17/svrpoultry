@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { useParams, Link, useNavigate, useLocation } from 'react-router-dom';
+import { useParams, Link, useNavigate, useLocation, useNavigation } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Truck, Shield, Clock, ArrowLeft } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -11,8 +11,8 @@ const TransportationDetail = () => {
   const navigate = useNavigate();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const location = useLocation();
-  const passedProduct = location.state?.product || null;  
-
+  const passedProduct = location.state?.product;
+  console.log('Passed product from navigation:', passedProduct);
 
   useEffect(()=>{
     window.scrollTo({top:0, behavior:'smooth'});
@@ -87,7 +87,50 @@ const TransportationDetail = () => {
       return () => clearInterval(interval);
     }
   }, [product]);
+  const handleNavigateToContact = () => {
+    console.log("Navigating to contact page with product:", product);
+    if (!product) {
+      console.error("No product found for navigation");
+      return;
+    }
 
+    const productData = {
+      id: id,
+      title: product.title,
+      category: 'Feed Transportation',
+      fromProductPage: true,
+      image: product.images?.[0] || '',
+      description: product.description,
+      features: product.keyFeatures || []
+    };
+
+    try {
+      // First try programmatic navigation with state
+      navigate('/contact', { 
+        state: { 
+          product: productData,
+          selectedProduct: productData.title,
+          selectedCategory: 'Feed Transportation'
+        },
+        replace: false
+      });
+      
+      // Force a page reload to ensure the contact page loads correctly
+      // window.location.href = '/contact';
+    } catch (error) {
+      console.error("Navigation error:", error);
+      // Fallback navigation without state
+      // window.location.href = '/contact';
+    }
+    };
+  [product];
+  const handleGoToContactUsPage = () => {
+    console.log("navigating to contact us page with product:", product);
+    navigate('/contact', { 
+      state: { 
+        product: product}
+      } 
+    );}
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -323,9 +366,9 @@ const TransportationDetail = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <Button 
+                  onClick={handleNavigateToContact}
                   size="lg"
                   className="bg-primary hover:bg-primary/90 px-12 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transform transition-all duration-300"
-                  onClick={()=>navigate('/contact', { state: { product : passedProduct} } ) }
                 >
                   Contact Us
                   <ArrowRight className="ml-3 w-6 h-6" />

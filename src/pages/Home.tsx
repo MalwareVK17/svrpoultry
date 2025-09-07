@@ -77,7 +77,7 @@ const Home = () => {
               <Link to="/about">
                 <Button
                   size="lg"
-                  className="bg-white text-primary hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
+                  className="bg-white text-primary hover:bg-gray-100 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 rounded-2xl shadow-lg border-b-4 border-primary"
                   aria-label="Discover Our Story"
                 >
                   Discover Our Story
@@ -197,7 +197,7 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-12 sm:mb-16"
           >
-            <h2 style={{ textDecoration: 'underline' }} className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 font-bold text-black bg-white/10 px-6 py-4 max-w-xl mx-auto rounded-2xl shadow-lg border-b-4 border-primary">
               Our Trusted Clients
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
